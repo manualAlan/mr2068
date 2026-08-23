@@ -103,7 +103,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-story wrap section-pad" id="about">
-      <div className="ambrosia-story-photo"><img src="/images/alistair-debate.png" alt="Alistair speaking during a public policy debate"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
+      <div className="ambrosia-story-photo"><img src="/images/alistair.png" alt="Alistair Foulke-McKeon"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
       <div className="ambrosia-story-copy">
         <p className="eyebrow">MEET ALISTAIR</p>
         <h2>A local inheritance. A public duty.</h2>
@@ -117,7 +117,7 @@ export default function AmbrosiaCampaign() {
     <section className="ambrosia-proof">
       <div className="wrap ambrosia-proof-grid">
         <div className="ambrosia-proof-copy"><p className="eyebrow light">A REPRESENTATIVE WHO SHOWS UP</p><h2>Politics done face to face.</h2><p>Alistair’s campaign is built around working sessions, town meetings and direct answers. Not every disagreement disappears, but every community deserves to be heard before decisions are made.</p><Link className="button button-white" href="/events?event=ambrosia-roundtable#register">Reserve your place <ArrowIcon/></Link></div>
-        <figure><img src="/images/alistair-forum.jpg" alt="Alistair addressing voters at a public forum"/><figcaption>AMBROSIA PUBLIC FORUM / OPEN QUESTIONS</figcaption></figure>
+        <figure><img src="/images/alistair.png" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/><figcaption>AMBROSIA CAMPAIGN PORTRAIT / 2064</figcaption></figure>
       </div>
     </section>
 
@@ -126,7 +126,6 @@ export default function AmbrosiaCampaign() {
       <div className="ambrosia-action-links"><Link className="button button-dark" href="/events#volunteer">Volunteer in Ambrosia <ArrowIcon/></Link><Link className="button button-outline" href="/events#updates">Get campaign updates <ArrowIcon/></Link></div>
     </section>
 
-    <section className="ambrosia-credit wrap"><p>Supporting photography: <a href="https://commons.wikimedia.org/wiki/File:Henri_Bontenbal_(cropped).png">Jonge Klimaatbeweging, CC BY 3.0</a> and <a href="https://commons.wikimedia.org/wiki/File:Henri_Bontenbal_-_AD_010-Verkiezingsdebat_2023_(cropped).jpg">Vera de Kok, CC BY-SA 4.0</a>, via Wikimedia Commons.</p></section>
   </main><footer className="mr-campaign-footer"><div className="wrap">
     <div className="mr-footer-brand"><img src="/images/mr-logo.png" alt="Moderate Reform"/><p>Alistair Foulke-McKeon<br/><strong>for Ambrosia</strong></p></div>
     <div className="mr-footer-links"><a href="#plan">Ambrosia plan</a><a href="#about">Meet Alistair</a><Link href="/events#volunteer">Volunteer</Link><Link href="/">LCA alliance</Link></div>
