@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className="portrait-strip">
             {candidates.map((person) => (
-              <Link className="portrait-card" href={`/team#${person.slug}`} key={person.name}>
+              <Link className="portrait-card" href={person.slug === 'alistair' ? '/ambrosia' : `/team#${person.slug}`} key={person.name}>
                 <div className="portrait-img"><img src={person.image} alt={person.name} /></div>
                 <p>{person.region}</p><h3>{person.name}</h3><span>Meet {person.first} <ArrowIcon /></span>
               </Link>
@@ -111,7 +111,7 @@ export default function Home() {
           <div className="section-head"><div><p className="eyebrow">FROM THE CAMPAIGN</p><h2>Ideas in motion.</h2></div><p>Short reads from the places and people shaping our plan.</p></div>
           <div className="note-grid">
             <article className="note-card note-lead"><div><span>CHASMIA / INDUSTRY</span><h3>The comeback is already being built.</h3><p>Inside the workshops pairing old industrial skill with new maritime technology.</p><Link href="/platform#build">Read the field note <ArrowIcon/></Link></div></article>
-            <article className="note-card"><span>AMBROSIA / WATER</span><h3>Clean water is not a slogan. It is the basic deal.</h3><p>Alistair’s three-step plan for transparent standards, local delivery and long-term renewal.</p><Link href="/team#alistair">Meet Alistair <ArrowIcon/></Link></article>
+            <article className="note-card"><span>AMBROSIA / WATER</span><h3>Clean water is not a slogan. It is the basic deal.</h3><p>Alistair’s three-step plan for transparent standards, local delivery and long-term renewal.</p><Link href="/ambrosia">Explore Alistair’s campaign <ArrowIcon/></Link></article>
             <article className="note-card"><span>MYRATI / AUTONOMY</span><h3>Decisions should make the crossing.</h3><p>JB Stoner on putting more authority, and more of tourism’s returns, in Myratian hands.</p><Link href="/team#stoner">Meet JB <ArrowIcon/></Link></article>
           </div>
         </section>
