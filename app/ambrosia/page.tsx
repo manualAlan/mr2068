@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Header, Footer, ArrowIcon } from "../components";
+import { ArrowIcon } from "../components";
 
 const commitments = [
   {
@@ -33,11 +33,16 @@ const commitments = [
 ];
 
 export default function AmbrosiaCampaign() {
-  return <><Header/><main className="ambrosia-page">
+  return <div className="ambrosia-shell"><header className="mr-campaign-header">
+    <div className="wrap mr-header-inner">
+      <Link className="mr-campaign-brand" href="/ambrosia" aria-label="Moderate Reform, Alistair for Ambrosia"><img src="/images/mr-logo.png" alt="MR"/><span>ALISTAIR<br/>FOR AMBROSIA</span></Link>
+      <nav aria-label="Ambrosia campaign navigation"><a href="#plan">Our plan</a><a href="#about">Meet Alistair</a><Link href="/events?event=ambrosia-roundtable#register">Events</Link><Link className="mr-alliance-link" href="/">LCA alliance <ArrowIcon/></Link></nav>
+    </div>
+  </header><main className="ambrosia-page">
     <section className="ambrosia-hero">
       <div className="ambrosia-hero-grid wrap">
         <div className="ambrosia-hero-copy">
-          <p className="ambrosia-party">MODERATE REFORM <span>·</span> LCA</p>
+          <p className="ambrosia-party">MODERATE REFORM <span>·</span> AMBROSIA</p>
           <p className="ambrosia-coordinate">AMBROSIA / DISTRICT SIGNAL 2064</p>
           <h1>Rooted here.<br/><em>Ready for what’s next.</em></h1>
           <p className="ambrosia-dek">Alistair Foulke-McKeon has a practical plan for clean water, strong farms and a future young Ambrosians can choose.</p>
@@ -55,7 +60,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-status">
-      <div className="wrap"><span>CAMPAIGN STATUS</span><b>ONLINE</b><i></i><strong>FARMS</strong><strong>WATER</strong><strong>HOME</strong><em>MR / LCA 2064</em></div>
+      <div className="wrap"><span>CAMPAIGN STATUS</span><b>ONLINE</b><i></i><strong>FARMS</strong><strong>WATER</strong><strong>HOME</strong><em>MR / AMBROSIA 2064</em></div>
     </section>
 
     <section className="ambrosia-intro wrap section-pad">
@@ -88,7 +93,7 @@ export default function AmbrosiaCampaign() {
       <div className="wrap">
         <div className="section-head"><div><p className="eyebrow">THE AMBROSIA COMPACT</p><h2>Four jobs.<br/>No excuses.</h2></div><p>Specific commitments shaped around the pressures Ambrosian families, farms and towns face now.</p></div>
         <div className="ambrosia-plan-grid">
-          {commitments.map(item => <article key={item.number}>
+          {commitments.map(item => <article data-node={item.number} key={item.number}>
             <div className="ambrosia-plan-top"><span>{item.number}</span><b>{item.label}</b></div>
             <h3>{item.title}</h3><p>{item.text}</p>
             <ul>{item.points.map(point=><li key={point}>{point}</li>)}</ul>
@@ -97,7 +102,7 @@ export default function AmbrosiaCampaign() {
       </div>
     </section>
 
-    <section className="ambrosia-story wrap section-pad">
+    <section className="ambrosia-story wrap section-pad" id="about">
       <div className="ambrosia-story-photo"><img src="/images/alistair-debate.png" alt="Alistair speaking during a public policy debate"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
       <div className="ambrosia-story-copy">
         <p className="eyebrow">MEET ALISTAIR</p>
@@ -122,5 +127,9 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-credit wrap"><p>Supporting photography: <a href="https://commons.wikimedia.org/wiki/File:Henri_Bontenbal_(cropped).png">Jonge Klimaatbeweging, CC BY 3.0</a> and <a href="https://commons.wikimedia.org/wiki/File:Henri_Bontenbal_-_AD_010-Verkiezingsdebat_2023_(cropped).jpg">Vera de Kok, CC BY-SA 4.0</a>, via Wikimedia Commons.</p></section>
-  </main><Footer/></>;
+  </main><footer className="mr-campaign-footer"><div className="wrap">
+    <div className="mr-footer-brand"><img src="/images/mr-logo.png" alt="Moderate Reform"/><p>Alistair Foulke-McKeon<br/><strong>for Ambrosia</strong></p></div>
+    <div className="mr-footer-links"><a href="#plan">Ambrosia plan</a><a href="#about">Meet Alistair</a><Link href="/events#volunteer">Volunteer</Link><Link href="/">LCA alliance</Link></div>
+    <p className="mr-footer-authorized">Authorized by Moderate Reform, Ambrosia.<br/>CAMPAIGN TRANSMISSION / 2064</p>
+  </div></footer></div>;
 }
