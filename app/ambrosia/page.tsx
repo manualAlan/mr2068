@@ -103,7 +103,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-story wrap section-pad" id="about">
-      <div className="ambrosia-story-photo"><img src="/images/alistair.png" alt="Alistair Foulke-McKeon"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
+      <div className="ambrosia-story-photo"><img src="/images/alistair-forum.jpg" alt="Alistair Foulke-McKeon speaking at a public forum"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
       <div className="ambrosia-story-copy">
         <p className="eyebrow">MEET ALISTAIR</p>
         <h2>A local inheritance. A public duty.</h2>
@@ -117,7 +117,7 @@ export default function AmbrosiaCampaign() {
     <section className="ambrosia-proof">
       <div className="wrap ambrosia-proof-grid">
         <div className="ambrosia-proof-copy"><p className="eyebrow light">A REPRESENTATIVE WHO SHOWS UP</p><h2>Politics done face to face.</h2><p>Alistair’s campaign is built around working sessions, town meetings and direct answers. Not every disagreement disappears, but every community deserves to be heard before decisions are made.</p><Link className="button button-white" href="/events?event=ambrosia-roundtable#register">Reserve your place <ArrowIcon/></Link></div>
-        <figure><img src="/images/alistair.png" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/><figcaption>AMBROSIA CAMPAIGN PORTRAIT / 2064</figcaption></figure>
+        <figure><img src="/images/alistair-debate.png" alt="Alistair Foulke-McKeon taking part in a public debate"/><figcaption>AMBROSIA CAMPAIGN DEBATE / 2064</figcaption></figure>
       </div>
     </section>
 
