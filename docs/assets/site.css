@@ -4970,6 +4970,247 @@ body {
 .mr-footer-brand strong {
   color: #b94cff;
 }
+.ambrosia-hero {
+  min-height: 800px;
+  background: linear-gradient(104deg,#030313 0%,#07113b 49%,#3d147c 100%);
+}
+.ambrosia-hero:before {
+  opacity: .48;
+  animation: none;
+}
+.ambrosia-hero:after {
+  width: 32vw;
+  height: 32vw;
+  right: 4vw;
+  top: 9vw;
+  opacity: .55;
+  animation: none;
+}
+.ambrosia-hero-grid {
+  min-height: 800px;
+  grid-template-columns: 1.04fr .96fr;
+}
+.ambrosia-hero-copy {
+  max-width: 720px;
+}
+.ambrosia-hero-copy:after {
+  display: none;
+}
+.ambrosia-hero h1 {
+  font-size: clamp(78px,8.4vw,132px);
+  line-height: .8;
+  letter-spacing: -.068em;
+}
+.ambrosia-hero h1 em {
+  animation: none;
+  background: linear-gradient(90deg,#6688ff,#c7baff 50%,#e94cde);
+  background-clip: text;
+}
+.ambrosia-portrait {
+  right: 0;
+  width: min(42vw,630px);
+  height: 660px;
+  bottom: 48px;
+  padding: 14px;
+  background: linear-gradient(135deg,rgba(83,112,255,.8),rgba(211,31,229,.5));
+  clip-path: polygon(8% 0,100% 0,100% 92%,92% 100%,0 100%,0 8%);
+}
+.ambrosia-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  clip-path: polygon(7% 0,100% 0,100% 93%,93% 100%,0 100%,0 7%);
+  filter: saturate(.82) contrast(1.07);
+}
+.ambrosia-portrait:before {
+  inset: 0;
+  border: 0;
+  background: linear-gradient(180deg,transparent 55%,rgba(2,3,20,.36));
+  clip-path: none;
+}
+.ambrosia-portrait:after {
+  background: linear-gradient(90deg,rgba(39,98,255,.12),transparent 28%,transparent 72%,rgba(211,31,229,.12));
+  mix-blend-mode: normal;
+}
+.ambrosia-id {
+  left: -32px;
+  bottom: 36px;
+  box-shadow: 10px 10px 0 rgba(10,14,53,.75);
+}
+.ambrosia-word {
+  opacity: .58;
+}
+.ambrosia-intro {
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+.ambrosia-intro h2 {
+  max-width: 760px;
+}
+.ambrosia-intro-copy {
+  max-width: 660px;
+}
+.ambrosia-region {
+  min-height: 720px;
+}
+.ambrosia-region-photo {
+  clip-path: none;
+}
+.ambrosia-region-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.72) contrast(1.1);
+}
+.ambrosia-photo-note {
+  position: absolute;
+  z-index: 3;
+  right: 28px;
+  top: 28px;
+  background: rgba(3,3,19,.88);
+  border: 1px solid rgba(102,136,255,.55);
+  padding: 18px 20px;
+  max-width: 250px;
+  backdrop-filter: blur(12px);
+}
+.ambrosia-photo-note b {
+  display: block;
+  color: #fff;
+  font: 900 10px/1.2 monospace;
+  letter-spacing: .14em;
+}
+.ambrosia-photo-note small {
+  display: block;
+  margin-top: 8px;
+  color: #aeb9dc;
+  font-size: 11px;
+}
+.ambrosia-plan {
+  padding-top: 135px;
+  padding-bottom: 135px;
+}
+.ambrosia-plan-grid {
+  gap: 14px;
+  background: transparent;
+  border: 0;
+}
+.ambrosia-plan-grid article {
+  border: 1px solid rgba(92,111,255,.3);
+  min-height: 400px;
+}
+.ambrosia-plan-grid article:hover {
+  transform: translateY(-4px);
+}
+.ambrosia-story {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  grid-template-columns: .84fr 1fr;
+}
+.ambrosia-story-photo {
+  height: 620px;
+  clip-path: polygon(9% 0,100% 0,100% 92%,92% 100%,0 100%,0 9%);
+  box-shadow: 20px 20px 0 rgba(65,53,255,.14);
+}
+.ambrosia-story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 48% center;
+  filter: saturate(.78) contrast(1.08);
+}
+.ambrosia-proof {
+  padding: 120px 0;
+}
+.ambrosia-proof-grid {
+  grid-template-columns: .9fr 1fr;
+}
+.ambrosia-proof figure {
+  height: 520px;
+  clip-path: polygon(0 0,94% 0,100% 9%,100% 100%,6% 100%,0 91%);
+}
+.ambrosia-proof figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+  filter: saturate(.8) contrast(1.08);
+}
+.ambrosia-status:after {
+  display: none;
+}
+.ambrosia-actions {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media (max-width:1000px) {
+  .ambrosia-portrait {
+    right: -7vw;
+    width: 50vw;
+  }
+  .ambrosia-hero-copy {
+    max-width: 59%;
+  }
+}
+@media (max-width:700px) {
+  .ambrosia-hero,.ambrosia-hero-grid {
+    min-height: 840px;
+  }
+  .ambrosia-hero-copy {
+    max-width: 100%;
+    padding-top: 44px;
+  }
+  .ambrosia-hero h1 {
+    font-size: 62px;
+  }
+  .ambrosia-dek {
+    max-width: 78%;
+    font-size: 16px;
+  }
+  .ambrosia-portrait {
+    width: 350px;
+    height: 410px;
+    right: -82px;
+    bottom: 36px;
+    padding: 7px;
+  }
+  .ambrosia-id {
+    left: -58px;
+    bottom: 18px;
+  }
+  .ambrosia-intro {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .ambrosia-region {
+    min-height: 0;
+  }
+  .ambrosia-photo-note {
+    top: 16px;
+    right: 16px;
+    padding: 13px;
+  }
+  .ambrosia-plan {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .ambrosia-plan-grid {
+    gap: 10px;
+  }
+  .ambrosia-story {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .ambrosia-story-photo {
+    height: 430px;
+  }
+  .ambrosia-proof {
+    padding: 80px 0;
+  }
+  .ambrosia-proof figure {
+    height: 340px;
+  }
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;

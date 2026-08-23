@@ -44,15 +44,15 @@ export default function AmbrosiaCampaign() {
         <div className="ambrosia-hero-copy">
           <p className="ambrosia-party">MODERATE REFORM <span>·</span> AMBROSIA</p>
           <p className="ambrosia-coordinate">AMBROSIA / DISTRICT SIGNAL 2064</p>
-          <h1>Rooted here.<br/><em>Ready for what’s next.</em></h1>
-          <p className="ambrosia-dek">Alistair Foulke-McKeon has a practical plan to take Ambrosia from recovery to growth, with clean water, stronger farm exports and a future young Ambrosians can choose.</p>
+          <h1>Ambrosia<br/><em>can grow here.</em></h1>
+          <p className="ambrosia-dek">Alistair Foulke-McKeon knows the places national politics too often overlooks. His plan turns Ambrosia’s rural strength into clean water, stronger farm exports and a future young people can choose without leaving home.</p>
           <div className="button-row">
             <a className="button button-white" href="#plan">See the Ambrosia plan <ArrowIcon/></a>
             <Link className="text-link light-link" href="/events?event=ambrosia-roundtable#register">Meet Alistair <ArrowIcon/></Link>
           </div>
         </div>
         <div className="ambrosia-portrait">
-          <img src="/images/alistair.png" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/>
+          <img src="/images/alistair-hero-2064.jpg" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/>
           <div className="ambrosia-id"><span>ALISTAIR FOULKE-MCKEON</span><strong>FOR AMBROSIA</strong></div>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-region">
-      <div className="ambrosia-region-photo"><img src="/images/farm.jpg" alt="Working farmland across rural Ambrosia"/><span>MOUNT AMBROSIA BASIN / 06:42</span></div>
+      <div className="ambrosia-region-photo"><img src="/images/ambrosia-aerial-farms.jpg" alt="Aerial view of productive farmland across rural Ambrosia"/><span>MOUNT AMBROSIA BASIN / 06:42</span><div className="ambrosia-photo-note"><b>THE LAND IS AN ASSET</b><small>Protect it. Connect it. Add value here.</small></div></div>
       <div className="ambrosia-region-copy">
         <p className="eyebrow light">THE REGION</p>
         <h2>Farm country.<br/>Forward country.</h2>
@@ -103,7 +103,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-story wrap section-pad" id="about">
-      <div className="ambrosia-story-photo"><img src="/images/alistair-forum.jpg" alt="Alistair Foulke-McKeon speaking at a public forum"/><span>PUBLIC SERVICE / LISTEN FIRST</span></div>
+      <div className="ambrosia-story-photo"><img src="/images/alistair-office-2064.jpg" alt="Alistair Foulke-McKeon reading in his office"/><span>PREPARED TO SERVE / READY TO LISTEN</span></div>
       <div className="ambrosia-story-copy">
         <p className="eyebrow">MEET ALISTAIR</p>
         <h2>A local inheritance. A public duty.</h2>
@@ -116,8 +116,8 @@ export default function AmbrosiaCampaign() {
 
     <section className="ambrosia-proof">
       <div className="wrap ambrosia-proof-grid">
-        <div className="ambrosia-proof-copy"><p className="eyebrow light">A REPRESENTATIVE WHO SHOWS UP</p><h2>Politics done face to face.</h2><p>Alistair’s campaign is built around working sessions, town meetings and direct answers. Not every disagreement disappears, but every community deserves to be heard before decisions are made.</p><Link className="button button-white" href="/events?event=ambrosia-roundtable#register">Reserve your place <ArrowIcon/></Link></div>
-        <figure><img src="/images/alistair-debate.png" alt="Alistair Foulke-McKeon taking part in a public debate"/><figcaption>AMBROSIA CAMPAIGN DEBATE / 2064</figcaption></figure>
+        <div className="ambrosia-proof-copy"><p className="eyebrow light">A REPRESENTATIVE WHO SHOWS UP</p><h2>Serious about the work. Close to the people.</h2><p>Alistair’s campaign is built around working sessions, town meetings and direct answers. He prepares, listens and stays until the difficult questions are answered, because every community deserves a voice before decisions are made.</p><Link className="button button-white" href="/events?event=ambrosia-roundtable#register">Sit down with Alistair <ArrowIcon/></Link></div>
+        <figure><img src="/images/alistair-listening-2064.jpg" alt="Alistair Foulke-McKeon seated for a campaign conversation"/><figcaption>LISTEN FIRST / AMBROSIA 2064</figcaption></figure>
       </div>
     </section>
 
