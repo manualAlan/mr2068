@@ -52,7 +52,7 @@ export default function AmbrosiaCampaign() {
           </div>
         </div>
         <div className="ambrosia-portrait">
-          <img src="/images/alistair-hero-2064.jpg" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/>
+          <img src="/images/alistair-hero-hd.jpg" alt="Alistair Foulke-McKeon, Moderate Reform candidate for Ambrosia"/>
           <div className="ambrosia-id"><span>ALISTAIR FOULKE-MCKEON</span><strong>FOR AMBROSIA</strong></div>
         </div>
       </div>
@@ -64,9 +64,10 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-intro wrap section-pad">
-      <div>
+      <div className="ambrosia-intro-lead">
         <p className="eyebrow">WHY HE IS RUNNING</p>
         <h2>Ambrosia should be a place to build a life, not leave one behind.</h2>
+        <figure><img src="/images/alistair-conversation-hd.jpg" alt="Alistair Foulke-McKeon explaining his vision in conversation"/><figcaption>IN CONVERSATION / AMBROSIA’S FUTURE</figcaption></figure>
       </div>
       <div className="ambrosia-intro-copy">
         <p className="lead">Eighty percent rural, vital to Caprica’s food supply and full of communities that know how to make things last, Ambrosia deserves government that notices what works here.</p>
@@ -103,7 +104,7 @@ export default function AmbrosiaCampaign() {
     </section>
 
     <section className="ambrosia-story wrap section-pad" id="about">
-      <div className="ambrosia-story-photo"><img src="/images/alistair-office-2064.jpg" alt="Alistair Foulke-McKeon reading in his office"/><span>PREPARED TO SERVE / READY TO LISTEN</span></div>
+      <div className="ambrosia-story-photo"><img src="/images/alistair-podium-hd.jpg" alt="Alistair Foulke-McKeon addressing a public meeting"/><span>PREPARED TO SERVE / READY TO LEAD</span></div>
       <div className="ambrosia-story-copy">
         <p className="eyebrow">MEET ALISTAIR</p>
         <h2>A local inheritance. A public duty.</h2>
@@ -117,7 +118,7 @@ export default function AmbrosiaCampaign() {
     <section className="ambrosia-proof">
       <div className="wrap ambrosia-proof-grid">
         <div className="ambrosia-proof-copy"><p className="eyebrow light">A REPRESENTATIVE WHO SHOWS UP</p><h2>Serious about the work. Close to the people.</h2><p>Alistair’s campaign is built around working sessions, town meetings and direct answers. He prepares, listens and stays until the difficult questions are answered, because every community deserves a voice before decisions are made.</p><Link className="button button-white" href="/events?event=ambrosia-roundtable#register">Sit down with Alistair <ArrowIcon/></Link></div>
-        <figure><img src="/images/alistair-listening-2064.jpg" alt="Alistair Foulke-McKeon seated for a campaign conversation"/><figcaption>LISTEN FIRST / AMBROSIA 2064</figcaption></figure>
+        <figure><img src="/images/alistair-stage-hd.jpg" alt="Alistair Foulke-McKeon answering questions before an audience"/><figcaption>LISTEN FIRST / AMBROSIA 2064</figcaption></figure>
       </div>
     </section>
 

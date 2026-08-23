@@ -5211,6 +5211,136 @@ body {
     height: 340px;
   }
 }
+.ambrosia-portrait {
+  width: min(45vw,650px);
+  height: 500px;
+  bottom: 105px;
+  padding: 10px;
+  clip-path: none;
+  border: 1px solid rgba(117,137,255,.72);
+  box-shadow: 24px 24px 0 rgba(45,39,141,.28),0 28px 80px rgba(0,0,0,.35);
+}
+.ambrosia-portrait img {
+  clip-path: none;
+  object-position: center 38%;
+}
+.ambrosia-id {
+  left: 20px;
+  bottom: 20px;
+  min-width: min(360px,calc(100% - 40px));
+  padding: 16px 22px;
+  box-shadow: 8px 8px 0 rgba(10,14,53,.82);
+  white-space: normal;
+}
+.ambrosia-id span,.ambrosia-id strong {
+  display: block;
+  overflow: visible;
+}
+.ambrosia-intro {
+  grid-template-columns: 1fr 1fr;
+  gap: 7vw;
+  align-items: start;
+}
+.ambrosia-intro-lead figure {
+  height: 330px;
+  margin: 42px 0 0;
+  position: relative;
+  border: 1px solid rgba(92,111,255,.42);
+  box-shadow: 14px 14px 0 rgba(75,49,190,.16);
+  overflow: hidden;
+}
+.ambrosia-intro-lead figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(.82) contrast(1.07);
+}
+.ambrosia-intro-lead figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,#2762ff,#7137ff,#d31fe5);
+  color: #fff;
+  padding: 11px 15px;
+  font: 900 9px/1 monospace;
+  letter-spacing: .12em;
+}
+.ambrosia-intro-copy {
+  padding-top: 52px;
+}
+.ambrosia-story-photo {
+  height: 480px;
+}
+.ambrosia-story-photo img {
+  object-position: center 34%;
+}
+.ambrosia-proof figure {
+  height: 440px;
+}
+.ambrosia-proof figure img {
+  object-position: center 32%;
+}
+@media (max-width:1000px) {
+  .ambrosia-portrait {
+    width: 47vw;
+    height: 470px;
+    right: -3vw;
+  }
+  .ambrosia-id {
+    left: 16px;
+    min-width: calc(100% - 32px);
+  }
+  .ambrosia-intro {
+    gap: 5vw;
+  }
+}
+@media (max-width:700px) {
+  .ambrosia-hero,.ambrosia-hero-grid {
+    min-height: 880px;
+  }
+  .ambrosia-dek {
+    max-width: 92%;
+  }
+  .ambrosia-portrait {
+    width: 88vw;
+    height: 330px;
+    right: -14vw;
+    bottom: 54px;
+    padding: 6px;
+  }
+  .ambrosia-portrait img {
+    object-position: center 36%;
+  }
+  .ambrosia-id {
+    left: 12px;
+    bottom: 12px;
+    min-width: calc(100% - 24px);
+    padding: 11px 13px;
+  }
+  .ambrosia-id span {
+    font-size: 9px;
+  }
+  .ambrosia-id strong {
+    font-size: 8px;
+  }
+  .ambrosia-intro {
+    grid-template-columns: 1fr;
+  }
+  .ambrosia-intro-lead figure {
+    height: 260px;
+    margin-top: 30px;
+  }
+  .ambrosia-intro-copy {
+    padding-top: 12px;
+  }
+  .ambrosia-story-photo {
+    height: 330px;
+  }
+  .ambrosia-proof figure {
+    height: 300px;
+  }
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
