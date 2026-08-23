@@ -2,7 +2,7 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr-party-2064/";
-const assetVersion = "20260822a";
+const assetVersion = "20260823a";
 const routes = ["", "platform", "team", "events", "ambrosia"];
 
 await rm("docs", { recursive: true, force: true });
