@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className="portrait-strip">
             {candidates.map((person) => (
-              <Link className="portrait-card" href={person.slug === 'alistair' ? '/ambrosia' : `/team#${person.slug}`} key={person.name}>
+              <Link className="portrait-card" href={`/team#${person.slug}`} key={person.name}>
                 <div className="portrait-img"><img src={person.image} alt={person.name} /></div>
                 <p>{person.region}</p><h3>{person.name}</h3><span>Meet {person.first} <ArrowIcon /></span>
               </Link>
