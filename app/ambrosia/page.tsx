@@ -45,7 +45,7 @@ export default function AmbrosiaCampaign() {
           <p className="ambrosia-party">MODERATE REFORM <span>·</span> AMBROSIA</p>
           <p className="ambrosia-coordinate">AMBROSIA / DISTRICT SIGNAL 2064</p>
           <h1>Rooted here.<br/><em>Ready for what’s next.</em></h1>
-          <p className="ambrosia-dek">Alistair Foulke-McKeon has a practical plan for clean water, strong farms and a future young Ambrosians can choose.</p>
+          <p className="ambrosia-dek">Alistair Foulke-McKeon has a practical plan to take Ambrosia from recovery to growth, with clean water, stronger farm exports and a future young Ambrosians can choose.</p>
           <div className="button-row">
             <a className="button button-white" href="#plan">See the Ambrosia plan <ArrowIcon/></a>
             <Link className="text-link light-link" href="/events?event=ambrosia-roundtable#register">Meet Alistair <ArrowIcon/></Link>
@@ -70,7 +70,7 @@ export default function AmbrosiaCampaign() {
       </div>
       <div className="ambrosia-intro-copy">
         <p className="lead">Eighty percent rural, vital to Caprica’s food supply and full of communities that know how to make things last, Ambrosia deserves government that notices what works here.</p>
-        <p>Alistair is standing to renew the basics, clean water, dependable roads, thriving farms and services within reach, while opening new doors for the next generation in Auburne, Garrison, Strawberry, Meridian and every rural community between them.</p>
+        <p>After four years of renewing water systems, strengthening agriculture and rebuilding essential infrastructure, Alistair is standing to move Ambrosia from recovery to growth. That means new markets for farm exports, more local processing, dependable roads and broadband, and services within reach in Auburne, Garrison, Strawberry, Meridian and every rural community between them.</p>
         <blockquote>“We do not need to turn Ambrosia into somewhere else. We need to give our own communities the confidence and connections to succeed.”</blockquote>
       </div>
     </section>
