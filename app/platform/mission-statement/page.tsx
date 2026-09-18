@@ -20,7 +20,7 @@ export default function MissionStatementPage() {
         <p>Abroad, I want Caprica to be a country others can count on. Open to trade, steady with our friends and careful with the lives of those who serve. We should have the confidence to talk to people we disagree with, and the judgment to know which commitments we can keep.</p>
         <p>I am asking you to judge us by the opportunities we open and the promises we keep. Question us. Expect an answer. The future of this country is too important to leave to people who all agree with one another.</p>
         <p className="p68-letter-closing">We have the talent. We have the opportunity.<br />Let’s give ourselves the freedom to build.</p>
-        <div className="p68-signature"><img src="/images/alan-bluespan-signature.png" alt="Alan Bluespan signature" width="220" height="54" /><strong>Alan Bluespan</strong><span>Party Co-chair</span></div>
+        <div className="p68-signature"><img src="/images/robert-bluespan-signature.png" alt="Robert Bluespan signature" width="220" height="54" /><strong>Robert Bluespan</strong><span>Party Co-leader</span></div>
       </article>
     </PolicyPageShell>
   );

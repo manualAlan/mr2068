@@ -131,7 +131,7 @@ test("policy details retain the campaign's named commitments", async () => {
     "platform/foreign-policy": [/The Bluespan Doctrine/i, /Kaoqing Communique/i, /OURS/, /Kerevan/i, /Oshmit/i],
     "platform/defense": [/stronger navy and air force/i, /smaller.{0,30}army/i, /CU partners/i],
     "platform/economy": [/20% earnings credit/i, /20,000 aurums/i, /net debt ceiling below 70%/i, /correction plan/i],
-    "platform/mission-statement": [/Alan Bluespan/i],
+    "platform/mission-statement": [/Robert Bluespan/i, /Party Co-leader/i],
   };
   for (const [route, commitments] of Object.entries(expectations)) {
     const text = visibleText(await page(route));
