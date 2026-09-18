@@ -255,7 +255,8 @@ def divider(part):
         'Equal rights, meaningful choices and public power that answers to the people it serves.',
     ][part]
     para(sub,M,289,445,15,21,HexColor('#D3E6EB'),max_h=65)
-    photo(['homes.jpg','field.jpg','port.jpg'][part],0,399,W,363,focus=[(.5,.6),(.5,.45),(.56,.58)][part])
+    # Each divider uses a different real photograph so no image is repeated.
+    photo(['homes.jpg','wind.jpg','transit.jpg'][part],0,399,W,363,focus=[(.5,.6),(.5,.45),(.56,.58)][part])
     box(M,733,CW,44,NAVY)
     label('CAPRICA / 2068-2072',M+14,749,white)
     end(PROMISES[part],True)
@@ -362,13 +363,14 @@ def notes():
 
 def closing():
     start('closing','Freedom to Build. Confidence in Tomorrow.',True)
-    photo('homes.jpg',0,0,W,346,focus=(.5,.55))
+    photo('field.jpg',0,0,W,346,focus=(.5,.55))
     box(0,318,W,H-318,NAVY)
     label('OUR SHARED PURPOSE',M,353,HexColor('#80DDB7'))
     para('A country where\nyou can build\na good life.',M,398,CW,38,43,white,True,max_h=132)
     para(SLOGAN,M,575,CW,18,26,HexColor('#80DDB7'),True,max_h=54)
     para('Robert Bluespan for Prime Minister',M,660,CW,14,20,white,True)
     para('An MR-led government. A common Alliance program.\nA mandate for 2068-2072.',M,700,CW-75,10.5,15,HexColor('#C6DAE5'),max_h=46)
+    para('Photography: Andy Li, Denise Jans, Melissa Askew and Unsplash contributors.',M,759,CW-75,6.8,9,HexColor('#9CB7C5'),max_h=16)
     logo(W-M-60,699,60)
     end('Liberal-Conservative Alliance',True)
 
@@ -380,7 +382,7 @@ for part in range(3):
     for p in PAGES:
         if p['part']==part:
             policy_page(p)
-delivery(); scorecard(); notes(); closing()
+delivery(); closing()
 c.save()
 
 audit_dir=ROOT/'tmp/pdfs/manifesto-2068'
