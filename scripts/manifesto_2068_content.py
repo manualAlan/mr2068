@@ -8,7 +8,7 @@ PROMISES = [
 ]
 
 # Every numerical forward commitment below is a proposal, not a claimed result.
-# The supplied current fiscal outturn is gross debt of 69% of GDP in 2068.
+# The supplied current fiscal outturn is gross debt of 68% of GDP in 2068.
 PAGES = [
     dict(id="housing", part=0, title="The keys to your own future.",
          intro="A place of your own changes what you can plan: a family, a new job, a life near the people you love. Caprica needs more homes where people actually want to live.",
@@ -107,11 +107,11 @@ PAGES = [
              ("Let regions make practical decisions", "Give regional leaders transport, skills and water budgets covering several years, with clear service outcomes. Local choices must respect national rights, safety and fiscal rules. Report investment, employment and service results by region so communities can see what their agreement has delivered."),
          ], delivery="By 2069: regional growth agreements, rural water priorities and a public map of broadband gaps and repairs."),
     dict(id="fiscal-rules", part=1, title="Rules that protect tomorrow.",
-         intro="Debt is down to 69% of GDP. That gives Caprica a stronger starting point. The next task is to keep services dependable, invest carefully and leave room to meet the next emergency.",
+         intro="Debt is down to 68% of GDP. That gives Caprica a stronger starting point. The next task is to keep services dependable, invest carefully and leave room to meet the next emergency.",
          everyday="Careful public finances help keep essential services reliable through difficult years and prevent today's promises from becoming an unexpected bill for tomorrow's households.",
          test="Gross debt target: 65% by 2072",
          entries=[
-             ("Keep debt moving down", "Aim to bring gross debt from 69% of GDP in 2068 to 65% by 2072 under normal economic conditions. Retain the separate statutory net debt ceiling below 70%. Report both measures and contingent liabilities clearly, so assets and accounting changes cannot disguise the true position."),
+             ("Keep debt moving down", "Aim to bring gross debt from 68% of GDP in 2068 to 65% by 2072 under normal economic conditions. Retain the separate statutory net debt ceiling below 70%. Report both measures and contingent liabilities clearly, so assets and accounting changes cannot disguise the true position."),
              ("Keep discipline after the milestone", "Passing the old 70% threshold will not end spending discipline. In normal conditions, current spending should grow no faster than CPI plus population. Exceptions for independently assessed aging, health or other service pressures need identified funding and an explicit vote in Parliament."),
              ("Pay for promises that last", "Fund recurring commitments with recurring revenue or verified permanent savings. Asset sales, temporary windfalls and hoped for growth cannot pay for permanent tax cuts. Protect sovereign wealth principal, and report withdrawals, investment income and obligations separately so people can see what the country owns and owes."),
              ("Make every major project prove itself", "Projects above 1 billion aurums must have an options appraisal, reference design, cost and benefit ranges, a responsible authority and funded maintenance. Apply proportionate checks to smaller projects. Independent reviews release money in stages, with overruns and guarantees reported to Parliament."),
@@ -286,7 +286,7 @@ EVERYDAY = [
 ]
 
 DELIVERY = [
-    ("FIRST 100 DAYS / 2068", "Establish the starting line", "Verify the 2068 housing total; release the 69% gross debt baseline, fiscal stress tests and a costed first budget schedule. Assign responsibility for every manifesto commitment and make the complete delivery register public."),
+    ("FIRST 100 DAYS / 2068", "Establish the starting line", "Verify the 2068 housing total; release the 68% gross debt baseline, fiscal stress tests and a costed first budget schedule. Assign responsibility for every manifesto commitment and make the complete delivery register public."),
     ("FIRST YEAR / 2069", "Put the machinery in place", "Legislate planning and service deadlines; agree regional growth compacts; set out the national investment pipeline and defense capability budget. Begin phased business, tax and care reforms with funded implementation plans."),
     ("MIDTERM / 2070", "Show services working", "Deliver youth offers within 90 days once eligible and qualifying clinical contact within 14 days, human appeals for consequential AI decisions, tested continuity plans and shared fare agreements. Audit access and capacity, then correct weak performance openly."),
     ("TERM END / 2072", "Submit to the public test", "Target annual housing completions 50% above 2068 and gross debt at 65% of GDP under normal conditions. Publish readiness tests, service outcomes and an independent rating of every commitment, including those delayed or not delivered."),

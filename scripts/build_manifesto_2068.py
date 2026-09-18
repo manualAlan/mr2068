@@ -141,9 +141,9 @@ def contents():
           'National progress should reach your front door. Our next term is about the homes, work, care and freedom that make a future possible.')
     rows=[
         ('THE CASE FOR ANOTHER TERM','Robert Bluespan, our record and our shared alliance','next-chapter','03',252),
-        ('01 / THE FREEDOM TO GET AHEAD','Homes, earnings, enterprise, skills and an open economy','part-0','07',354),
-        ('02 / THE CONFIDENCE TO PLAN YOUR FUTURE','Sound finances, care, energy, reliable services and security','part-1','16',456),
-        ('03 / THE POWER TO SHAPE YOUR OWN LIFE','Your rights, useful technology and government you can challenge','part-2','27',558),
+        ('01 / THE FREEDOM TO GET AHEAD','Homes, earnings, enterprise, skills and an open economy','part-0','06',354),
+        ('02 / THE CONFIDENCE TO PLAN YOUR FUTURE','Sound finances, care, energy, reliable services and security','part-1','15',456),
+        ('03 / THE POWER TO SHAPE YOUR OWN LIFE','Your rights, useful technology and government you can challenge','part-2','26',558),
     ]
     for head,body,key,num,top in rows:
         label(head,M,top,TEAL,CW-62)
@@ -159,7 +159,7 @@ def introduction():
     title('ROBERT BLUESPAN / PARTY CO-LEADER','You should be able\nto make plans.')
     body=[
         'A home of your own. A better job. A business you have talked about for years. Time to care for someone you love. These are ordinary ambitions. In a country as capable as ours, they should be within reach.',
-        'Capricans gave Moderate Reform another term in 2064. Today, gross public debt stands at 69% of GDP. We have a stronger foundation. We also have a responsibility to people who are still waiting for that progress to reach their own lives.',
+        'Capricans gave Moderate Reform another term in 2064. Today, gross public debt stands at 68% of GDP. We have a stronger foundation. We also have a responsibility to people who are still waiting for that progress to reach their own lives.',
         'That is the task of the next term. Build homes where people want to live. Make effort pay. Bring care within reach. Give businesses the confidence to invest and communities the connections to prosper.',
         'For an island at the Twin Strait, ambition belongs close to home and far beyond our shores. A farm that reaches a new market, a technician who learns a better trade and a firm that sells to Columbia all contribute to the same national success.',
         'Our method is clear. Let people build and compete. Give public services the means to do their job. Keep power answerable to the citizen. Pay honestly for the promises we make.',
@@ -177,7 +177,7 @@ def record():
     start('record','The record and the next task',True)
     label('IN GOVERNMENT / 2064 TO 2068',M,43,GREEN)
     para('We have a stronger\nstarting point.',M,83,CW,34,40,white,True,max_h=86)
-    para('69%',M,200,290,97,105,GREEN,True)
+    para('68%',M,200,290,97,105,GREEN,True)
     label('GROSS PUBLIC DEBT / GDP IN 2068',M,322,LIGHT)
     para('Now the gains must reach\neveryday life.',M,373,CW,26,32,white,True,max_h=67)
     para('A stronger balance sheet gives us room to face the next challenge. People also need a home they can afford, a route into work and care they can reach. That is how the next term will be judged.',M,465,CW,11,16,white,max_h=67)
@@ -196,11 +196,11 @@ def flagships():
           'More homes. A route into work. Help when you need it. These are practical commitments, backed by the policies in this manifesto.')
     cards=[
         ('50%','MORE HOMES','Your own front door.',
-         'Raise annual housing completions by 50% by 2072 against the verified 2068 total. Release land with services, set planning deadlines and build near jobs and transport.','housing','THE HOUSING PLAN / 08'),
+         'Raise annual housing completions by 50% by 2072 against the verified 2068 total. Release land with services, set planning deadlines and build near jobs and transport.','housing','THE HOUSING PLAN / 07'),
         ('90','DAYS ONCE ELIGIBLE','A route into working life.',
-         'By 2070, anyone under 25 who has spent four months outside work or education will receive a suitable job, apprenticeship or training offer within a further 90 days.','work','THE WORK PLAN / 11'),
+         'By 2070, anyone under 25 who has spent four months outside work or education will receive a suitable job, apprenticeship or training offer within a further 90 days.','work','THE WORK PLAN / 10'),
         ('14','DAYS TO FIRST CONTACT','Someone there to help.',
-         'By 2070, urgent nonemergency mental health referrals for under 25s will receive first clinical contact within 14 days. Emergency cases need immediate assessment. Treatment waits will also be reported.','health','THE CARE PLAN / 20'),
+         'By 2070, urgent nonemergency mental health referrals for under 25s will receive first clinical contact within 14 days. Emergency cases need immediate assessment. Treatment waits will also be reported.','health','THE CARE PLAN / 19'),
     ]
     for i,(num,unit,head,body,key,route) in enumerate(cards):
         top=239+i*181
@@ -257,40 +257,52 @@ def divider(part):
     end(PROMISES[part],True)
 
 POLICY_PHOTOS={
-    'schools':('schools-new.jpg',(.5,.4)),
-    'science':('research-new.jpg',(.5,.5)),
-    'health':('health-new.jpg',(.5,.45)),
+    'housing':('housing-policy.jpg',(.50,.48),108),
+    'tax':('tax-policy.jpg',(.50,.50),94),
+    'enterprise':('enterprise-policy.jpg',(.50,.45),108),
+    'work':('work-policy.jpg',(.52,.45),94),
+    'schools':('schools-new.jpg',(.50,.40),108),
+    'science':('research-new.jpg',(.50,.50),94),
+    'gateway':('gateway-policy.jpg',(.50,.50),108),
+    'regions':('regions-policy.jpg',(.50,.55),94),
+    'fiscal-rules':('fiscal-policy.jpg',(.50,.55),108),
+    'funding':('funding-policy.jpg',(.50,.50),94),
+    'health':('health-new.jpg',(.50,.45),108),
+    'families':('families-policy.jpg',(.50,.48),94),
+    'energy':('energy-policy.jpg',(.50,.54),108),
+    'networks':('networks-policy.jpg',(.50,.48),94),
+    'justice':('justice-policy.jpg',(.50,.38),108),
+    'defense':('defense-policy.jpg',(.50,.48),94),
+    'resilience':('resilience-policy.jpg',(.50,.50),108),
+    'rights':('rights-policy.jpg',(.50,.48),94),
+    'digital':('digital-policy.jpg',(.50,.48),108),
+    'government':('government-policy.jpg',(.50,.48),94),
+    'foreign':('foreign-policy.jpg',(.50,.46),108),
+    'trade-migration':('trade-policy.jpg',(.50,.50),94),
 }
 
 def policy_page(p):
     start(p['id'],p['title'])
     title(f"0{p['part']+1} / {PROMISES[p['part']]}",p['title'],p['intro'],size=28)
     gap=25;col=(CW-gap)/2
-    has_image=p['id'] in POLICY_PHOTOS
-    if has_image:
-        im,focus=POLICY_PHOTOS[p['id']]
-        photo(im,M,222,CW,90,focus=focus)
-        top0,stride,fs,leading=324,143,9.05,12.5
-    else:
-        box(M,225,CW,64,PALE)
-        label('IN YOUR LIFE',M+12,236,TEAL,110,6.9)
-        para(p.get('test',''),M+12,253,146,10.4,13.7,NAVY,True,max_h=30)
-        para(p.get('everyday',p['intro']),M+179,236,CW-194,9.4,13.2,INK,max_h=42)
-        top0,stride,fs,leading=307,147,9.4,13.0
+    im,focus,image_h=POLICY_PHOTOS[p['id']]
+    photo(im,M,222,CW,image_h,focus=focus)
+    c.setStrokeColor(ACCENTS[p['part']]);c.setLineWidth(1.2)
+    c.rect(M,H-222-image_h,CW,image_h,fill=0,stroke=1)
+    top0=222+image_h+14
+    stride=(786-top0)/3
+    fs,leading=9.15,12.7
     for i,(head,body) in enumerate(p['entries']):
         x=M+(i%2)*(col+gap);top=top0+(i//2)*stride
         box(x,top,19,2.5,ACCENTS[p['part']])
         y=para(head,x,top+10,col,10.5,13.4,NAVY,True,max_h=28)
         para(body,x,y+6,col,fs,leading,max_h=stride-(y-top)-5)
-    box(M,758,CW,37,PALE)
-    label('WHEN IT CHANGES',M+10,768,TEAL,89,6.3)
-    para(p['delivery'],M+111,766,CW-124,7.5,10.6,INK,max_h=24)
     end(PROMISES[p['part']])
 
 def fiscal_chart():
     start('debt','Pay for the future honestly')
     title('THE FINANCIAL FOUNDATION','Pay for the future\nhonestly.',
-          'Debt has fallen to 69% of GDP. Our proposed goal is 65% by 2072 under normal economic conditions. A stronger position helps protect the services people rely on.')
+          'Debt has fallen to 68% of GDP. Our proposed goal is 65% by 2072 under normal economic conditions. A stronger position helps protect the services people rely on.')
     box(M,242,CW,294,PALE)
     label('GROSS PUBLIC DEBT AS A SHARE OF GDP',M+17,258,TEAL)
     left=M+60;top=305;height=159;width=CW-105
@@ -298,7 +310,7 @@ def fiscal_chart():
         yy=top+height-height*tick/80
         line(left,yy,left+width,yy,RULE,.5)
         para(f'{tick}%',M+16,yy-5,32,7.5,10,GRAY,align=2)
-    for i,(v,year,note) in enumerate([(69,'2068','CURRENT RESULT'),(65,'2072','PROPOSED GOAL')]):
+    for i,(v,year,note) in enumerate([(68,'2068','CURRENT RESULT'),(65,'2072','PROPOSED GOAL')]):
         x=left+42+i*174;h=height*v/80
         if i==0:box(x,top+height-h,89,h,BLUE)
         else:
@@ -316,7 +328,7 @@ def fiscal_chart():
         y=587+i*66
         para(head,M,y,CW,11.4,15,NAVY,True)
         para(body,M,y+23,CW,9.4,13.2,max_h=30)
-    end('69% today. A proposed 65% by 2072.')
+    end('68% today. A proposed 65% by 2072.')
 
 def closing():
     start('closing','Your next chapter / Vote LCA',True)
@@ -332,7 +344,7 @@ def closing():
     c.linkURL('https://manualalan.github.io/mr2068/',(M,H-773,W-M,H-751),relative=0,thickness=0)
     end('Liberal-Conservative Alliance',True)
 
-cover();contents();introduction();record();flagships();alliance()
+cover();contents();introduction();record();flagships()
 for part in range(3):
     divider(part)
     if part==1:fiscal_chart()
