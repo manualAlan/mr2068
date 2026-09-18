@@ -1,0 +1,9 @@
+{
+  "usage": "Illustrative real photography for a fictional Caprica campaign. No endorsement implied.",
+  "license": "Unsplash License, https://unsplash.com/license",
+  "images": [
+    {"file":"port.jpg","photographer":"Andy Li","page":"https://unsplash.com/photos/CpsTAUPoScw","download":"https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=max&w=3000&q=90","dimensions":[3000,2000]},
+    {"file":"homes.jpg","photographer":"Denise Jans","page":"https://unsplash.com/photos/UbCSGqLXSOE","download":"https://unsplash.com/photos/UbCSGqLXSOE/download?force=true","dimensions":[5472,3080]},
+    {"file":"field.jpg","photographer":"Melissa Askew","page":"https://unsplash.com/photos/wheat-field-y4xZxzN754M","download":"https://images.unsplash.com/photo-1437252611977-07f74518abd7?auto=format&fit=max&w=3000&q=90","dimensions":[3000,2250]}
+  ]
+}

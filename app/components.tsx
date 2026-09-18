@@ -9,7 +9,7 @@ export function Header() {
   const [open,setOpen]=useState(false);
   const path=usePathname();
   const links=[
-    ['https://manualalan.github.io/mr2068/manifesto/caprica-new-future-2064.pdf','Manifesto'],
+    ['/manifesto/caprica-freedom-to-build-2068.pdf','Manifesto'],
     ['/platform/mission-statement','Our plan'],
     ['/team','Candidates'],
     ['/events','Events'],
@@ -18,7 +18,9 @@ export function Header() {
     <div className="header-inner wrap">
       <Link className="brand" href="/" aria-label="LCA alliance home"><img src="/images/lca-logo.svg" alt="LCA" /></Link>
       <nav className={open?'nav open':'nav'} aria-label="Main navigation">
-        {links.map(([href,label])=><Link className={path===href?'active':''} href={href} key={href} onClick={()=>setOpen(false)}>{label}</Link>)}
+        {links.map(([href,label])=>href.endsWith('.pdf')
+          ? <a href={href} key={href} target="_blank" rel="noreferrer" onClick={()=>setOpen(false)}>{label}</a>
+          : <Link className={path===href?'active':''} href={href} key={href} onClick={()=>setOpen(false)}>{label}</Link>)}
         <Link className="nav-cta" href="/events#volunteer" onClick={()=>setOpen(false)}>Get involved <ArrowIcon /></Link>
       </nav>
       <button className="menu-button" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span></span><span></span></button>

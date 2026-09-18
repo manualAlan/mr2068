@@ -16,7 +16,7 @@ const menuItems = [
   { label: "Candidates", href: "/team" },
   { label: "Events", href: "/events" },
   { label: "Merchandise", href: "https://www.etsy.com/market/campaign_merchandise", external: true },
-  { label: "Manifesto" },
+  { label: "Manifesto", href: "/manifesto/caprica-freedom-to-build-2068.pdf", external: true },
   { label: "Contact" },
 ];
 
