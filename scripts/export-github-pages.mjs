@@ -1,26 +1,36 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
-const base = "/mr-party-2064/";
-const assetVersion = "20260823b";
-const routes = ["", "platform", "team", "events", "ambrosia"];
+const base = "/mr2068/";
+const assetVersion = "20260917a";
+const routes = [
+  { source: "2068", output: "" },
+  { source: "2068", output: "2068" },
+  { source: "platform", output: "platform" },
+  { source: "team", output: "team" },
+  { source: "events", output: "events" },
+  { source: "ambrosia", output: "ambrosia" },
+];
 
 await rm("docs", { recursive: true, force: true });
 await mkdir("docs/assets", { recursive: true });
 await cp("public/images", "docs/images", { recursive: true });
 await cp("public/manifesto", "docs/manifesto", { recursive: true });
+await mkdir("docs/video", { recursive: true });
+await cp("public/video/caprica-2068-city.mp4", "docs/video/caprica-2068-city.mp4");
 
 for (const route of routes) {
-  const response = await fetch(`${origin}/${route}`);
-  if (!response.ok) throw new Error(`Could not export /${route}: ${response.status}`);
+  const response = await fetch(`${origin}/${route.source}`);
+  if (!response.ok) throw new Error(`Could not export /${route.source}: ${response.status}`);
   let html = await response.text();
   html = html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, "")
     .replace(/href="\/app\/globals\.css"[^>]*>/g, `href="/assets/site.css?v=${assetVersion}">`)
     .replace(/(href|src)="\/(?!\/)/g, `$1="${base}`)
+    .replaceAll(`href="${base}2068"`, `href="${base}"`)
     .replace("</body>", `<script src="${base}assets/site.js?v=${assetVersion}" defer></script></body>`);
-  const directory = route ? `docs/${route}` : "docs";
+  const directory = route.output ? `docs/${route.output}` : "docs";
   await mkdir(directory, { recursive: true });
   await writeFile(`${directory}/index.html`, html);
 }
@@ -42,6 +52,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const open = nav?.classList.toggle('open') ?? false;
     menu.setAttribute('aria-expanded', String(open));
   });
+
+  const campaignMenu = document.querySelector('.lca68-menu');
+  const campaignScrim = document.querySelector('.lca68-menu-scrim');
+  const campaignDrawer = document.querySelector('.lca68-drawer');
+  const setCampaignMenu = open => {
+    campaignMenu?.classList.toggle('is-open', open);
+    campaignScrim?.classList.toggle('is-open', open);
+    campaignDrawer?.classList.toggle('is-open', open);
+    campaignMenu?.setAttribute('aria-expanded', String(open));
+    campaignMenu?.setAttribute('aria-label', open ? 'Close campaign menu' : 'Open campaign menu');
+    campaignScrim?.setAttribute('tabindex', open ? '0' : '-1');
+    campaignDrawer?.setAttribute('aria-hidden', String(!open));
+  };
+  campaignMenu?.addEventListener('click', () => setCampaignMenu(!campaignMenu.classList.contains('is-open')));
+  campaignScrim?.addEventListener('click', () => setCampaignMenu(false));
+  campaignDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setCampaignMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') setCampaignMenu(false);
+  });
+
+  const campaignVideo = document.querySelector('.lca68-video');
+  const musicButton = document.querySelector('.lca68-music');
+  const musicBars = musicButton?.querySelector('.lca68-music-bars');
+  const musicLabel = musicButton?.querySelector('b');
+  const updateMusic = muted => {
+    musicBars?.classList.toggle('is-muted', muted);
+    if (musicLabel) musicLabel.textContent = muted ? 'Music off' : 'Music on';
+    musicButton?.setAttribute('aria-label', muted ? 'Turn background music on' : 'Turn background music off');
+    musicButton?.setAttribute('aria-pressed', String(!muted));
+  };
+  musicButton?.addEventListener('click', async () => {
+    if (!campaignVideo) return;
+    campaignVideo.muted = !campaignVideo.muted;
+    campaignVideo.volume = 0.65;
+    updateMusic(campaignVideo.muted);
+    if (!campaignVideo.muted) await campaignVideo.play();
+  });
+  if (campaignVideo) updateMusic(campaignVideo.muted);
 
   const requestedEvent = new URLSearchParams(location.search).get('event');
   const eventSelect = document.querySelector('.register-form select');

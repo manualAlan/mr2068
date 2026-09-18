@@ -7,6 +7,44 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.setAttribute('aria-expanded', String(open));
   });
 
+  const campaignMenu = document.querySelector('.lca68-menu');
+  const campaignScrim = document.querySelector('.lca68-menu-scrim');
+  const campaignDrawer = document.querySelector('.lca68-drawer');
+  const setCampaignMenu = open => {
+    campaignMenu?.classList.toggle('is-open', open);
+    campaignScrim?.classList.toggle('is-open', open);
+    campaignDrawer?.classList.toggle('is-open', open);
+    campaignMenu?.setAttribute('aria-expanded', String(open));
+    campaignMenu?.setAttribute('aria-label', open ? 'Close campaign menu' : 'Open campaign menu');
+    campaignScrim?.setAttribute('tabindex', open ? '0' : '-1');
+    campaignDrawer?.setAttribute('aria-hidden', String(!open));
+  };
+  campaignMenu?.addEventListener('click', () => setCampaignMenu(!campaignMenu.classList.contains('is-open')));
+  campaignScrim?.addEventListener('click', () => setCampaignMenu(false));
+  campaignDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setCampaignMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') setCampaignMenu(false);
+  });
+
+  const campaignVideo = document.querySelector('.lca68-video');
+  const musicButton = document.querySelector('.lca68-music');
+  const musicBars = musicButton?.querySelector('.lca68-music-bars');
+  const musicLabel = musicButton?.querySelector('b');
+  const updateMusic = muted => {
+    musicBars?.classList.toggle('is-muted', muted);
+    if (musicLabel) musicLabel.textContent = muted ? 'Music off' : 'Music on';
+    musicButton?.setAttribute('aria-label', muted ? 'Turn background music on' : 'Turn background music off');
+    musicButton?.setAttribute('aria-pressed', String(!muted));
+  };
+  musicButton?.addEventListener('click', async () => {
+    if (!campaignVideo) return;
+    campaignVideo.muted = !campaignVideo.muted;
+    campaignVideo.volume = 0.65;
+    updateMusic(campaignVideo.muted);
+    if (!campaignVideo.muted) await campaignVideo.play();
+  });
+  if (campaignVideo) updateMusic(campaignVideo.muted);
+
   const requestedEvent = new URLSearchParams(location.search).get('event');
   const eventSelect = document.querySelector('.register-form select');
   if (requestedEvent && eventSelect) eventSelect.value = requestedEvent;

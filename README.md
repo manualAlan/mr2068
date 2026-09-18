@@ -4,7 +4,7 @@ Official campaign website for the LCA three-party electoral alliance in the fict
 
 ## Live site
 
-[View the 2064 LCA campaign](https://manualalan.github.io/mr-party-2064/)
+[View the LCA campaign](https://manualalan.github.io/mr2068/)
 
 ## Local development
 

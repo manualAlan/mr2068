@@ -9,7 +9,7 @@ export function Header() {
   const [open,setOpen]=useState(false);
   const path=usePathname();
   const links=[
-    ['https://manualalan.github.io/mr-party-2064/manifesto/caprica-new-future-2064.pdf','Manifesto'],
+    ['https://manualalan.github.io/mr2068/manifesto/caprica-new-future-2064.pdf','Manifesto'],
     ['/platform','Our plan'],
     ['/team','Candidates'],
     ['/events','Events'],
