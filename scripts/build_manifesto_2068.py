@@ -161,7 +161,7 @@ def introduction():
         'A home of your own. A better job. A business you have talked about for years. Time to care for someone you love. These are ordinary ambitions. In a country as capable as ours, they should be within reach.',
         'Capricans gave Moderate Reform another term in 2064. Today, gross public debt stands at 68% of GDP. We have a stronger foundation. We also have a responsibility to people who are still waiting for that progress to reach their own lives.',
         'That is the task of the next term. Build homes where people want to live. Make effort pay. Bring care within reach. Give businesses the confidence to invest and communities the connections to prosper.',
-        'For an island at the Twin Strait, ambition belongs close to home and far beyond our shores. A farm that reaches a new market, a technician who learns a better trade and a firm that sells to Columbia all contribute to the same national success.',
+        'For an island at the west end of Columbia facing the cross road of the Twin Strait, ambition belongs close to home and far beyond our shores. A farm that reaches a new market, a technician who learns a better trade and a firm that sells to Columbia all contribute to the same national success.',
         'Our method is clear. Let people build and compete. Give public services the means to do their job. Keep power answerable to the citizen. Pay honestly for the promises we make.',
         'We are asking for your support to turn that method into a country where more people can look ahead and make a plan of their own.'
     ]

@@ -83,7 +83,7 @@ PAGES = [
              ("Put ideas to a demanding test", "Open research challenges in resilient agriculture, clean power, medicines, maritime systems and secure computing to universities and smaller firms working together. Test demand and public value before expanding an award. Every scheme will have an end date and independent evaluation of its results."),
          ], delivery="By 2070: standard research licenses, regional technical agreements and public results from research commercialization."),
     dict(id="gateway", part=0, title="A gateway that creates opportunity.",
-         intro="Our position at the Twin Strait is an opening to the world. Making the most of it means joining ports, skills and industry into an economy that offers opportunity well beyond the waterfront.",
+         intro="Our position facing the Twin Strait from the west end of Columbia is an opening to the world. Making the most of it means joining ports, skills and industry into an economy that offers opportunity well beyond the waterfront.",
          everyday="A growing port creates chances for the local apprentice, the inland food producer and the small supplier, with homes and services keeping pace.",
          test="One customs window for routine exporters",
          entries=[
