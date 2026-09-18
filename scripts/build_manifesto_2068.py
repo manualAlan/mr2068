@@ -259,7 +259,7 @@ def divider(part):
 POLICY_PHOTOS={
     'housing':('housing-policy.jpg',(.50,.48),108),
     'tax':('tax-policy.jpg',(.50,.50),94),
-    'enterprise':('enterprise-policy.jpg',(.50,.45),108),
+    'enterprise':('enterprise-policy.jpg',(.50,.50),108),
     'work':('work-policy.jpg',(.52,.45),94),
     'schools':('schools-new.jpg',(.50,.40),108),
     'science':('research-new.jpg',(.50,.50),94),
@@ -271,7 +271,7 @@ POLICY_PHOTOS={
     'families':('families-policy.jpg',(.50,.48),94),
     'energy':('energy-policy.jpg',(.50,.54),108),
     'networks':('networks-policy.jpg',(.50,.48),94),
-    'justice':('justice-policy.jpg',(.50,.38),108),
+    'justice':('justice-policy.jpg',(.50,.42),108),
     'defense':('defense-policy.jpg',(.50,.48),94),
     'resilience':('resilience-policy.jpg',(.50,.50),108),
     'rights':('rights-policy.jpg',(.50,.48),94),
