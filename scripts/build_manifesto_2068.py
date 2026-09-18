@@ -44,7 +44,7 @@ for name, file in [('MR', 'Montserrat-Regular.ttf'), ('MR-Bold', 'Montserrat-Bol
 c = canvas.Canvas(str(OUT), pagesize=A4, pageCompression=1)
 c.setTitle('Freedom to Build. Confidence in Tomorrow. | LCA Manifesto 2068')
 c.setAuthor("Liberal-Conservative Alliance | Moderate Reform, People's Party, Avenir Caprica")
-c.setSubject('Caprica 2068 election: Robert Bluespan for Prime Minister; program for 2068-2072')
+c.setSubject('Caprica 2068 election: Robert Bluespan, Party Co-leader; program for 2068-2072')
 c.setCreator('LCA campaign editorial team')
 layout_log = []
 page_map = {}
@@ -153,7 +153,7 @@ def cover():
     label('THE 2068 MANIFESTO / OUR PROGRAM TO 2072',M,436,HexColor('#9AB8C9'))
     photo('port.jpg',0,488,W,245,focus=(.55,.52))
     box(M,708,CW,53,NAVY)
-    para('Robert Bluespan for Prime Minister',M+14,720,CW-28,14,18,white,True)
+    para('Robert Bluespan, Party Co-leader',M+14,720,CW-28,14,18,white,True)
     para("Moderate Reform Party  /  People's Party  /  Avenir Caprica",M,788,CW,7.7,10,HexColor('#BAD6E3'))
     c.showPage()
 
@@ -166,7 +166,6 @@ def contents():
         ('01  THE FREEDOM TO GET AHEAD', 'Homes, work, enterprise, education, science and a gateway economy', 'part-0', 346),
         ('02  THE CONFIDENCE TO PLAN YOUR FUTURE', 'Sound finances, care, energy, reliable networks, safety and defense', 'part-1', 448),
         ('03  THE POWER TO SHAPE YOUR OWN LIFE', 'Rights, accountable government, digital choice and an open country', 'part-2', 550),
-        ('OUR DELIVERY CONTRACT', 'Deadlines, public measures and the rules behind the numbers', 'delivery', 652),
     ]
     for title,body,target,top in routes:
         label(title,M,top,TEAL)
@@ -177,7 +176,7 @@ def contents():
 
 def introduction():
     start('next-chapter','Robert Bluespan: the next chapter')
-    heading('ROBERT BLUESPAN / CANDIDATE FOR PRIME MINISTER','The next chapter should be yours.')
+    heading('ROBERT BLUESPAN / PARTY CO-LEADER','The next chapter should be yours.')
     y=242
     paragraphs=[
         "A country succeeds when people can make plans and expect them to mean something. A home within reach. Work that rewards effort. A business with room to grow. Care that is there when a family needs it. These are the ambitions that should set the direction of government.",
@@ -190,7 +189,7 @@ def introduction():
         y=para(s,M,y,CW,10.5,15.7,INK)+16
     line(M,y+2,M+90,y+2,GREEN,2)
     para('Robert Bluespan',M,y+21,CW,17,21,NAVY,True)
-    para('Candidate for Prime Minister, 2068',M,y+48,CW,9,12,GRAY)
+    para('Party Co-leader',M,y+48,CW,9,12,GRAY)
     end('A new mandate for an MR-led government')
 
 def record():
@@ -342,7 +341,7 @@ def notes():
     heading('NOTES ON THIS EDITION','Clear about the basis of the program.')
     y=241
     entries=[
-        ('The setting and dates', 'This is the Liberal-Conservative Alliance manifesto for Caprica\'s fictional 2068 election, covering a proposed governing term to 2072. References to 2064-2068 describe the preceding MR-led administration. Robert Bluespan is the candidate for Prime Minister.'),
+        ('The setting and dates', 'This is the Liberal-Conservative Alliance manifesto for Caprica\'s fictional 2068 election, covering a proposed governing term to 2072. References to 2064-2068 describe the preceding MR-led administration. Robert Bluespan is a Party Co-leader.'),
         ('Results and targets', 'The current gross-debt figure is 69% of GDP, supplied in the 2068 campaign brief. The 65% figure is the new proposed 2072 goal, not an independently forecast outturn. Other new deadlines and targets are manifesto commitments; they are not claims that earlier promises have already been delivered.'),
         ('Baselines and affordability', 'Annual housing completions will be compared with a verified 2068 baseline. The gross-debt ratio is separate from the statutory net-debt ceiling. Tax amounts use the established reference schedule and are subject to statutory indexation. Funding routes are described here; final allocations require published costing under the fiscal framework.'),
         ('Photography', 'The photographs are real stock images used to illustrate homes, farming and maritime trade in a fictional setting. They do not depict actual Caprican locations or imply endorsement by the photographers. Images are cropped to the page frames; no AI-generated photographs are used in this edition.'),
@@ -368,7 +367,7 @@ def closing():
     label('OUR SHARED PURPOSE',M,353,HexColor('#80DDB7'))
     para('A country where\nyou can build\na good life.',M,398,CW,38,43,white,True,max_h=132)
     para(SLOGAN,M,575,CW,18,26,HexColor('#80DDB7'),True,max_h=54)
-    para('Robert Bluespan for Prime Minister',M,660,CW,14,20,white,True)
+    para('Robert Bluespan, Party Co-leader',M,660,CW,14,20,white,True)
     para('An MR-led government. A common Alliance program.\nA mandate for 2068-2072.',M,700,CW-75,10.5,15,HexColor('#C6DAE5'),max_h=46)
     para('Photography: Andy Li, Denise Jans, Melissa Askew and Unsplash contributors.',M,759,CW-75,6.8,9,HexColor('#9CB7C5'),max_h=16)
     logo(W-M-60,699,60)
