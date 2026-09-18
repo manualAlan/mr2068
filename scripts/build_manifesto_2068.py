@@ -381,7 +381,7 @@ for part in range(3):
     for p in PAGES:
         if p['part']==part:
             policy_page(p)
-delivery(); closing()
+closing()
 c.save()
 
 audit_dir=ROOT/'tmp/pdfs/manifesto-2068'
