@@ -1,6 +1,9 @@
 import { candidates } from "../data";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PlatformFooter, PlatformHeader } from "../platform/PlatformChrome";
+
+export const metadata: Metadata = { title: "Our candidates | Alliance 2068", description: "Meet the people standing for the Alliance across Caprica." };
 
 export default function Team(){return <div className="team68-root"><PlatformHeader/><main>
  <header className="team68-heading"><h1>Candidates</h1></header>

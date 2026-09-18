@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { PolicyPageShell } from "../PlatformChrome";
 import { getFocusArea } from "../platform-data";
 
+export const metadata: Metadata = { title: "What we believe | Alliance 2068" };
 const area = getFocusArea("mission-statement")!;
 
 export default function MissionStatementPage() {
@@ -8,18 +10,17 @@ export default function MissionStatementPage() {
     <PolicyPageShell area={area}>
       <article className="p68-letter">
         <p className="p68-letter-mark">AN OPEN LETTER TO ALL CAPRICANS</p>
-        <h2>The Alliance mission statement</h2>
+        <h2>I believe in what<br /><em>we can become.</em></h2>
         <p className="p68-salutation">Fellow Capricans,</p>
-        <p>Caprica is an island nation at the western edge of the Columbian continent, facing the Twin Strait and looking west towards Albeuman. Our geography gives us a great national opportunity: to become Columbia’s gateway to the world, and the world’s gateway to Columbia.</p>
-        <p>We have faith in the talent of our people and confidence in what an ambitious, outward-looking nation can achieve. Our vision is a Caprica where enterprise flourishes, investment is welcomed and ideas become industries—a small nation with a keystone role in the global economy, connecting countries and creating opportunities far beyond our shores.</p>
-        <p>Our mission is to place national development at the heart of government. We will champion an open, pro-business economy, backed by modern infrastructure, excellent education, scientific ambition and institutions that command trust. We want every generation to inherit greater opportunities, and every citizen to share in the country’s progress.</p>
-        <p>Abroad, we will work with partners across Columbia and the wider world to advance peace through cooperation and prosperity through trade, investment and discovery. We believe Caprica can become a country others depend upon, whose success contributes to their own.</p>
-        <p>With purpose in government, confidence in enterprise and faith in our people, we will build a nation equal to that ambition.</p>
-        <div className="p68-signature">
-          <img src="/images/alan-bluespan-signature.png" alt="Alan Bluespan signature" />
-          <strong>Alan Bluespan</strong>
-          <span>Party Co-chair</span>
-        </div>
+        <p>I believe the best thing a government can give people is the confidence to get on with their own lives. To put down roots. To try an idea. To say what they think, even when the people in charge would rather not hear it.</p>
+        <p>That belief is why the Alliance exists. We trust people with their own ambitions. We believe a business should succeed because it serves its customers well, not because its owner knows a minister. And we believe that keeping a promise matters more than finding a clever way to announce it.</p>
+        <p>Caprica has a remarkable opportunity. We stand at the western edge of Columbia, facing the Twin Strait and looking towards Albeuman. We can be Columbia’s gateway to the world, and the world’s gateway to Columbia. Our size does not have to set the limits of our ambition.</p>
+        <p>But a successful country has to feel successful in ordinary life. A first salary should open possibilities. A family should be able to find a home. A person who is ill should know where to turn. An entrepreneur should spend more time finding customers than chasing forms.</p>
+        <p>This takes a government that knows its responsibilities. Keep the law fair. Keep the streets safe. Look after the public finances. Build the infrastructure and education that let talent travel further. Then leave room for people to surprise us.</p>
+        <p>Abroad, I want Caprica to be a country others can count on. Open to trade, steady with our friends and careful with the lives of those who serve. We should have the confidence to talk to people we disagree with, and the judgment to know which commitments we can keep.</p>
+        <p>I am asking you to judge us by the opportunities we open and the promises we keep. Question us. Expect an answer. The future of this country is too important to leave to people who all agree with one another.</p>
+        <p className="p68-letter-closing">We have the talent. We have the opportunity.<br />Let’s give ourselves the freedom to build.</p>
+        <div className="p68-signature"><img src="/images/alan-bluespan-signature.png" alt="Alan Bluespan signature" width="220" height="54" /><strong>Alan Bluespan</strong><span>Party Co-chair</span></div>
       </article>
     </PolicyPageShell>
   );

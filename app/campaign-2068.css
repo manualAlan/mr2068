@@ -1,0 +1,244 @@
+/* Alliance 2068: an editorial campaign, built around freedom and enterprise. */
+@font-face{font-family:Alliance Sans;src:url('/fonts/montserrat-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Alliance Sans;src:url('/fonts/montserrat-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:Alliance Editorial;src:url('/fonts/bodoni-moda-medium.ttf') format('truetype');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:Alliance Editorial;src:url('/fonts/bodoni-moda-medium-italic.ttf') format('truetype');font-weight:400 700;font-style:italic;font-display:swap}
+:root{--campaign-ink:#25232d;--campaign-purple:#63339e;--campaign-lilac:#e2d6f1;--campaign-line:#d7d3dc;--campaign-serif:'Alliance Editorial',Baskerville,Georgia,serif;--campaign-sans:'Alliance Sans',Arial,sans-serif}
+body:has(.build68-home,.belief-root,.mission68-root,.events68-root,.team68-root):after{display:none}
+.build68-home,.belief-root,.mission68-root,.events68-root,.team68-root{background:#fff;color:var(--campaign-ink);font-family:var(--campaign-sans);--lca68-purple-bright:#dbb5ff}
+.campaign-width{width:min(1370px,calc(100% - 112px));margin-inline:auto}
+.campaign-label{font:700 11px/1.5 var(--campaign-sans);letter-spacing:.14em;text-transform:uppercase;margin:0 0 28px}
+.campaign-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:38px;border-bottom:1px solid currentColor;padding:12px 0;font:700 13px/1.5 var(--campaign-sans);color:var(--campaign-purple);transition:color .2s}
+.campaign-text-link span{font:400 23px/1 var(--campaign-sans);transition:transform .2s}
+.campaign-text-link:hover span{transform:translate(3px,-3px)}
+.campaign-text-link:hover{color:#241b38}
+.campaign-skip{position:absolute;top:10px;left:70px;z-index:100;padding:12px 20px;background:white;color:#241b38;transform:translateY(-200%);font:700 13px var(--campaign-sans)}
+.campaign-skip:focus{transform:none}
+:is(.build68-home,.belief-root,.mission68-root,.events68-root,.team68-root) :focus-visible{outline:2px solid #9a65dd;outline-offset:6px}
+
+/* One navigation system, without numbered labels or decorative movement. */
+.p68-header,.lca68-header{height:86px;align-items:center;padding:0 38px;z-index:30}
+.p68-header-wordmark,.lca68-wordmark strong{font:700 20px/1 var(--campaign-sans);letter-spacing:.13em}
+.lca68-menu{width:42px;height:44px;gap:7px}
+.lca68-menu span{width:25px;height:1px}.lca68-menu span:last-child{width:17px}
+.lca68-menu:hover span:last-child{width:25px}
+.lca68-menu.is-open{position:fixed;left:38px;top:21px;color:#fff!important}
+.lca68-menu.is-open span:first-child,.lca68-menu.is-open span:last-child{width:27px}
+.lca68-drawer{width:min(480px,100vw);padding:105px 38px 30px;background:#211c2b;border:0;box-shadow:20px 0 70px #0003}
+.lca68-drawer:not(.is-open){visibility:hidden}
+.lca68-drawer-heading{padding-bottom:30px}.lca68-drawer-heading span{font:700 11px var(--campaign-sans);letter-spacing:.14em;color:#d5b1f5}
+.lca68-drawer-heading p{font:500 38px/1.2 var(--campaign-serif);letter-spacing:-.035em;margin:14px 0 0}
+.lca68-drawer nav>a,.lca68-drawer-placeholder,.lca68-drawer-primary>button.lca68-drawer-platform-trigger{grid-template-columns:1fr auto;min-height:62px;gap:16px;padding:0!important;transform:none!important}
+.lca68-drawer nav>a:hover,.lca68-drawer-platform-trigger:hover{color:#dfbdff}
+.lca68-drawer nav span:not(.lca68-drawer-placeholder),.lca68-drawer-placeholder>span{font:500 29px/1.25 var(--campaign-serif)}
+.lca68-drawer-group .lca68-drawer-platform-trigger i{font:400 23px/1 var(--campaign-sans);transition:transform .2s}
+.lca68-drawer-group.is-expanded .lca68-drawer-platform-trigger i{transform:rotate(45deg)}
+.lca68-drawer-group:not(.is-expanded) .lca68-drawer-submenu{max-height:0;opacity:0;padding-block:0;visibility:hidden}
+.lca68-drawer-group.is-expanded .lca68-drawer-submenu{max-height:450px;opacity:1;padding:4px 0 18px 18px;visibility:visible}
+.lca68-drawer-submenu>a{min-height:44px;gap:12px;padding:8px 0;line-height:1.3}
+.lca68-drawer-submenu>a>span{font:400 14px/1.5 var(--campaign-sans)!important;letter-spacing:0}
+.lca68-drawer-submenu>a:hover,.lca68-drawer-submenu>a:focus{padding-left:0;text-decoration:underline;text-underline-offset:5px}
+.lca68-drawer-placeholder em{font:400 9px var(--campaign-sans)}
+.lca68-drawer-note{padding-top:32px;font:400 10px/1.5 var(--campaign-sans);letter-spacing:.11em}
+
+/* A cinematic invitation, then a quieter, human introduction. */
+.build68-home .lca68-page{height:100svh;min-height:700px;max-height:1250px;font-family:var(--campaign-sans);background:#121827}
+.build68-home .lca68-page:after{display:none}
+.build68-home .lca68-media:after{background:linear-gradient(90deg,rgba(13,15,27,.60),rgba(13,15,27,.1) 76%),linear-gradient(0deg,rgba(7,9,19,.64),transparent 60%)}
+.build68-home .lca68-video{filter:saturate(.82) contrast(1.03) brightness(.86);transform:none}
+.build68-home .lca68-statement{left:7.5%;bottom:160px;max-width:1100px}
+.build68-home .lca68-statement h1{font:500 clamp(88px,10.8vw,164px)/.98 var(--campaign-serif);letter-spacing:-.055em;text-shadow:none;color:#ece5f6;margin:0 0 30px}
+.build68-home .lca68-statement h1 em{font-weight:500}
+.build68-home .lca68-statement .build68-deck{font:400 clamp(16px,1.4vw,21px)/1.5 var(--campaign-sans);letter-spacing:0;color:#f6f2fa;margin:0 0 30px}
+.build68-home .lca68-platform-link{font:400 18px/1.4 var(--campaign-sans);border-bottom:1px solid #d6c7e8;padding:9px 0;color:#f5efff;gap:30px}
+.build68-home .lca68-platform-link i{width:40px}.build68-home .lca68-platform-link:hover i{width:55px}
+.build68-hero-base{position:absolute;bottom:30px;left:38px;right:38px;display:flex;align-items:end;justify-content:space-between;color:#f4edf9}
+.build68-hero-base>img{width:86px;height:86px;object-fit:cover;object-position:center 38%}
+.build68-hero-base>a{font:400 11px/1.5 var(--campaign-sans);display:flex;gap:22px;align-items:center}
+.build68-hero-base>a span{font-size:25px}
+.build68-home .lca68-music{right:38px;bottom:90px}.build68-home .lca68-music b{font:700 9px var(--campaign-sans)}
+.build68-home .lca68-music-bars i{background:#d3b4f2;box-shadow:none}
+.lca68-motion{position:absolute;right:168px;bottom:90px;z-index:4;min-height:36px;border:0;border-bottom:1px solid #ffffff60;background:transparent;color:#fff;cursor:pointer;padding:8px 0}
+.lca68-motion b{font:700 9px var(--campaign-sans);letter-spacing:.08em;text-transform:uppercase}
+.build68-intro{display:grid;grid-template-columns:1fr 3fr;gap:30px;padding-block:130px 140px}
+.build68-intro>.campaign-label{padding-top:15px;color:var(--campaign-purple)}
+.build68-intro h2,.build68-feature h2,.build68-invitation h2{font:500 clamp(46px,5.8vw,86px)/1.08 var(--campaign-serif);letter-spacing:-.045em}
+.build68-intro h2 em,.build68-feature h2 em,.build68-invitation h2 em{color:var(--campaign-purple)}
+.build68-intro-copy{width:min(640px,90%);margin:50px 0 0 auto}
+.build68-intro-copy p,.build68-feature-copy>p:not(.campaign-label),.build68-invitation-copy p{font:400 17px/1.8 var(--campaign-sans);margin-bottom:23px}
+.build68-feature{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;background:#f1edf6}
+.build68-feature figure{margin:0;min-height:660px}.build68-feature figure img{height:100%;width:100%;object-fit:cover;object-position:55% center}
+.build68-feature-copy{padding:85px clamp(35px,5vw,86px)}
+.build68-feature h2{font-size:clamp(42px,4.3vw,67px);margin:0 0 38px}
+.build68-feature-copy>p:not(.campaign-label){max-width:520px;font-size:16px}
+.build68-invitation{display:grid;grid-template-columns:1.4fr 1fr;align-items:end;gap:10%;padding-block:140px}
+.build68-invitation-copy{padding-bottom:8px;max-width:470px}.build68-invitation-copy .campaign-text-link{display:flex;width:100%;margin-top:15px}
+
+/* Beliefs: big editorial openings, calm readable text, the detail available. */
+.belief-root{position:relative}
+.belief-hero{position:relative;min-height:720px;height:min(850px,90svh);overflow:hidden;background:#25232d;color:#fff}
+.belief-hero figure{margin:0;position:absolute;inset:0}.belief-hero figure img{width:100%;height:100%;object-fit:cover}
+.belief-hero-wide figure:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,19,29,.64),rgba(18,19,29,.06) 85%),linear-gradient(0deg,rgba(17,17,22,.48),transparent 70%)}
+.belief-hero-copy{position:absolute;bottom:76px;left:6%;right:6%;z-index:1}
+.belief-hero-copy .campaign-label{margin-bottom:24px}
+.belief-hero h1{margin:0;font:500 clamp(70px,8.2vw,124px)/1.01 var(--campaign-serif);letter-spacing:-.05em}
+.belief-hero h1 span,.belief-hero h1 em{display:block;font-weight:500}
+.belief-standfirst{max-width:525px;font:400 17px/1.7 var(--campaign-sans);margin:28px 0 0}
+.belief-scroll{position:absolute;right:4%;bottom:36px;z-index:2;font:400 34px var(--campaign-sans)}
+.belief-economy .p68-header,.belief-healthcare .p68-header{background:#fff;color:var(--campaign-ink);border-color:var(--campaign-line)}
+.belief-economy .p68-header>.lca68-menu,.belief-healthcare .p68-header>.lca68-menu{color:var(--campaign-ink)}
+.belief-hero-split{display:grid;grid-template-columns:1fr 1fr;padding-top:86px;color:var(--campaign-ink);background:#f0ebf5}
+.belief-hero-split figure{position:relative;inset:auto;grid-column:2;grid-row:1}
+.belief-hero-split .belief-hero-copy{position:relative;inset:auto;grid-column:1;grid-row:1;align-self:center;padding:60px 9% 80px 12%}
+.belief-hero-split h1{font-size:clamp(60px,6vw,91px)}
+.belief-hero-split h1 em{color:var(--campaign-purple)}
+.belief-hero-split .belief-standfirst{max-width:450px}
+.belief-healthcare .belief-hero-split{background:#fff}
+.belief-healthcare .belief-scroll,.belief-economy .belief-scroll{right:auto;left:6%;bottom:30px}
+.belief-civil-liberties .belief-hero{background:#e5dbef;color:#3f2859}
+.belief-civil-liberties .belief-hero figure{left:40%}
+.belief-civil-liberties .belief-hero figure:after{background:linear-gradient(90deg,#e5dbef,transparent 75%)}
+.belief-civil-liberties .belief-hero-copy{bottom:80px}
+.belief-civil-liberties .p68-header,.belief-civil-liberties .p68-header>.lca68-menu{color:#3f2859;border-color:#3f285933}
+.belief-defense .belief-hero-copy{bottom:90px}.belief-defense .belief-hero{height:80svh;min-height:680px}
+.belief-foreign-policy .belief-hero figure:after{background:linear-gradient(90deg,rgba(22,25,31,.68),rgba(22,25,31,.06)),linear-gradient(0deg,rgba(10,23,33,.45),transparent)}
+.belief-opening{padding-block:110px 100px;display:grid;grid-template-columns:1fr 3fr;gap:30px}
+.belief-opening>.campaign-label{color:var(--campaign-purple);padding-top:10px}
+.belief-opening h2{font:500 clamp(36px,3.9vw,58px)/1.2 var(--campaign-serif);letter-spacing:-.025em;max-width:940px;margin:0 0 45px}
+.belief-prose{max-width:670px;margin-left:auto}.belief-prose p{font:400 17px/1.85 var(--campaign-sans);margin:0 0 24px}
+.belief-statement{padding:90px max(8%,calc((100vw - 1210px)/2));background:#ede7f4;color:var(--campaign-purple)}
+.belief-statement>p{max-width:1060px;margin:0;font:500 clamp(44px,6.5vw,98px)/1.08 var(--campaign-serif);letter-spacing:-.04em;text-wrap:balance}
+.belief-housing .belief-statement{background:white;padding-top:20px;padding-bottom:70px}.belief-housing .belief-statement>p{margin:auto;text-align:center;max-width:980px}
+.belief-foreign-policy .belief-statement{background:#f2eee7;color:#5c4635}.belief-healthcare .belief-statement{background:#eef2ef;color:#36584b}
+.belief-defense .belief-statement{position:relative;min-height:610px;padding-top:80px;padding-bottom:280px;overflow:hidden;background:#edeef4;color:#334063}
+.belief-defense .belief-statement>p{max-width:820px;font-size:clamp(42px,5.3vw,79px)}
+.belief-airlift{position:absolute;bottom:-105px;right:-4%;width:min(920px,80%);height:auto;object-fit:contain}
+.belief-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;padding-block:100px}
+.belief-principle{border-top:1px solid #8c789d;padding-top:26px}
+.belief-principle h3{font:500 clamp(28px,2.7vw,42px)/1.15 var(--campaign-serif);letter-spacing:-.025em;margin:0 0 22px}
+.belief-principle p{font:400 15px/1.8 var(--campaign-sans);max-width:470px;color:#514c57;margin:0}
+.belief-healthcare .belief-principles,.belief-civil-liberties .belief-principles{display:block;padding-block:90px}
+.belief-healthcare .belief-principle,.belief-civil-liberties .belief-principle{display:grid;grid-template-columns:1fr 1fr;gap:12%;padding:35px 0}
+.belief-healthcare .belief-principle p,.belief-civil-liberties .belief-principle p{max-width:600px}
+.belief-details{display:grid;grid-template-columns:1fr 1.5fr;gap:12%;padding-block:30px 100px}
+.belief-details-intro h2{font:500 clamp(34px,3.6vw,54px)/1.12 var(--campaign-serif);letter-spacing:-.03em;margin:0 0 24px}
+.belief-details-intro>p:last-child{font:400 14px/1.7 var(--campaign-sans);max-width:325px;color:#625b67}
+.belief-details .campaign-label{color:var(--campaign-purple);margin-bottom:22px}
+.belief-accordions{border-top:1px solid #867b91}
+.belief-accordions details{border-bottom:1px solid #bcb4c5}
+.belief-accordions summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0;cursor:pointer;font:700 16px/1.5 var(--campaign-sans)}
+.belief-accordions summary::-webkit-details-marker{display:none}.belief-accordions summary>span{font:400 26px var(--campaign-sans);color:var(--campaign-purple)}
+.belief-accordions details[open] summary>span{transform:rotate(45deg)}
+.belief-accordions details>p{font:400 15px/1.8 var(--campaign-sans);color:#514c57;max-width:680px;margin:0;padding:0 30px 30px 0}
+.belief-closing{border-top:1px solid var(--campaign-line);padding-block:80px 100px;display:flex;align-items:end;justify-content:space-between;gap:70px}
+.belief-closing h2{font:500 clamp(32px,3.8vw,55px)/1.15 var(--campaign-serif);letter-spacing:-.03em;max-width:760px}
+.belief-closing .campaign-text-link{flex-shrink:0}
+
+/* The signed letter retains the supplied skyline, parchment and signature. */
+.mission68-root .p68-hero{height:69svh;min-height:580px;max-height:780px}
+.mission68-root .p68-hero-copy{left:6%;bottom:65px}
+.mission68-root .p68-hero-copy h1{font:500 clamp(66px,8vw,126px)/1.05 var(--campaign-serif);text-transform:none;letter-spacing:-.05em}
+.mission68-root .p68-hero-copy>span{font:400 17px/1.6 var(--campaign-sans);margin-top:25px}
+.mission68-root .p68-body{padding-block:100px 120px}
+.mission68-root .p68-letter{width:min(980px,100%);padding:90px 110px;box-shadow:0 9px 35px #30291d14;font-family:var(--campaign-serif)}
+.mission68-root .p68-letter h2{font:500 clamp(39px,4.2vw,62px)/1.13 var(--campaign-serif);letter-spacing:-.04em;margin-bottom:60px;max-width:700px}
+.mission68-root .p68-letter-mark{font:700 9px/1.6 var(--campaign-sans);letter-spacing:.15em;margin-bottom:25px}
+.mission68-root .p68-letter>p:not(.p68-letter-mark){font-family:Georgia,'Times New Roman',serif;font-size:21px;line-height:1.7;margin-bottom:25px}
+.mission68-root .p68-letter .p68-salutation{font-family:var(--campaign-serif)!important;font-size:27px!important}
+.mission68-root .p68-letter>p:nth-of-type(2)::first-letter{float:none;font:inherit;margin:0;color:inherit}
+.mission68-root .p68-letter .p68-letter-closing{font-style:italic;margin-top:38px}
+.mission68-root .p68-signature{margin-top:45px}.mission68-root .p68-signature strong{font:500 26px/1.3 var(--campaign-serif)}
+.mission68-root .p68-signature span{font:400 10px/1.8 var(--campaign-sans);letter-spacing:.08em}
+
+/* Existing events and portraits, with the same typographic signature. */
+.events68-hero-copy h1,.team68-heading h1{font-family:var(--campaign-serif);font-weight:500;text-transform:none;line-height:1.02;letter-spacing:-.055em}
+.events68-hero-copy h1{font-size:clamp(70px,8.6vw,132px);max-width:980px}
+.events68-hero-copy p{font:400 17px/1.7 var(--campaign-sans);margin:25px 0 0;max-width:580px}
+.events68-heading h2,.events68-card h3,.events68-register-copy h2,.events68-panel h2,.team68-card h2{font-family:var(--campaign-serif);font-weight:500;line-height:1.08;letter-spacing:-.035em}
+.events68-heading h2{font-size:clamp(50px,6.2vw,90px)}
+.events68-heading span,.events68-meta time span,.events68-meta>span,.events68-register-copy>span{font-family:var(--campaign-sans);font-size:10px;line-height:1.5}
+.events68-meta time strong{font-family:var(--campaign-serif);font-weight:500}
+.events68-card h3{font-size:clamp(32px,3vw,46px)}
+.events68-place{font-size:13px}.events68-description{font:400 14px/1.8 var(--campaign-sans)}
+.events68-card figure{height:auto!important;aspect-ratio:4/3}.events68-card-2 figure,.events68-card-3 figure,.events68-card-8 figure{aspect-ratio:1/1.05}
+.events68-register{background:#f0ebf5;align-items:center;margin-bottom:100px}
+.events68-registration-note{font:400 16px/1.85 var(--campaign-sans);max-width:540px}
+.events68-registration-note p{font:inherit}
+.team68-heading{padding-block:100px 85px}.team68-heading h1{font-size:clamp(70px,11vw,158px)}
+.team68-grid{background:#fff;gap:60px 28px;padding:60px 4% 110px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.team68-card{padding:0}.team68-card h2{font-size:clamp(25px,2.7vw,40px);margin:22px 0 0;max-width:90%}.team68-card figure{aspect-ratio:4/4.8}
+.team68-card img{filter:saturate(.8)}
+
+/* A single signature across every campaign page. */
+.campaign-footer{background:#241d30;color:#f5edf9;min-height:290px;padding:65px max(5%,calc((100vw - 1370px)/2));grid-template-columns:1fr 1fr auto;align-items:end;gap:45px}
+.campaign-footer-identity>a{display:block;width:96px;margin-bottom:20px}.campaign-footer-identity img{width:96px;height:96px;object-fit:cover;object-position:center 38%}
+.campaign-footer .campaign-footer-identity p{font:500 32px/1.2 var(--campaign-serif);color:#f0e5fa}
+.campaign-footer-manifesto{font:500 27px/1.3 var(--campaign-serif);width:max-content;max-width:100%;border-bottom:1px solid #9a829e;padding-bottom:13px}
+.campaign-footer-manifesto>span{margin-left:20px;color:#d7b5ef;font-family:var(--campaign-sans);font-size:22px}
+.campaign-footer-manifesto>small{display:block;font:400 8px/1.5 var(--campaign-sans);letter-spacing:.09em;margin-top:10px;color:#c2b1cc}
+.campaign-footer .campaign-copyright{font:400 10px/1.5 var(--campaign-sans);color:#c6b8d0;padding-bottom:12px}
+
+@media(min-width:1700px){.belief-hero-copy{left:max(6%,calc((100vw - 1400px)/2))}.belief-hero-split .belief-hero-copy{padding-left:max(12%,calc((100vw - 1370px)/2))}}
+@media(max-width:1000px){
+ .campaign-width{width:calc(100% - 64px)}
+ .build68-intro,.belief-opening{grid-template-columns:1fr 3.4fr;gap:20px}
+ .build68-feature{grid-template-columns:1fr 1fr}.build68-feature-copy{padding:70px 30px}.build68-feature figure{min-height:620px}
+ .belief-hero-split h1{font-size:clamp(51px,6.5vw,70px)}.belief-hero-split .belief-hero-copy{padding-inline:8%}
+ .belief-hero{min-height:660px}.belief-hero-split{grid-template-columns:1.08fr 1fr}
+ .belief-principles{gap:28px}.belief-details{gap:7%}.belief-closing{display:block}.belief-closing .campaign-text-link{margin-top:28px}
+ .mission68-root .p68-letter{padding:75px 65px}
+ .campaign-footer{grid-template-columns:1fr 1fr}.campaign-footer .campaign-copyright{grid-column:1/-1;justify-self:end}
+ .team68-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ .campaign-width{width:calc(100% - 40px)}
+ .p68-header,.lca68-header{height:72px;padding-inline:20px}.p68-header-wordmark,.lca68-wordmark strong{font-size:17px}
+ .lca68-menu.is-open{left:20px;top:14px}.lca68-drawer{padding:88px 25px 25px}.lca68-drawer-heading{padding-bottom:20px}
+ .lca68-drawer nav>a,.lca68-drawer-placeholder,.lca68-drawer-primary>button.lca68-drawer-platform-trigger{min-height:55px}
+ .lca68-drawer-heading p{font-size:34px}.lca68-drawer nav span:not(.lca68-drawer-placeholder),.lca68-drawer-placeholder>span{font-size:27px}
+ .build68-home .lca68-page{min-height:660px;max-height:960px}.build68-home .lca68-statement{left:24px;right:20px;bottom:155px}
+ .build68-home .lca68-statement h1{font-size:clamp(73px,17.5vw,118px);line-height:1.04;margin-bottom:26px}
+ .build68-home .lca68-statement .build68-deck{font-size:14px;margin-bottom:27px}.build68-home .lca68-platform-link{font-size:14px;gap:25px}
+ .build68-hero-base{left:24px;right:20px;bottom:24px}.build68-hero-base>img{width:70px;height:70px}.build68-hero-base>a{font-size:9px;gap:12px}
+ .build68-home .lca68-music{right:21px;bottom:80px}.build68-home .lca68-music b{display:block;font-size:8px}
+ .build68-home .lca68-motion{right:140px;bottom:80px}.lca68-motion b{font-size:8px}
+ .build68-intro,.belief-opening{display:block;padding-block:75px}.build68-intro>.campaign-label,.belief-opening>.campaign-label{padding:0;margin-bottom:30px}
+ .build68-intro h2,.build68-invitation h2{font-size:clamp(43px,10.4vw,65px)}.build68-intro-copy{width:100%;margin-top:35px}
+ .build68-intro-copy p,.build68-invitation-copy p{font-size:15px;line-height:1.85}
+ .build68-feature{display:flex;flex-direction:column}.build68-feature figure{min-height:0;height:350px}.build68-feature-copy{padding:55px 24px 65px}.build68-feature h2{font-size:44px}
+ .build68-invitation{display:block;padding-block:75px}.build68-invitation-copy{margin-top:38px;max-width:none}
+ .belief-hero{height:84svh;min-height:670px;max-height:850px}.belief-hero-copy{left:24px;right:24px;bottom:70px}
+ .belief-hero h1{font-size:clamp(55px,12.7vw,88px);line-height:1.07;letter-spacing:-.045em}
+ .belief-hero-copy .campaign-label{font-size:10px;margin-bottom:21px}.belief-standfirst{font-size:15px;line-height:1.75;margin-top:25px;max-width:380px}
+ .belief-scroll{bottom:19px;right:24px;font-size:29px}
+ .belief-hero-split{height:auto;min-height:0;display:flex;flex-direction:column;padding-top:72px}
+ .belief-hero-split .belief-hero-copy{order:0;padding:52px 24px 46px;align-self:auto}.belief-hero-split figure{order:1;min-height:290px;height:44vw;max-height:430px}
+ .belief-hero-split .belief-standfirst{max-width:450px}.belief-hero-split .belief-scroll{display:none}
+ .belief-civil-liberties .belief-hero figure{left:17%;opacity:.7}.belief-civil-liberties .belief-hero figure:after{background:linear-gradient(90deg,#e5dbef,transparent),linear-gradient(0deg,#e5dbef,transparent 90%)}
+ .belief-civil-liberties .belief-hero-copy{bottom:75px}.belief-defense .belief-hero{min-height:650px;height:82svh}
+ .belief-defense .belief-hero-copy{bottom:80px}
+ .belief-opening h2{font-size:36px;margin-bottom:30px}.belief-prose p{font-size:15px;line-height:1.85}
+ .belief-statement{padding:60px 25px}.belief-statement>p{font-size:46px;line-height:1.15}
+ .belief-housing .belief-statement{padding-block:15px 55px}
+ .belief-defense .belief-statement{min-height:490px;padding:58px 25px 200px}.belief-defense .belief-statement>p{font-size:40px}.belief-airlift{width:110%;max-width:none;right:-7%;bottom:-50px}
+ .belief-principles,.belief-healthcare .belief-principles,.belief-civil-liberties .belief-principles{display:block;padding-block:60px 35px}
+ .belief-principle,.belief-healthcare .belief-principle,.belief-civil-liberties .belief-principle{display:block;padding:25px 0 35px}.belief-principle h3{font-size:33px;margin-bottom:15px}.belief-principle p{font-size:14px;max-width:none}
+ .belief-details{display:block;padding-block:35px 60px}.belief-details-intro h2{font-size:39px;max-width:400px}.belief-details-intro>p:last-child{max-width:none;margin-bottom:35px}
+ .belief-accordions summary{font-size:14px;padding:22px 0}.belief-accordions details>p{font-size:14px;padding-right:0}
+ .belief-closing{padding-block:55px 75px}.belief-closing h2{font-size:37px}.belief-closing .campaign-text-link{font-size:12px}
+ .mission68-root .p68-hero{min-height:510px;height:65svh}.mission68-root .p68-hero-copy{left:24px;right:24px;bottom:50px}
+ .mission68-root .p68-hero-copy h1{font-size:clamp(53px,12vw,78px)}.mission68-root .p68-hero-copy>span{font-size:14px}
+ .mission68-root .p68-body{padding:40px 12px 65px}.mission68-root .p68-letter{padding:50px 28px}.mission68-root .p68-letter h2{font-size:39px;margin-bottom:38px}
+ .mission68-root .p68-letter>p:not(.p68-letter-mark){font-size:18px;line-height:1.75}.mission68-root .p68-letter-mark{font-size:8px;letter-spacing:.09em}
+ .mission68-root .p68-signature{width:220px}.mission68-root .p68-signature strong{font-size:24px}
+ .events68-hero-copy{left:24px;right:24px;bottom:50px}.events68-hero-copy h1{font-size:64px}.events68-hero-copy p{font-size:15px;max-width:330px}
+ .events68-heading{margin-bottom:55px}.events68-heading h2{font-size:48px}.events68-list{padding-block:65px 80px}.events68-grid{row-gap:60px}
+ .events68-card figure,.events68-card:nth-child(n) figure{height:auto;aspect-ratio:4/3}
+ .events68-register{margin-bottom:60px;padding:55px 22px;gap:15px}.events68-register-copy h2{font-size:43px}.events68-registration-note{font-size:14px}
+ .team68-heading{padding:65px 22px 55px}.team68-heading h1{font-size:clamp(59px,13vw,88px)}.team68-grid{padding:30px 20px 65px;gap:38px 16px}
+ .team68-card h2{font-size:25px;margin-top:17px;max-width:100%}
+ .campaign-footer{padding:45px 24px 30px;display:grid;grid-template-columns:1fr;gap:38px}.campaign-footer-identity>a{width:85px}.campaign-footer-identity img{width:85px;height:85px}
+ .campaign-footer .campaign-footer-identity p{font-size:31px}.campaign-footer-manifesto{font-size:25px}.campaign-footer .campaign-copyright{grid-column:1;justify-self:start;padding:0}
+}
+@media(max-width:380px){.build68-home .lca68-statement h1{font-size:70px}.belief-hero h1{font-size:53px}.mission68-root .p68-letter{padding-inline:23px}.team68-grid{grid-template-columns:1fr}.events68-hero-copy h1{font-size:56px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.build68-home .lca68-video{display:block}.build68-home *,.belief-root *,.mission68-root *,.events68-root *,.team68-root *{transition:none!important;animation:none!important}}

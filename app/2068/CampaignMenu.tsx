@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { FocusEvent, useEffect, useState } from "react";
+import { FocusEvent, KeyboardEvent as ReactKeyboardEvent, useEffect, useRef, useState } from "react";
 
 const platformLinks = [
   { label: "Mission Statement", href: "/platform/mission-statement" },
+  { label: "Economics & Enterprise", href: "/platform/economy" },
   { label: "Housing", href: "/platform/housing" },
   { label: "Healthcare", href: "/platform/healthcare" },
   { label: "Civil Liberties", href: "/platform/civil-liberties" },
@@ -23,6 +24,9 @@ const menuItems = [
 export default function CampaignMenu() {
   const [open, setOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
+  const menuRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLElement>(null);
+  const platformRef = useRef<HTMLButtonElement>(null);
 
   const closeMenu = () => {
     setOpen(false);
@@ -33,25 +37,71 @@ export default function CampaignMenu() {
     if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPlatformOpen(false);
   };
 
+  const handlePlatformKeys = (event: ReactKeyboardEvent<HTMLElement>) => {
+    if ((event.key === "ArrowDown" || event.key === "ArrowRight") && event.target === platformRef.current) {
+      event.preventDefault();
+      setPlatformOpen(true);
+      requestAnimationFrame(() => drawerRef.current?.querySelector<HTMLAnchorElement>(".lca68-drawer-submenu a")?.focus());
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setPlatformOpen(false);
+      platformRef.current?.focus();
+    }
+  };
+
   useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
-    };
     const openPlatforms = () => {
       setOpen(true);
       setPlatformOpen(true);
     };
-    window.addEventListener("keydown", closeOnEscape);
     window.addEventListener("lca:open-platforms", openPlatforms);
     return () => {
-      window.removeEventListener("keydown", closeOnEscape);
       window.removeEventListener("lca:open-platforms", openPlatforms);
     };
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const frame = requestAnimationFrame(() => platformRef.current?.focus({ preventScroll: true }));
+
+    const handleKeys = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+        setPlatformOpen(false);
+      }
+      if (event.key !== "Tab") return;
+      const drawerControls = Array.from(drawerRef.current?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])") ?? [])
+        .filter((element) => element.tabIndex >= 0 && !element.closest("[inert]"));
+      const controls = [menuRef.current, ...drawerControls].filter((element): element is HTMLElement => element !== null);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      const active = document.activeElement as HTMLElement;
+      if (event.shiftKey && (active === first || !controls.includes(active))) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && (active === last || !controls.includes(active))) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeys);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener("keydown", handleKeys);
+      document.body.style.overflow = previousOverflow;
+      if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
+    };
+  }, [open]);
+
   return (
     <>
       <button
+        ref={menuRef}
         className={open ? "lca68-menu is-open" : "lca68-menu"}
         type="button"
         onClick={() => {
@@ -71,62 +121,71 @@ export default function CampaignMenu() {
         type="button"
         onClick={closeMenu}
         aria-label="Close campaign menu"
-        tabIndex={open ? 0 : -1}
+        tabIndex={-1}
       />
 
       <aside
+        ref={drawerRef}
         className={open ? "lca68-drawer is-open" : "lca68-drawer"}
         id="lca68-campaign-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Campaign navigation"
         aria-hidden={!open}
+        inert={!open}
       >
         <div className="lca68-drawer-heading">
           <span>ALLIANCE</span>
-          <p>Navigate the campaign</p>
+          <p>Freedom to build.</p>
         </div>
         <nav aria-label="Campaign navigation">
           <div
             className={platformOpen ? "lca68-drawer-group is-expanded" : "lca68-drawer-group"}
             onMouseEnter={() => setPlatformOpen(true)}
-            onMouseLeave={() => setPlatformOpen(false)}
-            onFocus={() => setPlatformOpen(true)}
+            onMouseLeave={(event) => {
+              if (!event.currentTarget.contains(document.activeElement)) setPlatformOpen(false);
+            }}
             onBlur={closePlatformOnBlur}
           >
             <div className="lca68-drawer-primary">
               <button
+                ref={platformRef}
                 className="lca68-drawer-platform-trigger"
                 type="button"
                 aria-label="Show platform focus areas"
                 aria-expanded={platformOpen}
+                aria-controls="lca68-platform-submenu"
+                onKeyDown={handlePlatformKeys}
                 onClick={() => setPlatformOpen((value) => !value)}
               >
-                <small>01</small><span>Platform</span><i aria-hidden="true">+</i>
+                <span>Platform</span><i aria-hidden="true">+</i>
               </button>
             </div>
-            <div className="lca68-drawer-submenu" aria-label="Platform focus areas">
+            <div className="lca68-drawer-submenu" id="lca68-platform-submenu" aria-label="Platform focus areas" aria-hidden={!platformOpen} inert={!platformOpen}>
               {platformLinks.map((item) => (
-                <Link href={item.href} key={item.href} onClick={closeMenu} tabIndex={platformOpen ? 0 : -1}>
+                <Link href={item.href} key={item.href} onClick={closeMenu} onKeyDown={handlePlatformKeys} tabIndex={platformOpen ? 0 : -1}>
                   <span>{item.label}</span><i aria-hidden="true">→</i>
                 </Link>
               ))}
             </div>
           </div>
-          {menuItems.map((item, index) => item.href ? (
+          {menuItems.map((item) => item.href ? (
             item.external ? (
               <a href={item.href} target="_blank" rel="noreferrer" key={item.label} onClick={closeMenu}>
-                <small>0{index + 2}</small><span>{item.label}</span><i aria-hidden="true">↗</i>
+                <span>{item.label}</span><i aria-hidden="true">↗</i>
               </a>
             ) : (
               <Link href={item.href} key={item.label} onClick={closeMenu}>
-                <small>0{index + 2}</small><span>{item.label}</span><i aria-hidden="true">→</i>
+                <span>{item.label}</span><i aria-hidden="true">→</i>
               </Link>
             )
           ) : (
             <span className="lca68-drawer-placeholder" aria-disabled="true" key={item.label}>
-              <small>0{index + 2}</small><span>{item.label}</span><em>Coming soon</em>
+              <span>{item.label}</span><em>Coming soon</em>
             </span>
           ))}
         </nav>
-        <p className="lca68-drawer-note">Liberal-Conservative Alliance</p>
+        <p className="lca68-drawer-note">ALLIANCE / CAPRICA 2068</p>
       </aside>
     </>
   );

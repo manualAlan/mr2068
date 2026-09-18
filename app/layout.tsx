@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./campaign-2068.css";
 
 export const metadata: Metadata = {
-  title: "LCA | Make Room for Tomorrow",
-  description: "The LCA alliance program for a freer, safer and more confident Caprica.",
+  title: "Alliance 2068 | Freedom to build",
+  description: "A home of your own. Room for a good idea. The Alliance believes in a free, enterprising and confident Caprica.",
   icons: {
     icon: [{ url: "/images/lca-logo.svg?v=lca-2064", type: "image/svg+xml" }],
     shortcut: "/images/lca-logo.svg?v=lca-2064",

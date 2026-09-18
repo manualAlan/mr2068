@@ -1,6 +1,6 @@
-# LCA Alliance, 2064
+# Alliance 2068: Freedom to build
 
-Official campaign website for the LCA three-party electoral alliance in the fictional Republic of Caprica.
+Campaign website for the Alliance in the fictional Republic of Caprica. A single, confident identity built around enterprise, personal freedom and opportunity.
 
 ## Live site
 
@@ -17,6 +17,9 @@ The application is built with React and vinext. A Pages-safe static edition is g
 
 ```bash
 npm run export:pages
+node --test tests/campaign-2068.test.mjs
 ```
 
-Campaign portraits and the LCA logo were supplied for this project. Supporting policy photography is stored locally with the site.
+Keep the development server running on port 3000 while exporting. GitHub Pages serves `main:/docs` at `/mr2068/`.
+
+Campaign portraits and the Alliance logo were supplied for this project. Supporting photography and fonts are stored locally. See [CAMPAIGN_DIRECTION.md](CAMPAIGN_DIRECTION.md) for the voice, design references and asset notes. Event calendar downloads work without a backend; event registration and contact are not yet available.
