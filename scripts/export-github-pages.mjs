@@ -2,7 +2,7 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr2068/";
-const assetVersion = "20260918b";
+const assetVersion = "20260918c";
 const routes = [
   { source: "2068", output: "" },
   { source: "2068", output: "2068" },

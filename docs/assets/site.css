@@ -214,6 +214,9 @@
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .static {
     position: static;
   }
@@ -225,6 +228,9 @@
   }
   .block {
     display: block;
+  }
+  .contents {
+    display: contents;
   }
   .grid {
     display: grid;
