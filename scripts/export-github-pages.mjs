@@ -2,11 +2,16 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr2068/";
-const assetVersion = "20260917a";
+const assetVersion = "20260918b";
 const routes = [
   { source: "2068", output: "" },
   { source: "2068", output: "2068" },
-  { source: "platform", output: "platform" },
+  { source: "platform/mission-statement", output: "platform/mission-statement" },
+  { source: "platform/housing", output: "platform/housing" },
+  { source: "platform/healthcare", output: "platform/healthcare" },
+  { source: "platform/civil-liberties", output: "platform/civil-liberties" },
+  { source: "platform/foreign-policy", output: "platform/foreign-policy" },
+  { source: "platform/defense", output: "platform/defense" },
   { source: "team", output: "team" },
   { source: "events", output: "events" },
   { source: "ambrosia", output: "ambrosia" },
@@ -56,7 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const campaignMenu = document.querySelector('.lca68-menu');
   const campaignScrim = document.querySelector('.lca68-menu-scrim');
   const campaignDrawer = document.querySelector('.lca68-drawer');
-  const setCampaignMenu = open => {
+  const platformGroup = document.querySelector('.lca68-drawer-group');
+  const platformTrigger = document.querySelector('.lca68-drawer-platform-trigger');
+  const platformLauncher = document.querySelector('.lca68-platform-link');
+  const setPlatformMenu = open => {
+    platformGroup?.classList.toggle('is-expanded', open);
+    platformTrigger?.setAttribute('aria-expanded', String(open));
+  };
+  const setCampaignMenu = (open, showPlatforms = false) => {
     campaignMenu?.classList.toggle('is-open', open);
     campaignScrim?.classList.toggle('is-open', open);
     campaignDrawer?.classList.toggle('is-open', open);
@@ -64,9 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
     campaignMenu?.setAttribute('aria-label', open ? 'Close campaign menu' : 'Open campaign menu');
     campaignScrim?.setAttribute('tabindex', open ? '0' : '-1');
     campaignDrawer?.setAttribute('aria-hidden', String(!open));
+    if (!open || showPlatforms) setPlatformMenu(open && showPlatforms);
   };
   campaignMenu?.addEventListener('click', () => setCampaignMenu(!campaignMenu.classList.contains('is-open')));
   campaignScrim?.addEventListener('click', () => setCampaignMenu(false));
+  platformTrigger?.addEventListener('click', () => setPlatformMenu(!platformGroup?.classList.contains('is-expanded')));
+  platformLauncher?.addEventListener('click', () => setCampaignMenu(true, true));
   campaignDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setCampaignMenu(false)));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') setCampaignMenu(false);

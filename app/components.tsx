@@ -10,7 +10,7 @@ export function Header() {
   const path=usePathname();
   const links=[
     ['https://manualalan.github.io/mr2068/manifesto/caprica-new-future-2064.pdf','Manifesto'],
-    ['/platform','Our plan'],
+    ['/platform/mission-statement','Our plan'],
     ['/team','Candidates'],
     ['/events','Events'],
   ];
@@ -28,7 +28,7 @@ export function Header() {
 
 export function Footer(){return <footer className="footer"><div className="wrap footer-grid">
   <div className="footer-brand"><img src="/images/lca-logo.svg" alt="LCA"/><p>Three parties.<br/>One way forward.</p></div>
-  <div><p className="footer-label">Explore</p><Link href="/platform">Our plan</Link><Link href="/team">Candidates</Link><Link href="/events">Events</Link></div>
+  <div><p className="footer-label">Explore</p><Link href="/platform/mission-statement">Our plan</Link><Link href="/team">Candidates</Link><Link href="/events">Events</Link></div>
   <div><p className="footer-label">Take part</p><Link href="/events#volunteer">Volunteer</Link><Link href="/events#updates">Campaign updates</Link><Link href="/platform#alliance">About the alliance</Link></div>
   <div className="footer-note"><p>A shared campaign for all of Caprica.</p><span>Authorized by the LCA electoral alliance, Montiablo.</span></div>
  </div></footer>}

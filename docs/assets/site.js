@@ -10,7 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const campaignMenu = document.querySelector('.lca68-menu');
   const campaignScrim = document.querySelector('.lca68-menu-scrim');
   const campaignDrawer = document.querySelector('.lca68-drawer');
-  const setCampaignMenu = open => {
+  const platformGroup = document.querySelector('.lca68-drawer-group');
+  const platformTrigger = document.querySelector('.lca68-drawer-platform-trigger');
+  const platformLauncher = document.querySelector('.lca68-platform-link');
+  const setPlatformMenu = open => {
+    platformGroup?.classList.toggle('is-expanded', open);
+    platformTrigger?.setAttribute('aria-expanded', String(open));
+  };
+  const setCampaignMenu = (open, showPlatforms = false) => {
     campaignMenu?.classList.toggle('is-open', open);
     campaignScrim?.classList.toggle('is-open', open);
     campaignDrawer?.classList.toggle('is-open', open);
@@ -18,9 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     campaignMenu?.setAttribute('aria-label', open ? 'Close campaign menu' : 'Open campaign menu');
     campaignScrim?.setAttribute('tabindex', open ? '0' : '-1');
     campaignDrawer?.setAttribute('aria-hidden', String(!open));
+    if (!open || showPlatforms) setPlatformMenu(open && showPlatforms);
   };
   campaignMenu?.addEventListener('click', () => setCampaignMenu(!campaignMenu.classList.contains('is-open')));
   campaignScrim?.addEventListener('click', () => setCampaignMenu(false));
+  platformTrigger?.addEventListener('click', () => setPlatformMenu(!platformGroup?.classList.contains('is-expanded')));
+  platformLauncher?.addEventListener('click', () => setCampaignMenu(true, true));
   campaignDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setCampaignMenu(false)));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') setCampaignMenu(false);

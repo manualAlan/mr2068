@@ -12,7 +12,7 @@ export default function Home() {
             <h1>Make room<br />for tomorrow.</h1>
             <p className="hero-dek">A confident Caprica: easier to build in, safer to live in, and ready to lead in Columbia.</p>
             <div className="button-row">
-              <Link className="button button-white" href="/platform">Explore our plan <ArrowIcon /></Link>
+              <Link className="button button-white" href="/platform/mission-statement">Explore our plan <ArrowIcon /></Link>
               <Link className="text-link light-link" href="/team">Meet the LCA team <ArrowIcon /></Link>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function Home() {
           <div className="intro-copy">
             <p className="lead">LCA brings three parties together around a practical program for government, built on what works and focused on what Capricans share.</p>
             <p>Our alliance will protect the institutions that keep us free, unlock private initiative, and make sure every region can share in Caprica’s next chapter.</p>
-            <Link className="text-link" href="/platform">Read the full platform <ArrowIcon /></Link>
+            <Link className="text-link" href="/platform/mission-statement">Read the full platform <ArrowIcon /></Link>
           </div>
         </section>
 

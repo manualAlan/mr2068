@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CampaignMenu from "./CampaignMenu";
 import Lca68HeroMedia from "./Lca68HeroMedia";
+import PlatformLauncher from "./PlatformLauncher";
 
 export default function Campaign2068Home() {
   return (
@@ -14,16 +15,13 @@ export default function Campaign2068Home() {
         <Link className="lca68-wordmark" href="/2068" aria-label="LCA 2068 home">
           <strong>ALLIANCE</strong>
         </Link>
-        <span className="lca68-cycle">CAPRICA / 2068</span>
+        <span aria-hidden="true" />
       </header>
 
       <section className="lca68-statement" aria-labelledby="lca68-title">
         <p>THE LIBERAL-CONSERVATIVE ALLIANCE</p>
         <h1 id="lca68-title">IT’S TIME<br />TO BUILD.</h1>
-        <Link className="lca68-platform-link" href="/platform">
-          <span>Check out our Platforms</span>
-          <i aria-hidden="true" />
-        </Link>
+        <PlatformLauncher />
       </section>
 
       <footer className="lca68-footer">
