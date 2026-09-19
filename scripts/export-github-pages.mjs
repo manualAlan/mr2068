@@ -19,6 +19,7 @@ const routes = [
   { source: "chasmia", output: "chasmia" },
   { source: "montiablo", output: "montiablo" },
   { source: "myrati", output: "myrati" },
+  { source: "cambria", output: "cambria" },
 ];
 
 await rm("docs", { recursive: true, force: true });
@@ -35,6 +36,7 @@ await mkdir("docs/video", { recursive: true });
 await cp("public/video/caprica-2068-city.mp4", "docs/video/caprica-2068-city.mp4");
 
 for (const route of routes) {
+  const styleVersion = route.source === "cambria" ? `${assetVersion}-cambria` : assetVersion;
   const response = await fetch(`${origin}/${route.source}`);
   if (!response.ok) throw new Error(`Could not export /${route.source}: ${response.status}`);
   let html = await response.text();
@@ -42,7 +44,7 @@ for (const route of routes) {
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, "")
     .replace(/<link\b[^>]*href="\/app\/(?:globals|campaign-2068)\.css(?:\?[^"]*)?"[^>]*>/gi, "")
-    .replace("</head>", `<link rel="stylesheet" href="/assets/site.css?v=${assetVersion}"></head>`)
+    .replace("</head>", `<link rel="stylesheet" href="/assets/site.css?v=${styleVersion}"></head>`)
     .replace(/(href|src|poster)="\/(?!\/)/g, `$1="${base}`)
     .replaceAll(`href="${base}2068"`, `href="${base}"`)
     .replace("</body>", `<script src="${base}assets/site.js?v=${assetVersion}" defer></script></body>`);
