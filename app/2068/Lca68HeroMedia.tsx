@@ -5,11 +5,46 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Lca68HeroMedia() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const musicTimerRef = useRef<number | null>(null);
   // Start with music enabled. Browsers may still block audible autoplay; in
   // that case the catch below falls back to silent video and leaves the
   // visible music control available.
   const [muted, setMuted] = useState(false);
   const [paused, setPaused] = useState(false);
+
+  const stopMusic = () => {
+    if (musicTimerRef.current !== null) window.clearInterval(musicTimerRef.current);
+    musicTimerRef.current = null;
+    audioContextRef.current?.close();
+    audioContextRef.current = null;
+  };
+
+  const startMusic = () => {
+    if (audioContextRef.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const AudioContextClass = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AudioContextClass) return;
+    const context = new AudioContextClass();
+    audioContextRef.current = context;
+    const chords = [[261.63, 329.63, 392], [220, 277.18, 329.63], [246.94, 311.13, 369.99], [196, 246.94, 293.66]];
+    let step = 0;
+    const playChord = () => {
+      const now = context.currentTime;
+      chords[step++ % chords.length].forEach((frequency) => {
+        const oscillator = context.createOscillator();
+        const gain = context.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.value = frequency;
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.026, now + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.1);
+        oscillator.connect(gain).connect(context.destination);
+        oscillator.start(now);
+        oscillator.stop(now + 2.15);
+      });
+    };
+    void context.resume().then(() => { playChord(); musicTimerRef.current = window.setInterval(playChord, 2000); });
+  };
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -23,7 +58,15 @@ export default function Lca68HeroMedia() {
     };
     respectReducedMotion();
     preference.addEventListener("change", respectReducedMotion);
-    return () => preference.removeEventListener("change", respectReducedMotion);
+    const unlockMusic = () => startMusic();
+    window.addEventListener("pointerdown", unlockMusic, { once: true, passive: true });
+    window.addEventListener("keydown", unlockMusic, { once: true });
+    return () => {
+      preference.removeEventListener("change", respectReducedMotion);
+      window.removeEventListener("pointerdown", unlockMusic);
+      window.removeEventListener("keydown", unlockMusic);
+      stopMusic();
+    };
   }, []);
 
   useEffect(() => {
@@ -50,6 +93,9 @@ export default function Lca68HeroMedia() {
   const toggleMusic = async () => {
     const nextMuted = !muted;
     setMuted(nextMuted);
+
+    if (nextMuted) stopMusic();
+    else startMusic();
 
     if (videoRef.current) {
       videoRef.current.muted = nextMuted;
