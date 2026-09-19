@@ -6,9 +6,9 @@ const html = await readFile(new URL('../docs/chasmia/index.html', import.meta.ur
 
 test('Chasmia is a coherent 2068 campaign with twelve detailed commitments', () => {
   assert.match(html, /CHASMIA 2068/);
-  assert.match(html, /Build the/);
-  assert.match(html, /HARRY BALLS/);
-  assert.doesNotMatch(html, /Richard Balls|2064|—/);
+  assert.match(html, /David Cutter/);
+  assert.match(html, /Harry Balls/);
+  assert.doesNotMatch(html, /Patrick Cutter|Richard Balls|2064|—/);
   assert.equal((html.match(/<details>/g) || []).length, 12);
   assert.match(html, /mr-logo\.png/);
 });

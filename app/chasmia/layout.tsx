@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Patrick Cutter for Chasmia 2068 | Build the next Chasmia",
-  description: "Patrick Cutter’s Moderate Reform campaign for advanced industry, skilled work and stronger communities across Chasmia.",
+  title: "David Cutter for Chasmia 2068 | Make it here. Build a life here.",
+  description: "David Cutter’s Moderate Reform campaign for better work, room to build and a future close to home. Explore the Chasmia plan for 2068.",
   icons: {
     icon: [{ url: "/images/mr-logo.png?v=mr-chasmia-2068", type: "image/png" }],
     shortcut: "/images/mr-logo.png?v=mr-chasmia-2068",
