@@ -11,7 +11,8 @@ test('Ambrosia has one coherent 2068 campaign and twelve policy commitments', ()
   assert.match(html, /pp-logo\.png/);
   assert.match(html, /People’s Party · Ambrosia · 2068/);
   assert.doesNotMatch(html, /stands for Moderate Reform|MODERATE REFORM<\/figcaption>/);
-  assert.doesNotMatch(html, /<script\b/);
+  assert.doesNotMatch(html, /type="module"|\/app\/.*\.tsx/);
+  assert.match(html, /assets\/site\.js/);
 });
 test('all local links and assets exist, including fragment destinations', async () => {
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
