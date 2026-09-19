@@ -17,6 +17,7 @@ const routes = [
   { source: "events", output: "events" },
   { source: "ambrosia", output: "ambrosia" },
   { source: "chasmia", output: "chasmia" },
+  { source: "montiablo", output: "montiablo" },
 ];
 
 await rm("docs", { recursive: true, force: true });
