@@ -52,7 +52,7 @@ export default function ChasmiaCampaign() {
       <div className="cutter-promisebar" aria-label="Campaign priorities"><span>Better work.</span><span>Room to build.</span><span>A future close to home.</span></div>
 
       <section className="cutter-opening campaign-width">
-        <p className="campaign-label">The next Chasmia starts with us</p>
+        <div className="cutter-region-mark"><img src="/images/chasmia/chasmian-flag.jpg" alt="Flag of Chasmia" width="120" height="80" loading="lazy"/><p className="campaign-label">The next Chasmia<br/>starts with us</p></div>
         <h2>We have the talent.<br/>Let’s give it <em>every chance.</em></h2>
         <div className="cutter-opening-columns"><p>We know how to make things in Chasmia. We work the land, build ships, solve hard problems and turn raw materials into something the world needs. That is a strength worth backing.</p><p>Now the next generation deserves its chance: a paid way into a trade, a business that can take its next order, a good home within reach of work. David Cutter’s plan connects our region’s ambition to the life you want to build.</p></div>
       </section>
