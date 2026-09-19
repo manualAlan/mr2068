@@ -24,12 +24,12 @@ export function PlatformHero({ image, imagePosition, title, statement }: {
   );
 }
 
-export function PlatformFooter() {
+export function PlatformFooter({ copyright = "© 2068 Robert Bluespan" }: { copyright?: string } = {}) {
   return (
     <footer className="p68-footer campaign-footer">
       <div className="campaign-footer-identity"><Link href="/2068" aria-label="Alliance home"><img src="/images/lca-logo.svg" alt="Alliance" width="142" height="72" /></Link><p>Freedom to build.</p></div>
       <a className="campaign-footer-manifesto" href="/manifesto/caprica-freedom-to-build-2068.pdf" target="_blank" rel="noreferrer">The full manifesto <span aria-hidden="true">↗</span><small>OUR PROGRAMME FOR 2068 · PDF</small></a>
-      <span className="campaign-copyright">© 2068 Robert Bluespan</span>
+      <span className="campaign-copyright">{copyright}</span>
     </footer>
   );
 }

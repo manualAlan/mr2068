@@ -332,3 +332,132 @@ body:has(.myr68):after{display:none}.myr68{background:#faf8f3;color:#202638;font
 @media(max-width:800px){.cam-width{width:calc(100% - 44px)}.cam-hero{height:760px;min-height:0;max-height:none}.cam-hero-copy{padding:90px 25px}.cam-hero h1{font-size:90px}.cam-hero-foot{right:25px}.cam-intro{grid-template-columns:1fr;gap:45px;padding-block:65px}.cam-intro figure{max-width:340px}.cam-place-grid,.cam-account-grid{grid-template-columns:1fr;gap:25px}.cam-policy{grid-template-columns:1fr;gap:10px;padding:45px 0}.cam-plan-nav{grid-template-columns:1fr 1fr}.cam-plan-nav a:nth-child(3){border-left:0}.cam-plan-nav a:nth-child(n+3){border-top:1px solid #c8ccc8}.cam-local-nav{flex-wrap:wrap;gap:20px 30px}.cam-place,.cam-account{padding-top:60px}.cam-place figure img{height:300px}.cam-place figcaption{left:22px;font-size:18px}.cam-plan,.cam-invite{padding-block:65px}.cam-invite>div{align-items:flex-start;flex-direction:column}.cam-hero-copy>p:not(.cam-label){font-size:17px}}
 @media(max-width:450px){.cam-hero h1{font-size:64px}.cam-hero{height:700px}.cam-hero-copy{padding-top:100px}}
 @media(prefers-reduced-motion:reduce){.cam68 *{scroll-behavior:auto!important;transition:none!important}}
+
+/* Reno: an assured editorial identity, with MR's blue-to-purple signature. */
+body:has(.reno68):after{display:none}
+.reno68{--reno-paper:#f7f6f3;--reno-ink:#24232e;--reno-blue:#2946c6;--reno-purple:#753bad;background:var(--reno-paper);color:var(--reno-ink);font-family:var(--campaign-sans)}
+.reno68 *{box-sizing:border-box;min-width:0}
+.reno68 :is(h1,h2,h3,p,figure){margin:0}
+.reno68 :is(h1,h2,h3){font-family:var(--campaign-serif);font-weight:500;letter-spacing:-.045em;color:inherit;text-wrap:balance}
+.reno68 h2{font-size:clamp(40px,4.55vw,70px);line-height:1.09}
+.reno68 h3{font-size:34px;line-height:1.15}
+.reno68 em{color:var(--reno-purple);font-weight:500}
+.reno68 p{font-size:16px;line-height:1.8}
+.reno68 p+p{margin-top:21px}
+.reno68 .campaign-label{font-size:10px;line-height:1.6;letter-spacing:.15em;font-weight:700;margin:0 0 25px}
+.reno68 img{display:block;width:100%;object-fit:cover}
+.reno68 a{color:inherit;text-decoration:none}
+.reno68 a:focus-visible{outline:3px solid #925bd0;outline-offset:6px}
+.reno68 :is(section,article)[id]{scroll-margin-top:24px}
+.reno-width{width:min(1280px,calc(100% - 100px));margin-inline:auto}
+.reno-header{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:25px;border-bottom:1px solid #d4d0d9;position:relative}
+.reno-header:after{content:"";position:absolute;bottom:-1px;left:0;width:150px;height:2px;background:linear-gradient(90deg,#173aff,#9224cd)}
+.reno-brand{display:inline-flex;align-items:center;gap:15px;flex-shrink:0}
+.reno-brand img{width:54px!important;height:32px!important;object-fit:contain}
+.reno-brand>span{font:700 22px/1 var(--campaign-sans);letter-spacing:.075em}
+.reno-brand small{display:block;font:700 8px/1.5 var(--campaign-sans);letter-spacing:.17em;margin-top:7px}
+.reno-header nav{display:flex;align-items:center;gap:30px;font-size:11px;font-weight:700}
+.reno-header nav a{padding-block:10px;white-space:nowrap}
+.reno-header nav a:hover{color:var(--reno-purple)}
+.reno-header nav a:last-child{border-left:1px solid #d4d0d9;padding-left:30px}
+.reno-header nav a span{font-size:17px;margin-left:12px}
+.reno-hero{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;padding-block:55px 70px;align-items:stretch}
+.reno-hero-copy{display:flex;flex-direction:column;align-items:flex-start;padding-top:14px}
+.reno-hero h1{font-size:clamp(70px,7.8vw,112px);line-height:1.01;letter-spacing:-.065em;margin-bottom:30px}
+.reno-hero h1 em{background:linear-gradient(130deg,#2546bd 5%,#843aa3 80%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.reno68 .reno-deck{font-size:19px;line-height:1.6;margin-bottom:28px}
+.reno-button{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:54px;padding:17px 22px;background:linear-gradient(115deg,#2845be,#683395);color:white!important;font-size:12px;font-weight:700;transition:box-shadow .2s}
+.reno-button span{font-size:23px;line-height:1;flex-shrink:0}
+.reno-button:hover{box-shadow:0 6px 24px #643b9333}
+.reno-hero-signoff{align-self:stretch;display:flex;gap:20px;justify-content:space-between;border-top:1px solid #d4d0d9;margin-top:auto;padding-top:22px;font-size:8px;font-weight:700;letter-spacing:.11em}
+.reno-portrait{display:flex;flex-direction:column;position:relative;background:#242939}
+.reno-portrait>a{display:block;overflow:hidden;flex:1}
+.reno-portrait>a>img{height:100%;max-height:595px;object-position:center 26%}
+.reno-portrait figcaption{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 26px;background:#242939;color:#fff}
+.reno-portrait figcaption>span{font:400 12px/1.3 var(--campaign-sans);letter-spacing:.12em}
+.reno-portrait figcaption strong{display:block;font-size:27px;line-height:1.2;letter-spacing:.06em}
+.reno-portrait figcaption>a{font-size:10px;border-bottom:1px solid #b5a7d0;padding-bottom:8px;display:flex;align-items:center;gap:18px}
+.reno-portrait figcaption>a span{font-size:22px}
+.reno-opening{padding-block:85px;border-top:1px solid #d4d0d9}
+.reno-opening>div{display:grid;grid-template-columns:1.05fr 1fr;gap:90px}
+.reno-opening h2{font-size:clamp(43px,4.4vw,65px)}
+.reno-opening-text p:first-child{font-size:19px;line-height:1.7}
+.reno-index{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #cfcbd7;border-bottom:1px solid #cfcbd7;margin-bottom:90px}
+.reno-index a{position:relative;padding:23px 28px 23px 20px;font-size:12px;line-height:1.7;font-weight:700;border-left:1px solid #cfcbd7;transition:background .2s}
+.reno-index a:first-child{border-left:0;padding-left:0}
+.reno-index a>span:first-child{display:block;font:700 8px/1.5 var(--campaign-sans);letter-spacing:.11em;color:var(--reno-purple);margin-bottom:10px}
+.reno-index a>span:last-child{position:absolute;right:12px;bottom:23px;font-size:18px}
+.reno-index a:hover{background:#eae4f2}
+.reno-journey{display:grid;grid-template-columns:1fr 1fr;background:#ece8f1}
+.reno-journey-photo{position:relative;min-height:690px}
+.reno-journey-photo img{height:100%;position:absolute;inset:0;object-position:62% center}
+.reno-journey-photo:after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#141525b3);pointer-events:none}
+.reno68 .reno-journey-photo p{position:absolute;z-index:1;bottom:30px;left:35px;right:35px;color:white;font-size:9px;font-weight:700;letter-spacing:.13em}
+.reno-journey-copy{padding:70px clamp(30px,5vw,80px);max-width:800px}
+.reno-journey h2{font-size:clamp(38px,3.8vw,59px);margin-bottom:28px}
+.reno68 .reno-lead{font-size:20px;line-height:1.65}
+.reno-link{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;max-width:100%;font-size:12px;font-weight:700;line-height:1.6;border-bottom:1px solid currentColor;padding:10px 0;color:var(--reno-purple)!important;margin-top:24px}
+.reno-link span{font-size:22px;flex-shrink:0;transition:transform .2s}
+.reno-link:hover span{transform:translate(3px,-3px)}
+.reno-homes{display:grid;grid-template-columns:1.05fr .9fr;gap:100px;padding-block:115px;align-items:center}
+.reno-homes h2{margin-bottom:30px}
+.reno-homes figure{align-self:stretch;display:flex;flex-direction:column;padding-top:30px}
+.reno-homes figure img{height:100%;max-height:840px;object-position:48% center;flex:1;min-height:400px}
+.reno68 figcaption{font-size:10px;line-height:1.6;letter-spacing:.035em;padding-top:14px}
+.reno-economy{padding-block:90px 100px;background:#e9e9f2}
+.reno-economy-head{text-align:center;max-width:960px;margin:0 auto 50px}
+.reno-economy-head>p:last-child{max-width:670px;margin:27px auto 0;font-size:18px}
+.reno-cafe{aspect-ratio:2/1;object-position:center 60%}
+.reno-economy-copy{display:grid;grid-template-columns:.7fr 1fr;gap:100px;margin-top:55px}
+.reno-economy-copy h3{font-size:clamp(32px,3.4vw,50px)}
+.reno-economy-copy>div{columns:2;column-gap:32px}
+.reno-economy-copy p{font-size:15px;break-inside:avoid}
+.reno-confidence{padding-block:115px;display:grid;grid-template-columns:.85fr 1fr;gap:100px;align-items:center}
+.reno-confidence figure{align-self:stretch;display:flex;flex-direction:column}
+.reno-confidence img{flex:1;height:100%;min-height:500px;object-position:44% center}
+.reno-confidence h2{margin-bottom:28px}
+.reno-government{background:#242332;color:#f6f1fd;padding-block:100px;position:relative;overflow:hidden}
+.reno-government:before{content:"";position:absolute;top:0;right:0;width:55%;height:2px;background:linear-gradient(90deg,#304cdd,#c08bff)}
+.reno-government .reno-width{position:relative}
+.reno-government h2{font-size:clamp(54px,6.8vw,99px);line-height:1.03;max-width:1000px}
+.reno-government em{color:#cbb4ee}
+.reno-government-intro{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:end;margin-top:55px}
+.reno-principle{font:700 10px/1.9 var(--campaign-sans);letter-spacing:.13em;color:#b9b4cc}
+.reno-government-intro p{font-size:19px;line-height:1.7;color:#e4ddec}
+.reno-government-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin:60px 0 25px}
+.reno-government-columns article{border-top:1px solid #676176;padding-top:28px}
+.reno-government-columns h3{font-size:33px;line-height:1.2;margin-bottom:22px}
+.reno-government-columns p{font-size:15px;color:#d8d4df}
+.reno-government .reno-link{color:#d9c4fc!important}
+.reno-about{display:grid;grid-template-columns:1fr 1fr;gap:90px;padding-block:115px}
+.reno-monogram{font:500 155px/1 var(--campaign-serif);letter-spacing:-.09em;color:#cbc0d9;border:1px solid #cec7d5;display:flex;flex-direction:column;align-items:center;justify-content:center;width:215px;height:240px;margin-top:70px;position:relative}
+.reno-monogram:after{content:"";position:absolute;inset:8px;border:1px solid #d9d2df;pointer-events:none}
+.reno-monogram span{font:700 8px/1.5 var(--campaign-sans);letter-spacing:.22em;margin-top:10px;color:#705a88}
+.reno68 .reno-role{padding-top:22px;border-top:1px solid #d2cbdc;font-size:13px;color:#656071}
+.reno-join{background:linear-gradient(120deg,#ebeaf6,#e9ddf2);padding-block:90px}
+.reno-join>.reno-width{display:grid;grid-template-columns:1.1fr 1fr;gap:100px;align-items:center}
+.reno-join h2{margin-bottom:30px}
+.reno-join>div>div>p:last-child{font-size:18px}
+.reno-invitation{border-left:1px solid #bdb2cf;padding-left:60px}
+.reno-invitation h3{font-size:clamp(40px,4vw,61px);margin-bottom:25px}
+.reno-invitation .reno-button{margin-top:25px}
+.reno-invitation .reno-link{display:flex;width:fit-content;font-size:11px}
+.reno-footer{display:flex;align-items:center;justify-content:space-between;gap:25px;padding-block:40px}
+.reno68 .reno-footer p{font-size:10px;line-height:1.7}
+.reno-footer>a:not(.reno-brand){font-size:11px}
+@media(min-width:1500px){.reno-hero{grid-template-columns:1.15fr 1fr;gap:95px}.reno-hero h1{font-size:118px}}
+@media(max-width:1100px){.reno-width{width:calc(100% - 64px)}.reno-hero{gap:40px}.reno-hero h1{font-size:8.1vw}.reno-hero-signoff{font-size:7px;margin-top:35px}.reno-hero-copy{padding:0}.reno68 .reno-deck{font-size:17px}.reno-portrait figcaption{padding:18px}.reno-portrait figcaption>a{font-size:9px;gap:10px}.reno-opening>div,.reno-homes,.reno-confidence,.reno-about,.reno-join>.reno-width{gap:50px}.reno-index{grid-template-columns:repeat(3,1fr)}.reno-index a:nth-child(4){border-left:0;padding-left:0}.reno-index a:nth-child(n+4){border-top:1px solid #cfcbd7}.reno-index a:last-child{grid-column:span 2}.reno-journey-copy{padding:55px 35px}.reno-journey-photo{min-height:730px}.reno-economy-copy{grid-template-columns:.65fr 1fr;gap:55px}.reno-economy-copy>div{columns:1}.reno-government-columns{gap:30px}.reno-government-columns h3{font-size:29px}.reno-invitation{padding-left:35px}.reno-footer{flex-wrap:wrap}}
+@media(max-width:800px){.reno-width{width:calc(100% - 44px)}.reno-header{align-items:flex-start;gap:22px;flex-direction:column;padding-block:22px}.reno-header nav{width:100%;justify-content:space-between;gap:14px;font-size:10px}.reno-header nav a:last-child{padding-left:15px}.reno-header nav a span{margin-left:5px}.reno-hero{gap:25px;padding-block:35px 50px}.reno-hero h1{font-size:8.4vw}.reno-hero .campaign-label{font-size:8px;margin-bottom:18px}.reno-hero .reno-button{font-size:10px;padding:14px;gap:20px}.reno-portrait figcaption{align-items:flex-start;flex-direction:column;gap:12px}.reno-portrait figcaption>span{font-size:10px}.reno-portrait figcaption strong{font-size:23px}.reno-hero-signoff{flex-direction:column;gap:7px;margin-top:26px;padding-top:15px}.reno-opening{padding-block:60px}.reno-opening>div{gap:35px}.reno68 h2{font-size:44px}.reno-opening h2{font-size:38px}.reno-opening-text p:first-child{font-size:17px}.reno68 p{font-size:15px}.reno-index{margin-bottom:60px}.reno-index a{font-size:11px}.reno-journey{grid-template-columns:1fr}.reno-journey-photo{min-height:0;height:440px}.reno-journey-photo img{object-position:50% center}.reno-journey-copy{max-width:none;padding:55px 40px}.reno-journey h2{font-size:48px}.reno-homes,.reno-confidence{gap:35px;padding-block:70px}.reno-homes{grid-template-columns:1fr .75fr}.reno-homes h2,.reno-confidence h2{font-size:38px}.reno68 .reno-lead{font-size:18px}.reno-confidence{grid-template-columns:.75fr 1fr}.reno-homes figure img{max-height:none}.reno-economy{padding-block:65px}.reno-economy-copy{grid-template-columns:1fr;gap:25px;margin-top:35px}.reno-economy-copy>div{columns:2}.reno-government{padding-block:70px}.reno-government h2{font-size:65px}.reno-government-intro{grid-template-columns:.7fr 1fr;gap:30px}.reno-government-intro p{font-size:17px}.reno-government-columns{grid-template-columns:1fr;gap:32px;margin-top:45px}.reno-government-columns article{display:grid;grid-template-columns:.8fr 1fr;gap:30px}.reno-government-columns h3{font-size:29px}.reno-about{gap:40px;padding-block:70px;grid-template-columns:.8fr 1fr}.reno-about h2{font-size:39px}.reno-monogram{width:175px;height:195px;font-size:120px}.reno-join>.reno-width{gap:40px}.reno-join h2{font-size:42px}.reno-invitation{padding-left:25px}.reno-invitation h3{font-size:43px}.reno-invitation .reno-button{font-size:10px;gap:15px;padding:16px}.reno-footer{display:grid;grid-template-columns:1fr 1fr;gap:25px}}
+@media(max-width:560px){.reno-width{width:calc(100% - 40px)}.reno-header nav{gap:10px;font-size:9px;flex-wrap:wrap}.reno-header nav a:last-child{padding-left:10px}.reno-header nav a span{font-size:13px;margin-left:3px}.reno-hero{grid-template-columns:1fr;gap:35px}.reno-hero h1{font-size:clamp(66px,16vw,89px);margin-bottom:24px;letter-spacing:-.055em}.reno-hero h1 br:last-child{display:none}.reno-hero .campaign-label{font-size:9px}.reno68 .reno-deck{font-size:18px}.reno-hero .reno-button{font-size:12px;padding:17px 20px}.reno-hero-signoff{flex-direction:row;font-size:7px;gap:10px;margin-top:30px}.reno-portrait>a{height:auto}.reno-portrait>a>img{height:auto;max-height:none;aspect-ratio:4/4.7;object-position:center 24%}.reno-portrait figcaption{flex-direction:row;align-items:center;padding:20px}.reno-portrait figcaption>a{font-size:10px}.reno-opening>div,.reno-homes,.reno-confidence,.reno-about,.reno-join>.reno-width{grid-template-columns:1fr;gap:32px}.reno68 h2{font-size:43px}.reno-opening{padding-block:55px}.reno-index{grid-template-columns:1fr 1fr;margin-bottom:55px}.reno-index a{padding:20px 23px 20px 13px;font-size:10px}.reno-index a>span:first-child{font-size:7px}.reno-index a>span:last-child{right:5px;bottom:20px;font-size:17px}.reno-index a:nth-child(3){border-left:0;border-top:1px solid #cfcbd7;padding-left:0}.reno-index a:nth-child(4){border-left:1px solid #cfcbd7;padding-left:13px}.reno-index a:last-child{border-left:0;padding-left:0}.reno-journey-photo{height:330px}.reno68 .reno-journey-photo p{font-size:8px;left:20px;right:20px;bottom:20px}.reno-journey-copy{padding:45px 20px}.reno-journey h2{font-size:41px}.reno-homes,.reno-confidence,.reno-about{padding-block:60px}.reno-homes figure{padding-top:0}.reno-homes figure img{height:470px;min-height:0;max-height:none}.reno-economy{padding-block:55px}.reno-economy-head{text-align:left;margin-bottom:30px}.reno-economy-head h2{font-size:40px}.reno-economy-head>p:last-child{font-size:16px}.reno-cafe{aspect-ratio:4/3;object-position:51% center}.reno-economy-copy>div{columns:1}.reno-economy-copy h3{font-size:34px}.reno-confidence{gap:35px}.reno-confidence figure{order:2}.reno-confidence img{height:420px;min-height:0;flex:none;object-position:45% center}.reno-government{padding-block:60px}.reno-government h2{font-size:clamp(46px,11.7vw,65px)}.reno-government-intro{grid-template-columns:1fr;gap:25px;margin-top:35px}.reno-government-columns article{grid-template-columns:1fr;gap:0}.reno-government-columns h3{margin-bottom:16px;font-size:32px}.reno-monogram{display:none}.reno-about h2{font-size:43px}.reno-join{padding-block:60px}.reno-invitation{border-left:0;border-top:1px solid #bdb2cf;padding:35px 0 0}.reno-invitation .reno-button{font-size:12px;padding:17px 20px}.reno-footer{padding-block:30px;gap:30px 15px}.reno-footer .reno-brand>span{font-size:19px}.reno-footer .reno-brand{gap:10px}.reno-footer .reno-brand img{width:44px!important;height:28px!important}.reno-footer>a:not(.reno-brand){font-size:10px}.reno68 .reno-footer p{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.reno68 *{scroll-behavior:auto!important;transition:none!important}}
+
+/* Shared navigation beneath the Alliance masthead on every regional site. */
+.candidate-localbar{display:flex;align-items:center;justify-content:center;gap:clamp(26px,6vw,88px);min-height:58px;padding:15px 24px;background:#fff;color:#171717;border-bottom:1px solid #d8d8d8;font:700 11px/1.4 var(--campaign-sans);letter-spacing:.06em;text-transform:uppercase;position:relative;z-index:4}.candidate-localbar a{color:inherit;text-decoration:none}.candidate-localbar a:hover{color:#7041a3}.candidate-localbar a:focus-visible{outline:2px solid #7441a7;outline-offset:5px}
+.amb68-root>.p68-header,.cha68-root>.p68-header,.myr68>.p68-header,.jon68>.p68-header,.reno68>.p68-header{position:relative;background:#fff;color:#171717;border-bottom:1px solid #ddd}.amb68-root>.p68-header>.lca68-menu,.cha68-root>.p68-header>.lca68-menu,.myr68>.p68-header>.lca68-menu,.jon68>.p68-header>.lca68-menu,.reno68>.p68-header>.lca68-menu{color:#171717}.amb68-root>.p68-header>.lca68-menu.is-open,.cha68-root>.p68-header>.lca68-menu.is-open,.myr68>.p68-header>.lca68-menu.is-open,.jon68>.p68-header>.lca68-menu.is-open,.reno68>.p68-header>.lca68-menu.is-open{color:#fff}
+
+/* Oplana, Kalahooska and Pleucadeuc candidate stories. */
+.story68{--story-accent:#7441a7;--story-ink:#17231e;background:#fff;color:var(--story-ink);font-family:var(--campaign-sans)}.story68-kalahooska{--story-accent:#39705a;--story-ink:#14251d}.story68-pleucadeuc{--story-accent:#4d4ac5;--story-ink:#18213c}.story68-oplana{--story-accent:#86404f;--story-ink:#2b1c21}.story68 h1,.story68 h2,.story68 h3{font-family:var(--campaign-serif);font-weight:500;letter-spacing:-.045em}.story68 em{font-weight:500;color:var(--story-accent)}.story-width{width:min(1220px,calc(100% - 96px));margin-inline:auto}.story-label{font-size:10px!important;line-height:1.5!important;letter-spacing:.16em;text-transform:uppercase;font-weight:700}.story-hero{height:calc(100svh - 84px);min-height:680px;max-height:960px;position:relative;color:#fff;overflow:hidden}.story-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}.story68-pleucadeuc .story-hero>img{object-position:center 54%}.story-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,17,.88),rgba(10,20,17,.45) 55%,rgba(10,20,17,.06))}.story-hero-copy{position:relative;z-index:1;padding:clamp(90px,10vw,150px) max(48px,calc((100vw - 1220px)/2));max-width:1050px}.story-hero-copy>p{font-size:11px;letter-spacing:.16em;text-transform:uppercase}.story-hero h1{font-size:clamp(76px,9vw,140px);line-height:.88;margin:35px 0}.story-hero h1 em{color:#ecdbfa}.story68-kalahooska .story-hero h1 em{color:#c9f0d9}.story68-pleucadeuc .story-hero h1 em{color:#dedcff}.story68-oplana .story-hero h1 em{color:#ffdbe1}.story-hero-copy>span{display:block;font:500 21px/1.6 var(--campaign-serif);max-width:560px}.story-hero-copy>a{display:inline-flex;margin-top:32px;padding:18px 24px;background:#fff;color:#171717;text-decoration:none;font-size:13px}.story-intro{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(50px,9vw,130px);padding-block:120px}.story-intro figure{margin:0}.story-intro img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block}.story-intro figcaption{display:grid;gap:6px;padding:20px 0;border-bottom:1px solid #ccd0cc}.story-intro figcaption strong{font:500 25px/1.1 var(--campaign-serif)}.story-intro figcaption span{font-size:11px;text-transform:uppercase;letter-spacing:.1em}.story-intro h2,.story-plan-head h2,.story-commit h2,.story-invite h2{font-size:clamp(43px,5.2vw,76px);line-height:1.04;margin:18px 0 30px}.story-intro p:not(.story-label){font-size:17px;line-height:1.85;color:#48524c}.story-signature{display:block;font:italic 40px/1 var(--campaign-serif);color:var(--story-accent);margin-top:32px}.story-feature{height:min(62vw,700px);position:relative;overflow:hidden}.story-feature img{width:100%;height:100%;object-fit:cover;display:block}.story68-pleucadeuc .story-feature img{object-fit:contain;background:#f2f2ec;padding:45px}.story-feature p{position:absolute;left:5%;bottom:5%;max-width:620px;margin:0;color:#fff;font:italic clamp(28px,4vw,58px)/1.05 var(--campaign-serif);text-shadow:0 2px 14px #000}.story68-pleucadeuc .story-feature p{color:#17213e;text-shadow:none;background:#ffffffdd;padding:15px}.story-plan{padding-block:110px}.story-plan-head{max-width:770px}.story-plan-head>p:last-child{font-size:16px;line-height:1.75;color:#59635d;max-width:600px}.story-chapter{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;padding:72px 0;border-top:1px solid #cbd0cb;scroll-margin-top:30px}.story-chapter h3{font-size:clamp(34px,3.5vw,52px);line-height:1.06;margin:15px 0 25px}.story-chapter>div:first-child>p:last-child{font-size:16px;line-height:1.75;color:#59635d}.story-chapter details{border-bottom:1px solid #d9ddd9}.story-chapter summary{display:flex;justify-content:space-between;gap:20px;list-style:none;cursor:pointer;padding:24px 0;font-size:18px;line-height:1.45}.story-chapter summary::-webkit-details-marker{display:none}.story-chapter summary span{font-size:23px;color:var(--story-accent);transition:transform .2s}.story-chapter details[open] summary span{transform:rotate(45deg)}.story-chapter details p{margin:0;padding:0 0 25px;color:#505b54;font-size:15px;line-height:1.8}.story-commit{background:var(--story-ink);color:#fff;padding:100px 0}.story-commit .story-width>div{display:grid;grid-template-columns:1fr 1fr;gap:60px}.story-commit p:not(.story-label){font-size:16px;line-height:1.8;color:#d9e0dc}.story-commit h2{color:#fff;max-width:1000px}.story-invite{padding-block:110px}.story-invite>p:not(.story-label){font-size:17px;line-height:1.8;max-width:650px}.story-invite>div{display:flex;gap:18px;flex-wrap:wrap;margin-top:35px}.story-invite a{padding:17px 22px;background:var(--story-accent);color:#fff;text-decoration:none;font-size:13px}.story-invite a+a{background:transparent;color:var(--story-ink);border:1px solid #aeb5b0}.story68 a:focus-visible,.story68 summary:focus-visible{outline:3px solid var(--story-accent);outline-offset:4px}
+@media(max-width:950px){.story-intro,.story-chapter{grid-template-columns:1fr;gap:35px}.story-intro figure{max-width:430px}.story-commit .story-width>div{gap:30px}}
+@media(max-width:650px){.candidate-localbar{justify-content:flex-start;overflow-x:auto;white-space:nowrap;padding-inline:20px}.story-width{width:calc(100% - 42px)}.story-hero{height:700px;min-height:0}.story-hero-copy{padding:95px 22px}.story-hero h1{font-size:61px;line-height:.94}.story-hero-copy>span{font-size:17px}.story-intro,.story-plan,.story-invite{padding-block:65px}.story-intro h2,.story-plan-head h2,.story-commit h2,.story-invite h2{font-size:43px}.story-feature{height:480px}.story68-pleucadeuc .story-feature img{padding:18px}.story-chapter{padding:48px 0}.story-commit{padding:65px 0}.story-commit .story-width>div{grid-template-columns:1fr}.story-invite>div{flex-direction:column;align-items:stretch}.story-invite a{text-align:center}}
+@media(prefers-reduced-motion:reduce){.story68 *{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:560px){.reno-hero h1{font-size:clamp(54px,16vw,89px)}.reno-hero h1 br:last-child{display:initial}}

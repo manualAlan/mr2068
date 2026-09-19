@@ -2,7 +2,7 @@ import { access, cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr2068/";
-const assetVersion = "20260918d";
+const assetVersion = "20260919a";
 const routes = [
   { source: "2068", output: "" },
   { source: "2068", output: "2068" },
@@ -19,7 +19,17 @@ const routes = [
   { source: "chasmia", output: "chasmia" },
   { source: "montiablo", output: "montiablo" },
   { source: "myrati", output: "myrati" },
+  { source: "reno", output: "reno" },
   { source: "cambria", output: "cambria" },
+  { source: "alistair-foulke-mckeon", output: "alistair-foulke-mckeon" },
+  { source: "david-cutter", output: "david-cutter" },
+  { source: "jb-stoner", output: "jb-stoner" },
+  { source: "tony-blair", output: "tony-blair" },
+  { source: "roberto-libero", output: "roberto-libero" },
+  { source: "jon-fraser", output: "jon-fraser" },
+  { source: "pepe-marti-rutte", output: "pepe-marti-rutte" },
+  { source: "rupert-pagi-shaw", output: "rupert-pagi-shaw" },
+  { source: "mathieu-jeon", output: "mathieu-jeon" },
 ];
 
 await rm("docs", { recursive: true, force: true });

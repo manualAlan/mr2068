@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PlatformHeader } from '../platform/PlatformChrome';
 
 const policies = [
  {id:'trade',number:'01',name:'Work that stays here',title:'An open port. A stronger local economy.',items:[
@@ -25,7 +26,7 @@ const policies = [
 const image = (name:string) => `/images/myrati/${name}.jpg`;
 export default function Myrati(){return <div className="myr68">
  <a className="campaign-skip" href="#main">Skip to content</a>
- <header className="myr-header"><Link className="myr-brand" href="/myrati/"><img src="/images/mr-logo.png" alt="Moderate Reform" width="58" height="36"/><span>JB STONER<small>MYRATI · 2068</small></span></Link><nav aria-label="Myrati campaign"><a href="#plan">Our island plan</a><a href="#jb">Meet JB</a><a href="#join">Take part</a><Link href="/">The Alliance ↗</Link></nav></header>
+ <PlatformHeader/><nav className="candidate-localbar" aria-label="Myrati campaign"><a href="#plan">Our island plan</a><a href="#jb">Meet JB</a><a href="#join">Take part</a></nav>
  <main id="main">
   <section className="myr-hero"><img src={image('coast')} alt="A sunny coastal community beside a sheltered bay" fetchPriority="high"/><div className="myr-width"><p className="campaign-label">JB Stoner · Moderate Reform · Myrati 2068</p><h1>Proud of Myrati.<br/><em>Open to tomorrow.</em></h1><p className="myr-hero-text">Good work. Strong connections.<br/>A future with room for all of us.</p><a className="myr-button" href="#plan">Explore the island plan <span aria-hidden="true">↓</span></a><div className="myr-hero-bottom"><span>OUR ISLAND. OUR FUTURE.</span><span>MYRATI / CAPRICA / 2068</span></div></div></section>
   <section className="myr-welcome myr-width" id="jb"><div className="myr-portrait"><img src="/images/stoner.png" alt="JB Stoner, Moderate Reform candidate for Myrati" loading="lazy"/><div><strong>JB Stoner</strong><span>YOUR VOICE FOR MYRATI</span></div></div><div className="myr-welcome-copy"><p className="campaign-label">An invitation to every Myratian</p><h2>We share more<br/>than an island.<br/><em>We share a future.</em></h2><p className="myr-lead">You do not have to share a political history to want a better life for the place you call home.</p><p>JB’s campaign is about what we can build together: skilled work at Port Aaron, dependable connections, a fair chance to study and communities where our language and institutions flourish.</p><p>He backed the Prosper Myrati program. Now his task is to press for its promises to become useful, lasting results, and to answer for the work still ahead. Every neighborhood deserves a hearing. Every family deserves a place in the island’s next chapter.</p><Link className="myr-link" href="/team/#stoner">Meet the Alliance team <span aria-hidden="true">↗</span></Link></div></section>

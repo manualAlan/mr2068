@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PlatformHeader } from '../platform/PlatformChrome';
 
 const chapters = [
   { id:'connections', number:'01', name:'Your time', title:'One region. One network.', intro:'Your journey should not become more complicated just because it crosses a regional border.', items:[
@@ -27,7 +28,7 @@ const photo = (name:string) => `/images/montiablo/${name}.jpg`;
 export default function Montiablo() {
  return <div className="jon68">
   <a className="campaign-skip" href="#main">Skip to content</a>
-  <header className="jon-header"><Link href="/montiablo/" className="jon-brand"><img src="/images/pp-logo.png" alt="People’s Party" width="44" height="44"/><span>JON FRASER<small>MONTIABLO · 2068</small></span></Link><nav aria-label="Campaign"><a href="#plan">The plan</a><a href="#jon">Meet Jon</a><a href="#join">Get involved</a><Link href="/">The Alliance <span aria-hidden="true">↗</span></Link></nav></header>
+  <PlatformHeader/><nav className="candidate-localbar" aria-label="Montiablo campaign"><a href="#plan">The plan</a><a href="#jon">Meet Jon</a><a href="#join">Get involved</a></nav>
   <main id="main">
    <section className="jon-hero">
     <div className="jon-masthead jon-width"><p className="campaign-label">People’s Party · A voice for Montiablo</p><h1>A capital that<br/>gives you <em>more.</em></h1><div className="jon-hero-note"><p>More time for life.<br/>More room for ambition.<br/>A city that works for you.</p><a className="jon-link" href="#plan">Explore Jon’s plan <span aria-hidden="true">↓</span></a></div></div>

@@ -1,0 +1,7 @@
+rail.jpg
+Source: https://manualalan.github.io/mathieu-jeon-pleucadeuc/alto-hsr.png
+Reused from the previous Mathieu Jeon campaign site supplied for this project.
+
+rail-map.png
+Source: https://manualalan.github.io/mathieu-jeon-pleucadeuc/caprica-rail-map.png
+Reused from the previous Mathieu Jeon campaign site supplied for this project.

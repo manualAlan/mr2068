@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PlatformHeader } from "../platform/PlatformChrome";
 
 const plans = [
   { id: "water", label: "Water & public services", title: "Turn on the tap. Trust what comes out.", text: "Clean water is the first test of a government that works. A family should know its supply is safe, and a farmer should know who will fix a failing pipe.", details: [
@@ -26,7 +27,7 @@ const plans = [
 export default function AmbrosiaCampaign() {
   return <div className="amb68-root">
     <a className="campaign-skip" href="#ambrosia-main">Skip to content</a>
-    <header className="amb68-header"><Link className="amb68-brand" href="/ambrosia/" aria-label="Alistair for Ambrosia home"><img src="/images/pp-logo.png" alt="People’s Party" width="68" height="42"/><span>ALISTAIR<br/><small>AMBROSIA 2068</small></span></Link><nav aria-label="Ambrosia campaign"><a href="#plan">Our plan</a><a href="#about">Meet Alistair</a><a href="#take-part">Get involved</a><Link href="/">The Alliance <span aria-hidden="true">↗</span></Link></nav></header>
+    <PlatformHeader/><nav className="candidate-localbar" aria-label="Ambrosia campaign"><a href="#plan">Our plan</a><a href="#about">Meet Alistair</a><a href="#take-part">Get involved</a></nav>
     <main id="ambrosia-main">
       <section className="amb68-hero"><div className="amb68-hero-copy"><p className="campaign-label">People’s Party · Ambrosia · 2068</p><h1>A future<br/>you can<br/><em>build here.</em></h1><p>Alistair Foulke-McKeon for Ambrosia.<br/>Strong farms. Dependable services. Room to make a life.</p><a className="campaign-text-link" href="#plan">Our plan for Ambrosia <span aria-hidden="true">↓</span></a></div><figure><img src="/images/alistair-hero-hd.jpg" alt="Alistair Foulke-McKeon" fetchPriority="high"/><figcaption>ALISTAIR FOULKE-MCKEON / PEOPLE’S PARTY</figcaption></figure></section>
       <section className="amb68-opening campaign-width"><p className="campaign-label">The choice in 2068</p><div><h2>You should not have to leave the place you love <em>to get ahead.</em></h2><div className="amb68-prose"><p>Ambrosia feeds Caprica. Its farms, small businesses and close communities are a national strength. Yet a broken water main, an unreliable road or a lack of nearby training can still put an ordinary ambition out of reach.</p><p>Caprica’s gross public debt now stands at 68% of GDP. The People’s Party believes stronger national finances must support opportunity people can see in their own towns. That is the case Alistair will make for Ambrosia in the next Parliament.</p><p>Clean water at home. More value from what we grow. A decent connection to work and care. A future here, for every generation.</p></div></div></section>

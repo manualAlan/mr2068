@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PlatformHeader } from "../platform/PlatformChrome";
 
 const priorities = [
   { id: "industry", label: "Industry & investment", title: "Make more of what the world needs.", text: "Chasmia has the resources, factories and engineering culture to compete at the highest level. The next step is to turn more local inputs into high value products here at home.", details: [
@@ -32,10 +33,7 @@ export default function ChasmiaCampaign() {
   ];
   return <div className="amb68-root cha68-root cutter68">
     <a className="campaign-skip" href="#chasmia-main">Skip to content</a>
-    <header className="amb68-header">
-      <Link className="amb68-brand" href="/chasmia/" aria-label="David Cutter for Chasmia home"><img src="/images/mr-logo.png" alt="Moderate Reform" width="68" height="42"/><span>DAVID CUTTER<br/><small>CHASMIA 2068</small></span></Link>
-      <nav aria-label="Chasmia campaign"><a href="#plan">Our plan</a><a href="#about">Meet David</a><a href="#take-part">Get involved</a><Link href="/">The Alliance <span aria-hidden="true">↗</span></Link></nav>
-    </header>
+    <PlatformHeader/><nav className="candidate-localbar" aria-label="Chasmia campaign"><a href="#plan">Our plan</a><a href="#about">Meet David</a><a href="#take-part">Get involved</a></nav>
     <main id="chasmia-main">
       <section className="cutter-hero">
         <div className="cutter-hero-copy">

@@ -14,4 +14,4 @@ export default function Team(){return <div className="team68-root"><PlatformHead
    return <Link className="team68-card" href={href} id={candidate.slug} key={candidate.name} target={external?"_blank":undefined} rel={external?"noreferrer":undefined} aria-label={`Visit ${candidate.name}'s campaign website`}><figure><img src={candidate.image} alt={candidate.name}/></figure><h2>{candidate.name}</h2></Link>;
   })}
  </section>
- </main><PlatformFooter/></div>}
+ </main><PlatformFooter copyright="© 2068 Alliance"/></div>}
