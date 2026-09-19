@@ -18,6 +18,7 @@ const routes = [
   { source: "ambrosia", output: "ambrosia" },
   { source: "chasmia", output: "chasmia" },
   { source: "montiablo", output: "montiablo" },
+  { source: "myrati", output: "myrati" },
 ];
 
 await rm("docs", { recursive: true, force: true });
