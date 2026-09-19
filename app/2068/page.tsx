@@ -3,6 +3,7 @@ import CampaignMenu from "./CampaignMenu";
 import Lca68HeroMedia from "./Lca68HeroMedia";
 import PlatformLauncher from "./PlatformLauncher";
 import { PlatformFooter } from "../platform/PlatformChrome";
+import PriorityExplorer from "./PriorityExplorer";
 
 export default function Campaign2068Home() {
   return (
@@ -34,10 +35,13 @@ export default function Campaign2068Home() {
             <div className="build68-intro-copy">
               <p>You have an idea of the life you want. Government should respect that. A place of your own, a business worth starting, a future you can plan without asking permission at every turn.</p>
               <p>We believe in free enterprise because nobody has a monopoly on a good idea. In sound finances because promises should last. And in liberty because your life belongs to you.</p>
+              <p>We conserve what makes a free country work: independent institutions, secure property and the trust to plan ahead. We build what lets it prosper: homes, productive businesses, modern infrastructure and excellent education. That is the Alliance’s purpose in government.</p>
               <Link className="campaign-text-link" href="/platform/mission-statement">Read our mission statement <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
         </section>
+
+        <PriorityExplorer />
 
         <section className="build68-feature">
           <figure><img src="/images/belief-discovery.jpg" alt="A researcher working carefully with samples in a laboratory" loading="lazy" width="3000" height="2000" /></figure>

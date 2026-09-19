@@ -8,6 +8,7 @@ export const metadata: Metadata = { title: "Come with a question | Alliance even
 export default function Events() {
   return (
     <div className="events68-root">
+      <a className="campaign-skip" href="#upcoming">Skip to events</a>
       <PlatformHeader />
       <main>
         <section className="events68-hero">
@@ -28,7 +29,7 @@ export default function Events() {
             {events.map((event, index) => (
               <article className={`events68-card events68-card-${index + 1}`} id={event.slug} key={event.slug}>
                 <figure>
-                  <img src={event.image} alt={event.place} style={{ objectPosition: event.imagePosition }} />
+                  <img src={event.image} alt={event.place} style={{ objectPosition: event.imagePosition }} loading="lazy" />
                 </figure>
                 <div className="events68-card-copy">
                   <div className="events68-meta">

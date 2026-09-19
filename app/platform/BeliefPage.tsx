@@ -33,10 +33,26 @@ export default function BeliefPage({ slug }: { slug: string }) {
             {story.principles.map((principle) => <div className="belief-principle" key={principle.title}><h3>{principle.title}</h3><p>{principle.text}</p></div>)}
           </section>
           <section className="belief-details campaign-width">
-            <div className="belief-details-intro"><p className="campaign-label">BELIEF INTO ACTION</p><h2>{story.detailTitle}</h2><p>Convictions matter when they change what happens. Here is where we start.</p></div>
+            <div className="belief-details-intro"><p className="campaign-label">OUR 2068 COMMITMENTS</p><h2>{story.detailTitle}</h2><p>A practical plan, with standards to meet and choices made in public.</p></div>
             <div className="belief-accordions">{story.details.map((detail, index) => <details key={detail.title} open={index === 0}><summary>{detail.title}<span aria-hidden="true">+</span></summary><p>{detail.text}</p></details>)}</div>
           </section>
-          <section className="belief-closing campaign-width"><h2>{story.closing}</h2><a className="campaign-text-link" href="/manifesto/caprica-freedom-to-build-2068.pdf" target="_blank" rel="noreferrer">Read the full manifesto <span aria-hidden="true">↗</span></a></section>
+          <section className="belief-delivery campaign-width" aria-labelledby="belief-delivery-title">
+            <div className="belief-details-intro"><p className="campaign-label">THE DELIVERY TEST</p><h2 id="belief-delivery-title">Judge the promise by the result.</h2><p>What happens first, what is measured, and how it is paid for.</p></div>
+            <dl>
+              <div><dt>First step</dt><dd>{story.delivery.firstStep}</dd></div>
+              <div><dt>Public test</dt><dd>{story.delivery.publicTest}</dd></div>
+              <div><dt>Funding rule</dt><dd>{story.delivery.fundingRule}</dd></div>
+            </dl>
+          </section>
+          <section className="belief-related campaign-width" aria-labelledby="belief-related-title">
+            <p className="campaign-label">CONNECTED PRIORITIES</p>
+            <h2 id="belief-related-title">One plan, working together.</h2>
+            <div className="belief-related-links">{story.related.map((relatedSlug) => {
+              const relatedArea = getFocusArea(relatedSlug)!;
+              return <a className="campaign-text-link" key={relatedSlug} href={`/platform/${relatedSlug}`}>{relatedArea.title}<span aria-hidden="true">↗</span></a>;
+            })}</div>
+          </section>
+          <section className="belief-closing campaign-width"><h2>{story.closing}</h2><a className="campaign-text-link" href="/manifesto/caprica-freedom-to-build-2068.pdf" target="_blank" rel="noreferrer">Read the full manifesto (PDF) <span aria-hidden="true">↗</span></a></section>
         </article>
       </main>
       <PlatformFooter />

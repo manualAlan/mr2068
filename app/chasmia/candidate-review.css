@@ -1,0 +1,20 @@
+.cutter68 .cutter-candidate-note{font-size:10px;letter-spacing:.06em;color:#e0dcff;margin:22px 0 0;max-width:350px}
+.cutter68 .cutter-region-mark{justify-content:space-between;gap:20px}
+.cutter68 .cutter-region-mark img{width:54px;height:36px;max-width:54px;object-fit:contain;box-shadow:none;border:0}
+.cutter68 .cutter-build-sequence{background-color:#182256;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:44px 44px}
+.cutter68 .cutter-sequence-intro{max-width:520px;margin-top:25px;color:#d9def5}
+.cutter68 .cutter-build-sequence .cutter-payoff-grid article{position:relative;border-top:2px solid #9eb6ff;padding-top:26px}
+.cutter68 .cutter-build-sequence .cutter-payoff-grid article:before{content:"";position:absolute;width:9px;height:9px;background:#9eb6ff;top:-5px;left:0}
+.cutter68 .amb68-policy:target{border-top:2px solid #5149c6;padding-top:53px}
+.cutter68 .cutter-delivery{padding-block:55px 75px;border-top:1px solid #cfc8dd}
+.cutter68 .cutter-delivery ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;counter-reset:delivery;gap:0;padding:0;margin:0;border:1px solid #d8d2e4;background:#f8f6fb}
+.cutter68 .cutter-delivery li{padding:32px;counter-increment:delivery}
+.cutter68 .cutter-delivery li+li{border-left:1px solid #d8d2e4}
+.cutter68 .cutter-delivery li:before{content:"CHECK 0" counter(delivery);display:block;color:#51449c;font-size:9px;letter-spacing:.14em;font-weight:700;margin-bottom:25px}
+.cutter68 .cutter-delivery h3{font-size:30px;margin-bottom:18px}
+.cutter68 .cutter-delivery li p{font-size:13px;margin:0;color:#5c5668}
+.cutter68 .cutter-delivery-rule{font-size:12px;max-width:970px;padding-top:24px;color:#61586c}
+.cutter68 .cutter-national-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin:25px 0 32px}
+.cutter68 .cutter-national-links a{border-bottom:1px solid #9684b7;font-size:12px;padding-block:9px;min-height:44px}
+@media(max-width:760px){.cutter68 .cutter-delivery{padding-block:40px 55px}.cutter68 .cutter-delivery ol{grid-template-columns:1fr}.cutter68 .cutter-delivery li{padding:25px}.cutter68 .cutter-delivery li+li{border-left:0;border-top:1px solid #d8d2e4}.cutter68 .cutter-delivery li:before{margin-bottom:15px}.cutter68 .cutter-delivery h3{font-size:29px}.cutter68 .cutter-hero .cutter-hero-dek{font-size:15px}.cutter68 .cutter-build-sequence .cutter-payoff-grid{gap:40px}}
+@media(max-width:520px){.cutter68 .candidate-localbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:10px 14px}.cutter68 .candidate-localbar a{font-size:9px;min-width:0;text-align:center;justify-content:center;padding:11px 3px}}

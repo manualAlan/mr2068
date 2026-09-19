@@ -1,0 +1,11 @@
+.candidate-actions{display:block!important;width:100%;margin:26px 0 0;padding:0!important;border:0!important;font-family:var(--campaign-sans);text-align:left}
+.candidate-actions .candidate-actions-buttons{display:flex!important;flex-wrap:wrap;gap:12px!important;margin:0!important;padding:0!important;border:0!important}
+.candidate-actions .candidate-actions-buttons button{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;max-width:100%;min-height:46px;padding:13px 17px;border:1px solid currentColor;border-radius:0;background:transparent;color:inherit;cursor:pointer;font:600 11px/1.5 var(--campaign-sans);letter-spacing:0;text-transform:none;transition:background .2s}
+.candidate-actions .candidate-actions-buttons button:hover{background:#7954aa15}
+.candidate-actions .candidate-actions-buttons button:focus-visible,.candidate-actions input:focus-visible{outline:3px solid #9d6bd0;outline-offset:4px}
+.candidate-actions .candidate-actions-buttons button span{font:400 18px/1 var(--campaign-sans);flex-shrink:0}
+.candidate-actions p.candidate-actions-status{font:400 12px/1.6 var(--campaign-sans)!important;margin:12px 0 0!important;min-height:20px;color:inherit!important;max-width:none!important}
+.candidate-actions .candidate-actions-fallback{display:block;font-size:12px;line-height:1.6;margin-top:12px}
+.candidate-actions input{display:block;box-sizing:border-box;width:100%;margin-top:8px;padding:12px;border:1px solid currentColor;border-radius:0;background:#fff;color:#252030;font:400 12px/1.5 var(--campaign-sans)}
+@media(max-width:420px){.candidate-actions .candidate-actions-buttons{flex-direction:column}.candidate-actions .candidate-actions-buttons button{width:100%}}
+@media(prefers-reduced-motion:reduce){.candidate-actions *{transition:none!important}}

@@ -1,0 +1,79 @@
+.cam-review { --cam-purple: #68508e; }
+.cam-review .cam-hero { min-height: 680px; height: min(790px, calc(100svh - 84px)); }
+.cam-review .cam-hero-copy { padding-top: clamp(75px, 8vw, 120px); }
+.cam-review .cam-hero h1 { font-size: clamp(78px, 8.4vw, 124px); }
+.cam-review .cam-hero::after { background: linear-gradient(90deg, #132e28db, #17322975 50%, #102c2420); }
+.cam-review-nameplate { position: absolute; bottom: 40px; right: max(50px, calc((100vw - 1240px) / 2)); width: 255px; background: #f2ebdc; color: #1d3028; padding: 26px 30px; border-top: 4px solid #68508e; }
+.cam-review-nameplate > span { font-size: 8px; letter-spacing: .15em; font-weight: 700; }
+.cam-review-nameplate strong { display: block; font: 400 45px/.98 var(--campaign-serif); letter-spacing: -.04em; margin: 18px 0 20px; }
+.cam-review-nameplate a { display: flex; justify-content: space-between; gap: 18px; font-size: 11px; padding-top: 15px; border-top: 1px solid #bcbcae; }
+.cam-review .cam-intro { padding-block: 95px; grid-template-columns: .8fr 1.3fr; }
+.cam-review .cam-intro figure { position: sticky; top: 35px; background: #eeeae3; padding: 20px 20px 0; }
+.cam-review .cam-intro figcaption { border: 0; }
+.cam-review .cam-intro h2 { font-size: clamp(42px, 4.7vw, 68px); }
+.cam-review-place { background: #f0eee7; padding-block: 80px; }
+.cam-review-place header { display: flex; align-items: end; justify-content: space-between; gap: 40px; padding-bottom: 45px; }
+.cam-review-place header h2 { margin: 0; }
+.cam-review-place header .cam-label { max-width: 220px; margin: 0; padding-bottom: 8px; color: #68706a; }
+.cam-review-place-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 65px; align-items: stretch; }
+.cam-review-place figure { margin: 0; min-height: 660px; position: relative; }
+.cam-review-place figure img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 55% center; }
+.cam-review-place figcaption { position: absolute; inset: auto 0 0; color: #fff; padding: 55px 24px 25px; background: linear-gradient(transparent, #15271dd6); font-size: 9px; letter-spacing: .13em; line-height: 1.7; }
+.cam-review-place-rows article { padding: 26px 0 29px; border-top: 1px solid #b7beaf; }
+.cam-review-place-rows article:first-child { padding-top: 0; border-top: 0; }
+.cam-review-place-rows article:last-child { padding-bottom: 0; }
+.cam-review-place-rows article > span { color: #68508e; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.cam-review-place-rows h3 { font-size: 35px; line-height: 1.04; margin: 16px 0; }
+.cam-review-place-rows p { font-size: 15px; line-height: 1.75; margin: 0 0 15px; color: #47574d; }
+.cam-review-place-rows a { display: inline-flex; gap: 24px; color: #68508e; font-size: 12px; font-weight: 700; padding-block: 6px; }
+.cam-review .cam-plan { padding-bottom: 75px; }
+.cam-review .cam-plan-nav { grid-template-columns: repeat(5, 1fr); }
+.cam-review .cam-plan-nav a { font-size: 12px; padding: 22px 14px; }
+.cam-review .cam-policy { column-gap: 75px; padding-block: 60px; }
+.cam-review .cam-policy#homes { background: #f6f3f9; margin-inline: -30px; padding-inline: 30px; border-block: 1px solid #dcd4e6; }
+.cam-review .cam-account { padding-block: 80px; }
+.cam-review-alliance { display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px; padding-block: 85px; border-bottom: 1px solid #c8ccc8; }
+.cam-review-alliance h2 { font-size: clamp(42px, 4.5vw, 66px); }
+.cam-review-alliance > div > p:not(.cam-label) { margin-top: 0; font-size: 16px; }
+.cam-review-alliance nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 25px; }
+.cam-review-alliance nav a { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #c8ccc8; padding: 17px 0; font-size: 12px; line-height: 1.6; }
+.cam-review .cam-invite { padding-block: 85px; }
+@media (max-width: 1050px) {
+  .cam-review-nameplate { width: 210px; padding: 22px; right: 35px; }
+  .cam-review-nameplate strong { font-size: 38px; }
+  .cam-review-place-grid { gap: 35px; }
+  .cam-review-alliance { gap: 45px; }
+}
+@media (max-width: 800px) {
+  .cam-review .cam-hero { height: auto; min-height: 760px; padding-bottom: 190px; }
+  .cam-review .cam-hero-copy { padding: 65px 22px 35px; }
+  .cam-review .cam-hero h1 { font-size: clamp(69px, 12vw, 98px); }
+  .cam-review-nameplate { left: 22px; right: 22px; bottom: 25px; width: auto; padding: 20px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 25px; align-items: center; }
+  .cam-review-nameplate > span { grid-column: 1 / -1; }
+  .cam-review-nameplate strong { font-size: 34px; margin: 5px 0 0; }
+  .cam-review-nameplate a { padding-block: 14px; align-self: end; }
+  .cam-review .cam-intro { grid-template-columns: 1fr; padding-block: 60px; }
+  .cam-review .cam-intro figure { position: static; width: min(340px, 100%); }
+  .cam-review .cam-intro h2 { font-size: 45px; }
+  .cam-review-place { padding-block: 55px; }
+  .cam-review-place header { display: block; padding-bottom: 30px; }
+  .cam-review-place header .cam-label { max-width: none; margin-bottom: 20px; }
+  .cam-review-place-grid { grid-template-columns: 1fr; }
+  .cam-review-place figure { min-height: 0; height: 62vw; max-height: 420px; }
+  .cam-review-place-rows h3 { font-size: 34px; max-width: 450px; }
+  .cam-review .cam-plan-nav { grid-template-columns: 1fr 1fr; }
+  .cam-review .cam-plan-nav a:nth-child(odd) { border-left: 0; }
+  .cam-review .cam-plan-nav a:last-child { grid-column: 1 / -1; }
+  .cam-review .cam-policy { padding-block: 42px; }
+  .cam-review .cam-policy#homes { margin-inline: -12px; padding-inline: 12px; }
+  .cam-review-alliance { grid-template-columns: 1fr; gap: 15px; padding-block: 55px; }
+  .cam-review-alliance h2 { margin-bottom: 10px; }
+  .cam-review .cam-invite { padding-block: 60px; }
+}
+@media (max-width: 400px) {
+  .cam-review .cam-hero { min-height: 780px; }
+  .cam-review .cam-hero h1 { font-size: 65px; }
+  .cam-review-nameplate { column-gap: 15px; }
+  .cam-review-nameplate strong { font-size: 31px; }
+  .cam-review-alliance nav { grid-template-columns: 1fr; }
+}

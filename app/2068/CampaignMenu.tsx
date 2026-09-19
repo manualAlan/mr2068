@@ -2,23 +2,18 @@
 
 import Link from "next/link";
 import { FocusEvent, KeyboardEvent as ReactKeyboardEvent, useEffect, useRef, useState } from "react";
+import { focusAreas } from "../platform/platform-data";
 
-const platformLinks = [
-  { label: "Mission Statement", href: "/platform/mission-statement" },
-  { label: "Economics & Enterprise", href: "/platform/economy" },
-  { label: "Housing", href: "/platform/housing" },
-  { label: "Healthcare", href: "/platform/healthcare" },
-  { label: "Civil Liberties", href: "/platform/civil-liberties" },
-  { label: "Foreign Policy", href: "/platform/foreign-policy" },
-  { label: "Defense", href: "/platform/defense" },
-];
+const platformLinks = focusAreas.map((area) => ({
+  label: area.slug === "mission-statement" ? "Mission Statement" : area.title,
+  href: `/platform/${area.slug}`,
+}));
 
 const menuItems = [
   { label: "Candidates", href: "/team" },
   { label: "Events", href: "/events" },
-  { label: "Merchandise", href: "https://www.etsy.com/market/campaign_merchandise", external: true },
   { label: "Manifesto", href: "/manifesto/caprica-freedom-to-build-2068.pdf", external: true },
-  { label: "Contact" },
+  { label: "Get involved", href: "/events#register" },
 ];
 
 export default function CampaignMenu() {

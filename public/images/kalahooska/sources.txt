@@ -1,3 +1,11 @@
 forest.jpg
 Source: https://manualalan.github.io/rupert-pagi-kalahooska/kalahooska-forest.jpg
 Reused from the previous Rupert Pagi Shaw campaign site supplied for this project.
+
+forest-connections.jpg
+Photographer: Will Suddreth
+Source: https://unsplash.com/photos/aerial-photography-of-road-between-forest-hneAIGb01xQ
+Image: https://images.unsplash.com/photo-1503449957946-d06ac01cf711
+License: Unsplash License, https://unsplash.com/license
+Illustrative Blue Ridge Mountains landscape, not a documentary photograph of fictional Kalahooska.
+Downloaded at 2200px width for the local development site, September 19, 2026.

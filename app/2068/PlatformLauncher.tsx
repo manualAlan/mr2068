@@ -2,14 +2,12 @@
 
 export default function PlatformLauncher() {
   return (
-    <button
+    <a
       className="lca68-platform-link"
-      type="button"
-      onClick={() => window.dispatchEvent(new CustomEvent("lca:open-platforms"))}
-      aria-label="Open the platform focus areas"
+      href="#priorities"
     >
-      <span>Check out our Platforms</span>
+      <span>Explore our five priorities</span>
       <i aria-hidden="true" />
-    </button>
+    </a>
   );
 }

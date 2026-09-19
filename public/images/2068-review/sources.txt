@@ -1,0 +1,23 @@
+National platform photographs
+Retrieved 2026-09-19. Real photographic images, not AI-generated.
+Both source pages identify the free Unsplash License. Attribution is appreciated
+but not required under that license: https://unsplash.com/license
+These are illustrative photographs, not claims of a Caprican location or an
+endorsement by the photographer or any person depicted.
+
+education.jpg
+Photographer: Quilia (@heyquilia)
+Title: Students in classroom with teacher presenting
+Published: 2017-10-27. Source camera: FUJIFILM X100T.
+Source: https://unsplash.com/photos/students-in-classroom-with-teacher-presenting-zFSo6bnZJTw
+Downloaded image: https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&fm=jpg&q=88&w=2400
+Local dimensions: 2400 x 1494. No retouching; displayed with CSS object-fit cropping.
+
+infrastructure.jpg
+Photographer: Gary Walker-Jones
+Title: A large body of water surrounded by mountains
+Location documented by photographer: Geres, Portugal.
+Published: 2024-02-28. Source camera: Hasselblad L1D-20c.
+Source: https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-M_W_wwXupTM
+Downloaded image: https://images.unsplash.com/photo-1709131121922-028189a2c984?auto=format&fit=crop&fm=jpg&q=85&w=2400
+Local dimensions: 2400 x 1599. No retouching; displayed with CSS object-fit cropping.
