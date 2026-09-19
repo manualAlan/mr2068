@@ -6,7 +6,7 @@ import { PlatformFooter, PlatformHeader } from "../platform/PlatformChrome";
 export const metadata: Metadata = { title: "Our candidates | Alliance 2068", description: "Meet the people standing for the Alliance across Caprica." };
 
 export default function Team(){return <div className="team68-root"><PlatformHeader/><main>
- <header className="team68-heading"><h1>Candidates</h1></header>
+ <header className="team68-heading"><h1>Candidates</h1><p>Select a portrait to learn more about each candidate.</p></header>
  <section className="team68-grid" aria-label="Alliance candidates">
   {candidates.map((candidate)=>{
    const href=candidate.campaignSite ?? "/2068";
