@@ -461,3 +461,8 @@ body:has(.reno68):after{display:none}
 @media(max-width:650px){.candidate-localbar{justify-content:flex-start;overflow-x:auto;white-space:nowrap;padding-inline:20px}.story-width{width:calc(100% - 42px)}.story-hero{height:700px;min-height:0}.story-hero-copy{padding:95px 22px}.story-hero h1{font-size:61px;line-height:.94}.story-hero-copy>span{font-size:17px}.story-intro,.story-plan,.story-invite{padding-block:65px}.story-intro h2,.story-plan-head h2,.story-commit h2,.story-invite h2{font-size:43px}.story-feature{height:480px}.story68-pleucadeuc .story-feature img{padding:18px}.story-chapter{padding:48px 0}.story-commit{padding:65px 0}.story-commit .story-width>div{grid-template-columns:1fr}.story-invite>div{flex-direction:column;align-items:stretch}.story-invite a{text-align:center}}
 @media(prefers-reduced-motion:reduce){.story68 *{scroll-behavior:auto!important;transition:none!important}}
 @media(max-width:560px){.reno-hero h1{font-size:clamp(54px,16vw,89px)}.reno-hero h1 br:last-child{display:initial}}
+
+/* Keep shared drawer typography identical on the main and candidate sites. */
+body .lca68-drawer-heading p{font:500 38px/1.2 var(--campaign-serif);letter-spacing:-.035em;margin:14px 0 0}
+body .lca68-drawer-note{margin:auto 0 0;padding-top:32px;font:400 10px/1.5 var(--campaign-sans);letter-spacing:.11em;color:rgba(255,255,255,.42)}
+@media(max-width:700px){body .lca68-drawer-heading p{font-size:34px}}
