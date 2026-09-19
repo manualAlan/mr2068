@@ -5,7 +5,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Lca68HeroMedia() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
+  // Start with music enabled. Browsers may still block audible autoplay; in
+  // that case the catch below falls back to silent video and leaves the
+  // visible music control available.
+  const [muted, setMuted] = useState(false);
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
@@ -21,6 +24,19 @@ export default function Lca68HeroMedia() {
     respectReducedMotion();
     preference.addEventListener("change", respectReducedMotion);
     return () => preference.removeEventListener("change", respectReducedMotion);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.volume = 0.65;
+    video.muted = false;
+    video.play().catch(() => {
+      setMuted(true);
+      video.muted = true;
+      // Keep the video moving silently when audible autoplay is disallowed.
+      video.play().catch(() => setPaused(true));
+    });
   }, []);
 
   const toggleMotion = async () => {
