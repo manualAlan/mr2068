@@ -14,14 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const platformTrigger = document.querySelector('.lca68-drawer-platform-trigger');
   const platformSubmenu = document.querySelector('.lca68-drawer-submenu');
   const platformLinks = Array.from(platformSubmenu?.querySelectorAll('a') ?? []);
+  const contactGroup = document.querySelector('.lca68-contact-group');
+  const contactTrigger = document.querySelector('.lca68-drawer-contact-trigger');
+  const contactPanel = document.querySelector('.lca68-contact-panel');
+  const contactForm = contactPanel?.querySelector('form');
+  const contactInput = contactPanel?.querySelector('input');
+  const contactStatus = contactPanel?.querySelector('[role="status"]');
   let returnFocus = null;
   let previousOverflow = '';
   const setPlatformMenu = open => {
+    if (open) setContactMenu(false);
     platformGroup?.classList.toggle('is-expanded', open);
     platformTrigger?.setAttribute('aria-expanded', String(open));
     platformSubmenu?.setAttribute('aria-hidden', String(!open));
     platformSubmenu?.toggleAttribute('inert', !open);
     platformLinks.forEach(link => link.tabIndex = open ? 0 : -1);
+  };
+  const setContactMenu = open => {
+    contactGroup?.classList.toggle('is-expanded', open);
+    contactTrigger?.setAttribute('aria-expanded', String(open));
+    contactPanel?.setAttribute('aria-hidden', String(!open));
+    contactPanel?.toggleAttribute('inert', !open);
+    if (contactInput) contactInput.tabIndex = open ? 0 : -1;
+    if (open) setPlatformMenu(false);
   };
   const setCampaignMenu = (open, showPlatforms = false) => {
     const wasOpen = campaignDrawer?.classList.contains('is-open');
@@ -39,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     campaignDrawer?.setAttribute('aria-hidden', String(!open));
     campaignDrawer?.toggleAttribute('inert', !open);
     if (!open || showPlatforms) setPlatformMenu(open && showPlatforms);
+    if (!open) setContactMenu(false);
     if (open && !wasOpen) requestAnimationFrame(() => platformTrigger?.focus({ preventScroll: true }));
     if (!open && wasOpen) {
       document.body.style.overflow = previousOverflow;
@@ -48,6 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
   campaignMenu?.addEventListener('click', () => setCampaignMenu(!campaignMenu.classList.contains('is-open')));
   campaignScrim?.addEventListener('click', () => setCampaignMenu(false));
   platformTrigger?.addEventListener('click', () => setPlatformMenu(!platformGroup?.classList.contains('is-expanded')));
+  contactTrigger?.addEventListener('click', () => setContactMenu(!contactGroup?.classList.contains('is-expanded')));
+  contactForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    if (contactStatus) contactStatus.textContent = 'Thanks. We’ll be in touch.';
+  });
   document.querySelectorAll('.lca68-platform-link').forEach(launcher => launcher.addEventListener('click', () => setCampaignMenu(true, true)));
   platformGroup?.addEventListener('mouseenter', () => setPlatformMenu(true));
   platformGroup?.addEventListener('mouseleave', () => {
@@ -76,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setCampaignMenu(false);
     }
     if (event.key !== 'Tab') return;
-    const drawerControls = Array.from(campaignDrawer.querySelectorAll('a[href], button:not([disabled])'))
+    const drawerControls = Array.from(campaignDrawer.querySelectorAll('a[href], button:not([disabled]), input:not([disabled])'))
       .filter(element => element.tabIndex >= 0 && !element.closest('[inert]'));
     const controls = [campaignMenu, ...drawerControls].filter(Boolean);
     const first = controls[0];
@@ -91,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   setPlatformMenu(false);
+  setContactMenu(false);
 
   const campaignVideo = document.querySelector('.lca68-video');
   const musicButton = document.querySelector('.lca68-music');
