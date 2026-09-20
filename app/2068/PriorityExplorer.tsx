@@ -18,15 +18,15 @@ export default function PriorityExplorer(){
   const keys=["ArrowRight","ArrowDown","ArrowLeft","ArrowUp","Home","End"];
   if(!keys.includes(event.key))return;
   event.preventDefault();
-  const next=event.key==="Home"?0:event.key==="End"?4:(index+(event.key==="ArrowLeft"||event.key==="ArrowUp"?-1:1)+5)%5;
+  const next=event.key==="Home"?0:event.key==="End"?priorities.length-1:(index+(event.key==="ArrowLeft"||event.key==="ArrowUp"?-1:1)+priorities.length)%priorities.length;
   setSelected(next);tabs.current[next]?.focus();
  };
- const item=priorities[selected];
  return <section className="build68-priorities" id="priorities" aria-labelledby="priorities-title">
   <div className="campaign-width">
    <div className="priority-heading"><div><p className="campaign-label">THE ALLIANCE PLAN · 2068 TO 2072</p><h2 id="priorities-title">Five priorities.<br/><em>One purpose.</em></h2></div><p>The freedom to build a good life. <br/>Choose a priority to see the commitment <br/>and the policy that makes it possible.</p></div>
-   <div className="priority-explorer"><div className="priority-tabs" role="tablist" aria-label="Our five priorities" aria-orientation="vertical">{priorities.map((p,index)=><button key={p.href} id={`priority-tab-${index}`} ref={node=>{tabs.current[index]=node}} role="tab" type="button" aria-selected={selected===index} aria-controls="priority-panel" tabIndex={selected===index?0:-1} onClick={()=>setSelected(index)} onKeyDown={event=>onKey(event,index)}><span>0{index+1}</span><strong>{p.label}</strong><span aria-hidden="true">→</span></button>)}</div>
-    <div className="priority-panel" id="priority-panel" role="tabpanel" tabIndex={0} aria-labelledby={`priority-tab-${selected}`}><div className="priority-topic"><span>{item.topic}</span><span>0{selected+1} / 05</span></div><h3>{item.title}</h3><p>{item.text}</p><div className="priority-measure"><strong>{item.measure}</strong><p>{item.basis}</p></div><Link className="campaign-text-link" href={`/platform/${item.href}`}>{item.link}<span aria-hidden="true">↗</span></Link><Link className="priority-connection" href={`/platform/${item.related}`}>{item.connection}<span aria-hidden="true">→</span></Link></div>
+   <div className="priority-explorer"><div className="priority-tabs" role="tablist" aria-label="Our five priorities" aria-orientation="vertical">{priorities.map((p,index)=><button key={p.href} id={`priority-tab-${index}`} ref={node=>{tabs.current[index]=node}} role="tab" type="button" aria-selected={selected===index} aria-controls={`priority-panel-${index}`} tabIndex={selected===index?0:-1} onClick={()=>setSelected(index)} onKeyDown={event=>onKey(event,index)}><span>0{index+1}</span><strong>{p.label}</strong><span aria-hidden="true">→</span></button>)}</div>
+    {/* Keep every panel in the HTML so the GitHub Pages client can switch them without React. */}
+    {priorities.map((item,index)=><div key={item.href} className="priority-panel" id={`priority-panel-${index}`} role="tabpanel" hidden={selected!==index} tabIndex={0} aria-labelledby={`priority-tab-${index}`}><div className="priority-topic"><span>{item.topic}</span><span>0{index+1} / 05</span></div><h3>{item.title}</h3><p>{item.text}</p><div className="priority-measure"><strong>{item.measure}</strong><p>{item.basis}</p></div><Link className="campaign-text-link" href={`/platform/${item.href}`}>{item.link}<span aria-hidden="true">↗</span></Link><Link className="priority-connection" href={`/platform/${item.related}`}>{item.connection}<span aria-hidden="true">→</span></Link></div>)}
    </div>
   </div>
  </section>;

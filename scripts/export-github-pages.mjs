@@ -2,7 +2,7 @@ import { access, cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr2068/";
-const assetVersion = "20260920b";
+const assetVersion = "20260920c";
 const routes = [
   { source: "2068", output: "" },
   { source: "2068", output: "2068" },
@@ -92,6 +92,33 @@ await writeFile("docs/assets/site.css", css);
 
 const client = `
 document.addEventListener('DOMContentLoaded', () => {
+  // All priority content is server-rendered; only the active panel is exposed.
+  document.querySelectorAll('.priority-explorer').forEach(explorer => {
+    const tabs = Array.from(explorer.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(explorer.querySelectorAll('[role="tabpanel"]'));
+    const selectPriority = index => {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+      });
+      panels.forEach(panel => {
+        panel.hidden = panel.id !== tabs[index].getAttribute('aria-controls');
+      });
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectPriority(index));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1
+          : (index + (event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1) + tabs.length) % tabs.length;
+        selectPriority(next);
+        tabs[next].focus();
+      });
+    });
+    if (tabs.length) selectPriority(Math.max(0, tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true')));
+  });
+
   const menu = document.querySelector('.menu-button');
   const nav = document.querySelector('.nav');
   menu?.addEventListener('click', () => {
