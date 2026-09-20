@@ -50,6 +50,18 @@ for (const route of routes) {
   const response = await fetch(`${origin}/${route.source}`);
   if (!response.ok) throw new Error(`Could not export /${route.source}: ${response.status}`);
   let html = await response.text();
+  const routeStyles = [...html.matchAll(/<link\b[^>]*href="(\/app\/[^"?]+\.css)(?:\?[^" ]*)?"[^>]*>/gi)]
+    .map((match) => match[1])
+    .filter((file) => !file.endsWith("/globals.css") && !file.endsWith("/campaign-2068.css"));
+  for (const file of new Set(routeStyles)) {
+    const stylesheetResponse = await fetch(`${origin}${file}`, { headers: { Accept: "text/css,*/*;q=0.1" } });
+    if (!stylesheetResponse.ok) throw new Error(`Could not export ${file}: ${stylesheetResponse.status}`);
+    const stylesheet = (await stylesheetResponse.text())
+      .replace(/url\(\s*(['"]?)\/(?!\/)([^)'"\s]+)\1\s*\)/g, (_, quote, path) => `url(${quote}${base}${path}${quote})`);
+    const outputPath = `docs${file}`;
+    await mkdir(outputPath.slice(0, outputPath.lastIndexOf("/")), { recursive: true });
+    await writeFile(outputPath, stylesheet);
+  }
   html = html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, "")
