@@ -13,12 +13,14 @@ const menuItems = [
   { label: "Candidates", href: "/team" },
   { label: "Events", href: "/events" },
   { label: "Manifesto", href: "/manifesto/caprica-freedom-to-build-2068.pdf", external: true },
-  { label: "Get involved", href: "/events#register" },
 ];
 
 export default function CampaignMenu() {
   const [open, setOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactSubmitted, setContactSubmitted] = useState(false);
   const menuRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLElement>(null);
   const platformRef = useRef<HTMLButtonElement>(null);
@@ -26,6 +28,7 @@ export default function CampaignMenu() {
   const closeMenu = () => {
     setOpen(false);
     setPlatformOpen(false);
+    setContactOpen(false);
   };
 
   const closePlatformOnBlur = (event: FocusEvent<HTMLDivElement>) => {
@@ -70,7 +73,7 @@ export default function CampaignMenu() {
         setPlatformOpen(false);
       }
       if (event.key !== "Tab") return;
-      const drawerControls = Array.from(drawerRef.current?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])") ?? [])
+      const drawerControls = Array.from(drawerRef.current?.querySelectorAll<HTMLElement>("a[href], button:not([disabled]), input:not([disabled])") ?? [])
         .filter((element) => element.tabIndex >= 0 && !element.closest("[inert]"));
       const controls = [menuRef.current, ...drawerControls].filter((element): element is HTMLElement => element !== null);
       const first = controls[0];
@@ -151,7 +154,11 @@ export default function CampaignMenu() {
                 aria-expanded={platformOpen}
                 aria-controls="lca68-platform-submenu"
                 onKeyDown={handlePlatformKeys}
-                onClick={() => setPlatformOpen((value) => !value)}
+                onClick={() => {
+                  setPlatformOpen((value) => !value);
+                  setContactOpen(false);
+                  setContactSubmitted(false);
+                }}
               >
                 <span>Platform</span><i aria-hidden="true">+</i>
               </button>
@@ -179,6 +186,30 @@ export default function CampaignMenu() {
               <span>{item.label}</span><em>Coming soon</em>
             </span>
           ))}
+          <div className={contactOpen ? "lca68-drawer-group lca68-contact-group is-expanded" : "lca68-drawer-group lca68-contact-group"}>
+            <div className="lca68-drawer-primary">
+              <button
+                className="lca68-drawer-contact-trigger"
+                type="button"
+                aria-label="Show contact form"
+                aria-expanded={contactOpen}
+                aria-controls="lca68-contact-panel"
+                onClick={() => {
+                  setContactOpen((value) => !value);
+                  setPlatformOpen(false);
+                  setContactSubmitted(false);
+                }}
+              ><span>Contact</span><i aria-hidden="true">+</i></button>
+            </div>
+            <div className="lca68-drawer-submenu lca68-contact-panel" id="lca68-contact-panel" aria-hidden={!contactOpen} inert={!contactOpen}>
+              <form onSubmit={(event) => { event.preventDefault(); if (contactEmail.trim()) setContactSubmitted(true); }}>
+                <label htmlFor="lca68-contact-email">Get campaign updates</label>
+                <input id="lca68-contact-email" name="email" type="email" value={contactEmail} onChange={(event) => { setContactEmail(event.target.value); setContactSubmitted(false); }} placeholder="you@example.com" required />
+                <button type="submit">Share my email <span aria-hidden="true">→</span></button>
+                <p role="status" aria-live="polite">{contactSubmitted ? "Thanks. We’ll be in touch." : ""}</p>
+              </form>
+            </div>
+          </div>
         </nav>
         <p className="lca68-drawer-note">ALLIANCE / CAPRICA 2068</p>
       </aside>
