@@ -10,6 +10,7 @@ const routes = [
   { source: "platform/economy", output: "platform/economy" },
   { source: "platform/housing", output: "platform/housing" },
   { source: "platform/infrastructure", output: "platform/infrastructure" },
+  { source: "platform/education", output: "platform/education" },
   { source: "platform/healthcare", output: "platform/healthcare" },
   { source: "platform/civil-liberties", output: "platform/civil-liberties" },
   { source: "platform/foreign-policy", output: "platform/foreign-policy" },
@@ -32,8 +33,10 @@ const routes = [
   { source: "rupert-pagi-shaw", output: "rupert-pagi-shaw" },
   { source: "mathieu-jeon", output: "mathieu-jeon" },
 ];
+const requestedRoutes = process.env.EXPORT_ROUTES?.split(",").map((route) => route.trim()).filter(Boolean);
+const exportRoutes = requestedRoutes?.length ? routes.filter((route) => requestedRoutes.includes(route.source)) : routes;
 
-await rm("docs", { recursive: true, force: true });
+if (!requestedRoutes?.length) await rm("docs", { recursive: true, force: true });
 await mkdir("docs/assets", { recursive: true });
 await cp("public/images", "docs/images", { recursive: true });
 await cp("public/manifesto", "docs/manifesto", { recursive: true });
@@ -46,7 +49,7 @@ try {
 await mkdir("docs/video", { recursive: true });
 await cp("public/video/caprica-2068-city.mp4", "docs/video/caprica-2068-city.mp4");
 
-for (const route of routes) {
+for (const route of exportRoutes) {
   const styleVersion = route.source === "cambria" ? `${assetVersion}-cambria` : assetVersion;
   const response = await fetch(`${origin}/${route.source}`);
   if (!response.ok) throw new Error(`Could not export /${route.source}: ${response.status}`);
