@@ -9,6 +9,7 @@ const routes = [
   { source: "platform/mission-statement", output: "platform/mission-statement" },
   { source: "platform/economy", output: "platform/economy" },
   { source: "platform/housing", output: "platform/housing" },
+  { source: "platform/infrastructure", output: "platform/infrastructure" },
   { source: "platform/healthcare", output: "platform/healthcare" },
   { source: "platform/civil-liberties", output: "platform/civil-liberties" },
   { source: "platform/foreign-policy", output: "platform/foreign-policy" },
