@@ -2,7 +2,7 @@ import { access, cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const origin = process.env.EXPORT_ORIGIN ?? "http://localhost:3000";
 const base = "/mr2068/";
-const assetVersion = "20260920a";
+const assetVersion = "20260920b";
 const routes = [
   { source: "2068", output: "" },
   { source: "2068", output: "2068" },
@@ -206,19 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const musicButton = document.querySelector('.lca68-music');
   const musicBars = musicButton?.querySelector('.lca68-music-bars');
   const musicLabel = musicButton?.querySelector('b');
-  const motionButton = document.querySelector('.lca68-motion');
-  const motionLabel = motionButton?.querySelector('b');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const updateMusic = muted => {
     musicBars?.classList.toggle('is-muted', muted);
     if (musicLabel) musicLabel.textContent = muted ? 'Music off' : 'Music on';
     musicButton?.setAttribute('aria-label', muted ? 'Turn background music on' : 'Turn background music off');
     musicButton?.setAttribute('aria-pressed', String(!muted));
-  };
-  const updateMotion = paused => {
-    if (motionLabel) motionLabel.textContent = paused ? 'Play video' : 'Pause video';
-    motionButton?.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
-    motionButton?.setAttribute('aria-pressed', String(paused));
   };
   const playVideo = async () => {
     if (!campaignVideo) return;
@@ -227,9 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch {
       campaignVideo.muted = true;
       updateMusic(true);
+      try { await campaignVideo.play(); } catch {}
     }
-    updateMotion(campaignVideo.paused);
   };
+  void playVideo();
   musicButton?.addEventListener('click', async () => {
     if (!campaignVideo) return;
     campaignVideo.muted = !campaignVideo.muted;
@@ -237,31 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMusic(campaignVideo.muted);
     if (!campaignVideo.muted) await playVideo();
   });
-  motionButton?.addEventListener('click', async () => {
-    if (!campaignVideo) return;
-    if (campaignVideo.paused) {
-      await playVideo();
-    } else {
-      campaignVideo.pause();
-      updateMotion(true);
-    }
-  });
-  const respectReducedMotion = () => {
-    if (!campaignVideo || !reducedMotion.matches) return;
-    campaignVideo.autoplay = false;
-    campaignVideo.pause();
-    campaignVideo.muted = true;
-    updateMotion(true);
-    updateMusic(true);
-  };
   if (campaignVideo) {
-    campaignVideo.addEventListener('play', () => updateMotion(false));
-    campaignVideo.addEventListener('pause', () => updateMotion(true));
     campaignVideo.addEventListener('volumechange', () => updateMusic(campaignVideo.muted));
-    respectReducedMotion();
     updateMusic(campaignVideo.muted);
-    updateMotion(campaignVideo.paused);
-    reducedMotion.addEventListener('change', respectReducedMotion);
   }
 
   if (location.hash) requestAnimationFrame(() => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({block:'start'}));

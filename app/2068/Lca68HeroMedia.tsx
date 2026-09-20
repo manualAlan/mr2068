@@ -8,10 +8,9 @@ export default function Lca68HeroMedia() {
   const audioContextRef = useRef<AudioContext | null>(null);
   const musicTimerRef = useRef<number | null>(null);
   // Start with music enabled. Browsers may still block audible autoplay; in
-  // that case the catch below falls back to silent video and leaves the
-  // visible music control available.
+  // that case the catch below falls back to silent video while keeping the
+  // visual loop running.
   const [muted, setMuted] = useState(false);
-  const [paused, setPaused] = useState(false);
 
   const stopMusic = () => {
     if (musicTimerRef.current !== null) window.clearInterval(musicTimerRef.current);
@@ -47,22 +46,10 @@ export default function Lca68HeroMedia() {
   };
 
   useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const respectReducedMotion = () => {
-      const video = videoRef.current;
-      if (preference.matches && video) {
-        video.autoplay = false;
-        video.muted = true;
-        video.pause();
-      }
-    };
-    respectReducedMotion();
-    preference.addEventListener("change", respectReducedMotion);
     const unlockMusic = () => startMusic();
     window.addEventListener("pointerdown", unlockMusic, { once: true, passive: true });
     window.addEventListener("keydown", unlockMusic, { once: true });
     return () => {
-      preference.removeEventListener("change", respectReducedMotion);
       window.removeEventListener("pointerdown", unlockMusic);
       window.removeEventListener("keydown", unlockMusic);
       stopMusic();
@@ -78,17 +65,9 @@ export default function Lca68HeroMedia() {
       setMuted(true);
       video.muted = true;
       // Keep the video moving silently when audible autoplay is disallowed.
-      video.play().catch(() => setPaused(true));
+      void video.play();
     });
   }, []);
-
-  const toggleMotion = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      try { await video.play(); } catch { setPaused(true); }
-    } else video.pause();
-  };
 
   const toggleMusic = async () => {
     const nextMuted = !muted;
@@ -118,15 +97,10 @@ export default function Lca68HeroMedia() {
         preload="metadata"
         poster="/images/caprica-2068-city-poster.png"
         aria-hidden="true"
-        onPause={() => setPaused(true)}
-        onPlay={() => setPaused(false)}
         onVolumeChange={(event) => setMuted(event.currentTarget.muted)}
       >
         <source src="/video/caprica-2068-city.mp4" type="video/mp4" />
       </video>
-      <button className="lca68-motion" type="button" onClick={toggleMotion} aria-label={paused ? "Play background video" : "Pause background video"} aria-pressed={paused}>
-        <b>{paused ? "Play video" : "Pause video"}</b>
-      </button>
       <button
         className="lca68-music"
         type="button"
